@@ -71,27 +71,27 @@ export const Dock = () => {
   const openWindowIds = windows.map(w => w.id);
 
   const infosIcons = [
-    { icon: <User size={36} strokeWidth={2} />, title: 'À propos', windowId: 'about' },
-    { icon: <FileText size={36} strokeWidth={2} />, title: 'CV', windowId: 'cv' }
+    { icon: <User size={36} strokeWidth={1.5} />, title: 'À propos', windowId: 'about' },
+    { icon: <FileText size={36} strokeWidth={1.5} />, title: 'CV', windowId: 'cv' }
   ];
 
   const creationIcons = [
-    { icon: <Video size={36} strokeWidth={2} />, title: 'Vidéos', windowId: 'videos' },
-    { icon: <Palette size={36} strokeWidth={2} />, title: 'Projets Créatifs', windowId: 'projects' },
-    { icon: <Box size={36} strokeWidth={2} />, title: '3D / Motion', windowId: 'three-d' },
-    { icon: <FlaskConical size={36} strokeWidth={2} />, title: 'Lab', windowId: 'lab' }
+    { icon: <Video size={36} strokeWidth={1.5} />, title: 'Vidéos', windowId: 'videos' },
+    { icon: <Palette size={36} strokeWidth={1.5} />, title: 'Projets Créatifs', windowId: 'projects' },
+    { icon: <Box size={36} strokeWidth={1.5} />, title: '3D / Motion', windowId: 'three-d' },
+    { icon: <FlaskConical size={36} strokeWidth={1.5} />, title: 'Lab', windowId: 'lab' }
   ];
 
   const techniqueIcons = [
-    { icon: <Terminal size={36} strokeWidth={2} />, title: 'Développement', windowId: 'dev' },
-    { icon: <Hand size={36} strokeWidth={2} />, title: 'TouchDesigner', windowId: 'touchdesigner' }
+    { icon: <Terminal size={36} strokeWidth={1.5} />, title: 'Développement', windowId: 'dev' },
+    { icon: <Hand size={36} strokeWidth={1.5} />, title: 'TouchDesigner', windowId: 'touchdesigner' }
   ];
 
   const reseauxIcons = [
-    { icon: <Instagram size={36} strokeWidth={2} />, title: 'Instagram', href: 'https://www.instagram.com/retro.goy/?hl=fr' },
-    { icon: <Youtube size={36} strokeWidth={2} />, title: 'YouTube', href: 'https://www.youtube.com/@retrogoy/videos' },
-    { icon: <Github size={36} strokeWidth={2} />, title: 'GitHub', href: 'https://github.com/RetroGoy' },
-    { icon: <Linkedin size={36} strokeWidth={2} />, title: 'LinkedIn', href: 'https://www.linkedin.com/in/nathana%C3%ABl-naveau-708478385/' }
+    { icon: <Instagram size={36} strokeWidth={1.5} />, title: 'Instagram', href: 'https://www.instagram.com/retro.goy/?hl=fr' },
+    { icon: <Youtube size={36} strokeWidth={1.5} />, title: 'YouTube', href: 'https://www.youtube.com/@retrogoy/videos' },
+    { icon: <Github size={36} strokeWidth={1.5} />, title: 'GitHub', href: 'https://github.com/RetroGoy' },
+    { icon: <Linkedin size={36} strokeWidth={1.5} />, title: 'LinkedIn', href: 'https://www.linkedin.com/in/nathana%C3%ABl-naveau-708478385/' }
   ];
 
   return (
