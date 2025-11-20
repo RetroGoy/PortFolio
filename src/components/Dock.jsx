@@ -79,7 +79,7 @@ export const Dock = () => {
   const creationIcons = [
     { icon: <Video size={36} strokeWidth={1.5} />, title: 'Vidéos', windowId: 'videos' },
     { icon: <Palette size={36} strokeWidth={1.5} />, title: 'Projets Créatifs', windowId: 'projects' },
-    { icon: <Box size={36} strokeWidth={1.5} />, title: '3D / Motion', windowId: 'three-d' }
+    { icon: <Box size={36} strokeWidth={1.5} />, title: '3D', windowId: 'three-d' }
   ];
 
   const techniqueIcons = [
