@@ -5,6 +5,7 @@ import { Dock } from './Dock';
 import { Background } from './Background';
 import { Scanlines } from './Scanlines';
 import { FilmGrain } from './FilmGrain';
+import { CRTEffects } from './CRTEffects';
 import { Tooltip } from './Tooltip';
 import { Footer } from './Footer';
 import { AboutWindow } from '../windows/AboutWindow';
@@ -13,7 +14,6 @@ import { VideoWindow } from '../windows/VideoWindow';
 import { ThreeDWindow } from '../windows/ThreeDWindow';
 import { ProjectsWindow } from '../windows/ProjectsWindow';
 import { DevWindow } from '../windows/DevWindow';
-import { LabWindow } from '../windows/LabWindow';
 
 const windowComponents = {
   'about': AboutWindow,
@@ -22,8 +22,7 @@ const windowComponents = {
   'three-d': ThreeDWindow,
   'touchdesigner': ThreeDWindow,
   'projects': ProjectsWindow,
-  'dev': DevWindow,
-  'lab': LabWindow
+  'dev': DevWindow
 };
 
 export const Desktop = () => {
@@ -50,6 +49,7 @@ export const Desktop = () => {
         <Background />
         <Scanlines />
         <FilmGrain />
+        <CRTEffects />
 
         <Dock />
         <Tooltip />
