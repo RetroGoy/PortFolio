@@ -13,8 +13,7 @@ export const CVWindow = () => {
       <div className="flex items-center justify-between border-b border-white/20 pb-4">
         <div>
           <h2 className="text-2xl font-light tracking-wide text-green-600">Nathanaël NAVEAU</h2>
-          <p className="text-xs text-white/60 mt-1">Développeur • Artiste Visuel • Creative Coder</p>
-          <p className="text-xs text-white/50 mt-0.5">Développeur full-stack en alternance</p>
+          <p className="text-xs text-white/60 mt-1">Développeur full-stack en alternance</p>
         </div>
         <button
           onClick={handleDownload}
@@ -48,17 +47,10 @@ export const CVWindow = () => {
 
       <div className="bg-white/5 border border-white/20 p-4 rounded">
         <h3 className="font-light text-white/80 mb-2 uppercase text-xs tracking-wider">Profil</h3>
-        <div className="space-y-3 text-sm text-white/80 leading-relaxed">
-          <p>
-            Créatif numérique passionné par l'intersection entre art, technologie et interaction.
-          </p>
-          <p>
-            Mon travail explore les possibilités offertes par les outils de création en temps réel, la visualisation de données, et les installations interactives.
-          </p>
-          <p>
-            Spécialisé dans TouchDesigner, Three.js, et les technologies web créatives, je crée des expériences visuelles immersives pour des événements, performances live, et installations artistiques.
-          </p>
-        </div>
+        <p className="text-sm text-white/80 leading-relaxed">
+          Développeur full-stack en alternance (Mastère Architecture Logiciel) avec 3 ans d'expérience dans le développement d'applications et l'industrialisation logicielle (.NET, React, Docker).
+          Je recherche une alternance de 24 mois pour contribuer à des projets innovants et approfondir mes compétences en cloud-native, qualité logicielle et développement web.
+        </p>
       </div>
 
       <div className="space-y-4">
@@ -123,9 +115,9 @@ export const CVWindow = () => {
         </div>
       </div>
 
-      <div className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <h3 className="font-light text-white/80 mb-3 uppercase text-xs tracking-wider border-b border-white/20 pb-2">Compétences Techniques</h3>
+          <h3 className="font-light text-white/80 mb-3 uppercase text-xs tracking-wider border-b border-white/20 pb-2">Compétences</h3>
           <div className="space-y-3 text-xs">
             <div>
               <p className="text-white/60 mb-1">Langages :</p>
@@ -136,37 +128,24 @@ export const CVWindow = () => {
               <p className="text-white/80">.NET 7 · WPF / XAML · React / Next.js</p>
             </div>
             <div>
-              <p className="text-white/60 mb-1">Outils Dev :</p>
+              <p className="text-white/60 mb-1">Outils :</p>
               <p className="text-white/80">Git · Docker · GitHub Actions · Scrum</p>
             </div>
           </div>
         </div>
 
         <div>
-          <h3 className="font-light text-white/80 mb-3 uppercase text-xs tracking-wider border-b border-white/20 pb-2">Compétences Créatives</h3>
-          <div className="flex flex-wrap gap-2">
-            <span className="border border-white/30 px-3 py-1 text-xs text-white/70">TouchDesigner</span>
-            <span className="border border-white/30 px-3 py-1 text-xs text-white/70">Three.js</span>
-            <span className="border border-white/30 px-3 py-1 text-xs text-white/70">WebGL</span>
-            <span className="border border-white/30 px-3 py-1 text-xs text-white/70">DaVinci Resolve</span>
-            <span className="border border-white/30 px-3 py-1 text-xs text-white/70">Blender</span>
-            <span className="border border-white/30 px-3 py-1 text-xs text-white/70">After Effects</span>
-            <span className="border border-white/30 px-3 py-1 text-xs text-white/70">Motion Design</span>
-            <span className="border border-white/30 px-3 py-1 text-xs text-white/70">WebRTC</span>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h3 className="font-light text-white/80 mb-3 uppercase text-xs tracking-wider border-b border-white/20 pb-2">Langues</h3>
-            <div className="text-xs space-y-1">
+          <h3 className="font-light text-white/80 mb-3 uppercase text-xs tracking-wider border-b border-white/20 pb-2">Langues & Soft Skills</h3>
+          <div className="space-y-3 text-xs">
+            <div>
+              <p className="text-white/60 mb-1">Langues :</p>
               <p className="text-white/80">Français natif</p>
               <p className="text-white/80">Anglais technique professionnel - B1</p>
             </div>
-          </div>
-          <div>
-            <h3 className="font-light text-white/80 mb-3 uppercase text-xs tracking-wider border-b border-white/20 pb-2">Soft Skills</h3>
-            <p className="text-xs text-white/80">Adaptabilité · Autonomie · Créativité</p>
+            <div>
+              <p className="text-white/60 mb-1">Soft Skills :</p>
+              <p className="text-white/80">Adaptabilité · Autonomie · Créativité</p>
+            </div>
           </div>
         </div>
       </div>

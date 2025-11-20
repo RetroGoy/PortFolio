@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FileText, Palette, Box, Terminal, Hand, Instagram, Youtube, Github, Linkedin, ExternalLink } from 'lucide-react';
+import { User, FileText, Palette, Box, Terminal, Hand, Instagram, Youtube, Github, Linkedin, ExternalLink, Briefcase } from 'lucide-react';
 import { useWindowStore } from '../state/useWindowStore';
 
 const DockIcon = ({ icon, title, windowId, onIconClick, isOpen, href }) => {
@@ -71,15 +71,20 @@ export const Dock = () => {
 
   const openWindowIds = windows.map(w => w.id);
 
-  const techniqueIcons = [
-    { icon: <FileText size={36} strokeWidth={1.5} />, title: 'Profil', windowId: 'cv' },
-    { icon: <Terminal size={36} strokeWidth={1.5} />, title: 'Développement', windowId: 'dev' }
+  const infosIcons = [
+    { icon: <User size={36} strokeWidth={1.5} />, title: 'À propos', windowId: 'about' },
+    { icon: <FileText size={36} strokeWidth={1.5} />, title: 'CV', windowId: 'cv' }
   ];
 
   const creationIcons = [
     { icon: <Hand size={36} strokeWidth={1.5} />, title: 'Vidéos', windowId: 'videos' },
     { icon: <Palette size={36} strokeWidth={1.5} />, title: 'Projets Créatifs', windowId: 'projects' },
     { icon: <Box size={36} strokeWidth={1.5} />, title: '3D', windowId: 'three-d' }
+  ];
+
+  const techniqueIcons = [
+    { icon: <Terminal size={36} strokeWidth={1.5} />, title: 'Développement', windowId: 'dev' },
+    { icon: <Briefcase size={36} strokeWidth={1.5} />, title: 'Projets Pro', windowId: 'pro-projects' }
   ];
 
   const reseauxIcons = [
@@ -93,8 +98,9 @@ export const Dock = () => {
     <div className="fixed top-6 left-1/2 -translate-x-1/2 z-[200] w-full max-w-[100vw] md:w-auto">
       <div className="overflow-x-auto overflow-y-visible md:overflow-visible px-4 scrollbar-hide">
         <div className="flex items-center gap-6 w-max">
-          <DockGroup label="TECHNIQUE" icons={techniqueIcons} onIconClick={handleIconClick} openWindows={openWindowIds} />
+          <DockGroup label="INFOS" icons={infosIcons} onIconClick={handleIconClick} openWindows={openWindowIds} />
           <DockGroup label="CRÉATION" icons={creationIcons} onIconClick={handleIconClick} openWindows={openWindowIds} />
+          <DockGroup label="TECHNIQUE" icons={techniqueIcons} onIconClick={handleIconClick} openWindows={openWindowIds} />
           <DockGroup label="RÉSEAUX" icons={reseauxIcons} onIconClick={handleIconClick} openWindows={openWindowIds} showExternalIndicator={true} />
         </div>
       </div>
