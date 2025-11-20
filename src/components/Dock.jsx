@@ -24,7 +24,7 @@ const DockIcon = ({ icon, title, windowId, onIconClick, isOpen, href }) => {
         {icon}
       </button>
       {showTooltip && (
-        <div className="hidden md:block absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-[#051810] border border-white px-3 py-1 text-white text-[10px] uppercase tracking-wider whitespace-nowrap pointer-events-none z-20">
+        <div className="hidden md:block absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-[#051810] px-3 py-1 text-white text-[10px] uppercase tracking-wider whitespace-nowrap pointer-events-none z-20">
           {title}
         </div>
       )}
