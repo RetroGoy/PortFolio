@@ -46,10 +46,10 @@ export const Desktop = () => {
   return (
     <div className="fixed inset-0 overflow-auto">
       <div className="min-h-screen relative">
+        <CRTEffects />
         <Background />
         <Scanlines />
         <FilmGrain />
-        <CRTEffects />
 
         <Dock />
         <Tooltip />

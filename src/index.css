@@ -104,7 +104,25 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 299;
-  transform: scale(1.01);
-  filter: blur(0.3px);
+  z-index: 1;
+  background:
+    radial-gradient(circle at 50% 50%,
+      transparent 0%,
+      transparent 40%,
+      rgba(0, 0, 0, 0.02) 60%,
+      rgba(0, 0, 0, 0.05) 80%,
+      rgba(0, 0, 0, 0.1) 100%);
+  border-radius: 2%;
+}
+
+.crt-fisheye::before {
+  content: '';
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  right: -5%;
+  bottom: -5%;
+  background: inherit;
+  filter: blur(20px);
+  opacity: 0.3;
 }
