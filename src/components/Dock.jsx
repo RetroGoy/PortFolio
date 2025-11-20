@@ -11,7 +11,7 @@ const DockIcon = ({ icon, title, windowId, onIconClick, isOpen }) => {
         onClick={() => onIconClick(windowId)}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
-        className={`text-white hover:opacity-70 transition-opacity relative ${isOpen ? 'after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-white' : ''}`}
+        className={`text-white hover:opacity-70 transition-opacity relative ${isOpen ? 'after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-[2px] after:bg-white' : ''}`}
       >
         {icon}
       </button>
