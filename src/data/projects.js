@@ -88,8 +88,8 @@ export const devProjects = [
     date: 'Mai 2022 - Février 2023',
     tech: ['React', 'Node.js', 'Web Audio API'],
     description: 'Plateforme collaborative sous forme de forum musical avec noeuds de pistes',
-    link: 'https://forkjam.yourdomain.com',
-    iframeUrl: 'https://forkjam.yourdomain.com',
+    link: 'https://forkjam.dumatus.fr',
+    iframeUrl: 'https://forkjam.dumatus.fr',
     screenshots: [
       'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800',
       'https://images.pexels.com/photos/1389429/pexels-photo-1389429.jpeg?auto=compress&cs=tinysrgb&w=800',
