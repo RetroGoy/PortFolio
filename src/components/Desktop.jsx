@@ -14,15 +14,16 @@ import { VideoWindow } from '../windows/VideoWindow';
 import { ThreeDWindow } from '../windows/ThreeDWindow';
 import { ProjectsWindow } from '../windows/ProjectsWindow';
 import { DevWindow } from '../windows/DevWindow';
+import { ProProjectsWindow } from '../windows/ProProjectsWindow';
 
 const windowComponents = {
   'about': AboutWindow,
   'cv': CVWindow,
   'videos': VideoWindow,
   'three-d': ThreeDWindow,
-  'touchdesigner': ThreeDWindow,
   'projects': ProjectsWindow,
-  'dev': DevWindow
+  'dev': DevWindow,
+  'pro-projects': ProProjectsWindow
 };
 
 export const Desktop = () => {
