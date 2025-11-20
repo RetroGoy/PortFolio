@@ -9,9 +9,9 @@ export const projects = [
     youtubeId: 'dQw4w9WgXcQ',
     description: 'Installation interactive créée pour un festival d\'art numérique. Le système réagit en temps réel aux mouvements du public grâce à des capteurs de profondeur, créant une expérience immersive unique. Développée avec TouchDesigner et Processing.',
     images: [
-      'https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800'
+      { src: 'https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Interface de contrôle TouchDesigner' },
+      { src: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Installation en action au festival' },
+      { src: 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Système de capteurs de profondeur' }
     ]
   },
   {
@@ -24,9 +24,9 @@ export const projects = [
     youtubeId: 'dQw4w9WgXcQ',
     description: 'Série d\'explorations visuelles générées algorithmiquement. Chaque forme est le résultat de règles mathématiques simples créant des structures complexes et organiques. Le processus combine code créatif et rendu 3D haute qualité.',
     images: [
-      'https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/2693212/pexels-photo-2693212.png?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&w=800'
+      { src: 'https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Structure organique générée' },
+      { src: 'https://images.pexels.com/photos/2693212/pexels-photo-2693212.png?auto=compress&cs=tinysrgb&w=800', caption: 'Variation de formes abstraites' },
+      { src: 'https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Rendu final haute qualité' }
     ]
   }
 ];

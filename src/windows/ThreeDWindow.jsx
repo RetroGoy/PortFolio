@@ -56,12 +56,15 @@ export const ThreeDWindow = ({ onNavigate, currentView }) => {
 
         <div className="grid grid-cols-3 gap-3">
           {selectedProject.images.map((img, idx) => (
-            <div key={idx} className="aspect-video border border-white/20 overflow-hidden">
+            <div key={idx} className="aspect-video border border-white/20 overflow-hidden relative group">
               <img
-                src={img}
+                src={img.src}
                 alt={`${selectedProject.title} - image ${idx + 1}`}
-                className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
+                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
               />
+              <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-3">
+                <p className="text-white text-xs text-center">{img.caption}</p>
+              </div>
             </div>
           ))}
         </div>

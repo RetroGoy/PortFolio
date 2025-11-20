@@ -9,9 +9,9 @@ export const threeDProjects = [
     description: 'Clip expérimental en 3D réalisé avec Blender et divers plugins. Une exploration visuelle abstraite mêlant formes organiques et géométriques.',
     tags: ['Blender', '3D', 'Motion'],
     images: [
-      'https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/2693212/pexels-photo-2693212.png?auto=compress&cs=tinysrgb&w=800'
+      { src: 'https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Rendu avec Geometry Nodes' },
+      { src: 'https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Formes organiques abstraites' },
+      { src: 'https://images.pexels.com/photos/2693212/pexels-photo-2693212.png?auto=compress&cs=tinysrgb&w=800', caption: 'Détails de texture' }
     ],
     tools: ['Blender', 'Geometry Nodes', 'Cycles Render']
   },
@@ -24,9 +24,9 @@ export const threeDProjects = [
     description: 'Visualiseur interactif permettant d\'explorer un objet 3D en temps réel. Navigation libre autour du modèle avec contrôles intuitifs.',
     tags: ['Three.js', 'WebGL', 'Interactive'],
     images: [
-      'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=800'
+      { src: 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Interface du visualiseur' },
+      { src: 'https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Contrôles de navigation' },
+      { src: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Rendu temps réel WebGL' }
     ],
     tools: ['Three.js', 'WebGL', 'React Three Fiber'],
     isInteractive: true
