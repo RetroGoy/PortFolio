@@ -85,6 +85,10 @@ export const ProjectsWindow = ({ onNavigate, currentView }) => {
         PROJETS CRÉATIFS
       </h2>
 
+      <p className="text-xs text-white/40 leading-relaxed">
+        Projets artistiques et expérimentaux explorant l'art génératif, les installations interactives et les performances audiovisuelles. Ces créations mêlent code créatif, design sonore et technologies immersives pour proposer des expériences sensorielles uniques.
+      </p>
+
       <div className="grid grid-cols-2 gap-4">
         {projects.map((project) => (
           <div

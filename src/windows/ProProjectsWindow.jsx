@@ -84,6 +84,10 @@ export const ProProjectsWindow = ({ onNavigate, currentView }) => {
         PROJETS PROFESSIONNELS
       </h2>
 
+      <p className="text-xs text-white/40 leading-relaxed">
+        Collaborations avec des clients professionnels pour créer des solutions digitales sur mesure. Du développement web et mobile à l'identité visuelle animée, ces projets allient expertise technique et créativité pour répondre aux besoins stratégiques de chaque client.
+      </p>
+
       <div className="grid grid-cols-2 gap-4">
         {proProjects.map((project) => (
           <div

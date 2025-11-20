@@ -74,6 +74,10 @@ export const VideoWindow = ({ onNavigate, currentView }) => {
        COURTS-MÉTRAGES
       </h2>
 
+      <p className="text-xs text-white/40 leading-relaxed">
+        Cette section présente mes réalisations en court-métrage, explorant différents styles narratifs et visuels. De la fiction expérimentale aux documentaires urbains, chaque projet raconte une histoire unique à travers l'image et le son.
+      </p>
+
       <div className="grid grid-cols-2 gap-4">
         {videos.map((video) => (
           <div
