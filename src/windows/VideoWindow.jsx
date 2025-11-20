@@ -88,10 +88,21 @@ export const VideoWindow = ({ onNavigate, currentView }) => {
                 <Play size={32} className="text-white" strokeWidth={1} />
               </div>
             </div>
-            <div className="p-3">
-              <div className="flex items-center justify-between gap-2">
-                <p className="text-sm text-white/90">{video.title}</p>
+            <div className="p-4 space-y-2">
+              <div className="flex items-start justify-between gap-2">
+                <h3 className="text-sm font-light">{video.title}</h3>
                 <span className="text-[10px] text-white/40 whitespace-nowrap">{video.date}</span>
+              </div>
+              <p className="text-xs text-white/60 leading-relaxed">{video.summary}</p>
+              <div className="flex flex-wrap gap-1 pt-2">
+                {video.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[10px] border border-white/30 px-2 py-0.5 text-white/70"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
