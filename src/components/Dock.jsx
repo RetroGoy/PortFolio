@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { User, FileText, Video, Palette, Box, Terminal, Hand, Instagram, Youtube, Github, Linkedin } from 'lucide-react';
+import { User, FileText, Video, Palette, Box, Terminal, Hand, Instagram, Youtube, Github, Linkedin, ExternalLink } from 'lucide-react';
 import { useWindowStore } from '../state/useWindowStore';
 
 const DockIcon = ({ icon, title, windowId, onIconClick, isOpen, href }) => {
@@ -32,11 +32,12 @@ const DockIcon = ({ icon, title, windowId, onIconClick, isOpen, href }) => {
   );
 };
 
-const DockGroup = ({ label, icons, onIconClick, openWindows }) => {
+const DockGroup = ({ label, icons, onIconClick, openWindows, showExternalIndicator }) => {
   return (
     <div className="relative border-[1.5px] border-white px-5 py-3 flex items-center gap-6 flex-shrink-0">
-      <span className="absolute -top-1.5 left-4 bg-[#0a2f1f] px-2 text-white text-[10px] uppercase tracking-widest font-medium z-10">
+      <span className="absolute -top-1.5 left-4 bg-[#0a2f1f] px-2 text-white text-[10px] uppercase tracking-widest font-medium z-10 flex items-center gap-1">
         {label}
+        {showExternalIndicator && <ExternalLink size={10} className="opacity-60" />}
       </span>
       {icons.map((icon, idx) => (
         <DockIcon
@@ -100,7 +101,7 @@ export const Dock = () => {
           <DockGroup label="INFOS" icons={infosIcons} onIconClick={handleIconClick} openWindows={openWindowIds} />
           <DockGroup label="CRÉATION" icons={creationIcons} onIconClick={handleIconClick} openWindows={openWindowIds} />
           <DockGroup label="TECHNIQUE" icons={techniqueIcons} onIconClick={handleIconClick} openWindows={openWindowIds} />
-          <DockGroup label="RÉSEAUX" icons={reseauxIcons} onIconClick={handleIconClick} openWindows={openWindowIds} />
+          <DockGroup label="RÉSEAUX" icons={reseauxIcons} onIconClick={handleIconClick} openWindows={openWindowIds} showExternalIndicator={true} />
         </div>
       </div>
     </div>
