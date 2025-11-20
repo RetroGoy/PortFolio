@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { playOpenSound, playCloseSound } from '../utils/soundEffects';
 
 const getInitialWindows = () => {
   const isMobile = window.innerWidth <= 768;
@@ -34,6 +35,7 @@ export const useWindowStore = create((set) => ({
   openWindow: (windowData) => set((state) => {
     const existing = state.windows.find(w => w.id === windowData.id);
     if (existing) {
+      playOpenSound();
       return {
         windows: state.windows.map(w =>
           w.id === windowData.id
@@ -53,6 +55,8 @@ export const useWindowStore = create((set) => ({
       width: isMobile ? window.innerWidth - 20 : (windowData.width || 550),
       height: isMobile ? window.innerHeight - 120 : (windowData.height || 550)
     };
+
+    playOpenSound();
 
     return {
       windows: [
@@ -79,6 +83,8 @@ export const useWindowStore = create((set) => ({
         height: windowToClose.height
       };
     }
+
+    playCloseSound();
 
     return {
       windows: state.windows.filter(w => w.id !== id),
