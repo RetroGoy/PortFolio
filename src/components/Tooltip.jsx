@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { ArrowUp } from 'lucide-react';
 
 export const Tooltip = () => {
   const [visible, setVisible] = useState(true);
@@ -22,11 +21,10 @@ export const Tooltip = () => {
 
   return (
     <div className="fixed top-[120px] left-1/2 -translate-x-1/2 z-[190] pointer-events-none">
-      <div className="flex flex-col items-center gap-2 animate-bounce">
+      <div className="animate-float">
         <div className="bg-[#051810] border border-white px-4 py-2 text-white text-sm uppercase tracking-wider whitespace-nowrap">
           Essayez de cliquer sur les icônes pour ouvrir les fenêtres
         </div>
-        <ArrowUp size={24} strokeWidth={2} className="text-white" />
       </div>
     </div>
   );
