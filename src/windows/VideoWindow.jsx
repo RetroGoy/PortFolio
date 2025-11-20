@@ -68,7 +68,7 @@ export const VideoWindow = ({ onNavigate, currentView }) => {
   return (
     <div className="space-y-6">
       <h2 className="text-xl font-light tracking-wide border-b border-white/20 pb-2">
-        VIDÉOS & COURTS-MÉTRAGES
+       COURTS-MÉTRAGES
       </h2>
 
       <div className="grid grid-cols-2 gap-4">
