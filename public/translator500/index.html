@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Translator 500</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Translator 500</h1>
+      <p class="subtitle">Traduction entre instruments</p>
+    </header>
+
+    <div class="translator">
+      <div class="instrument-panel">
+        <label for="source-instrument">Instrument source</label>
+        <select id="source-instrument">
+          <option value="guitar">Guitare</option>
+          <option value="piano">Piano</option>
+          <option value="bass">Basse</option>
+          <option value="drums">Batterie</option>
+          <option value="violin">Violon</option>
+          <option value="saxophone">Saxophone</option>
+        </select>
+      </div>
+
+      <div class="arrow">→</div>
+
+      <div class="instrument-panel">
+        <label for="target-instrument">Instrument cible</label>
+        <select id="target-instrument">
+          <option value="piano" selected>Piano</option>
+          <option value="guitar">Guitare</option>
+          <option value="bass">Basse</option>
+          <option value="drums">Batterie</option>
+          <option value="violin">Violon</option>
+          <option value="saxophone">Saxophone</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="input-section">
+      <label for="note-input">Note / Accord à traduire</label>
+      <input type="text" id="note-input" placeholder="Ex: C4, Am, G major">
+      <button id="translate-btn">Traduire</button>
+    </div>
+
+    <div class="result-section" id="result-section">
+      <h3>Résultat</h3>
+      <div class="result-content" id="result-content">
+        Entrez une note pour voir la traduction
+      </div>
+      <div class="technical-info" id="technical-info"></div>
+    </div>
+
+    <div class="presets">
+      <h3>Presets populaires</h3>
+      <div class="preset-grid">
+        <button class="preset-btn" data-source="guitar" data-target="piano" data-note="Em">
+          Guitar Em → Piano
+        </button>
+        <button class="preset-btn" data-source="piano" data-target="guitar" data-note="C major">
+          Piano C → Guitar
+        </button>
+        <button class="preset-btn" data-source="bass" data-target="drums" data-note="A2">
+          Bass A2 → Drums
+        </button>
+        <button class="preset-btn" data-source="violin" data-target="saxophone" data-note="D5">
+          Violin D5 → Sax
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="translator.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

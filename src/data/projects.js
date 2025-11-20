@@ -121,6 +121,26 @@ export const devProjects = [
       frontend: ['Vanilla JS', 'Canvas API', 'WebRTC'],
       tools: ['Webpack', 'PM2', 'Nginx']
     }
+  },
+  {
+    id: 'dev-4',
+    title: 'Translator 500',
+    date: 'Janvier 2022 - Mars 2022',
+    tech: ['JavaScript', 'Vanilla JS', 'CSS'],
+    description: 'Outil de traduction entre instruments musicaux',
+    link: '/translator500/index.html',
+    iframeUrl: '/translator500/index.html',
+    screenshots: [
+      'https://images.pexels.com/photos/1407322/pexels-photo-1407322.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/1916824/pexels-photo-1916824.jpeg?auto=compress&cs=tinysrgb&w=800'
+    ],
+    architecture: 'Application web légère en JavaScript vanilla sans dépendances. Utilise des algorithmes de transposition MIDI pour convertir les notes entre différentes tessitures d\'instruments. Interface rétro inspirée des terminaux avec thème vert phosphorescent.',
+    stack: {
+      frontend: ['Vanilla JavaScript', 'CSS3', 'HTML5'],
+      features: ['Conversion MIDI', 'Algorithmes de transposition', 'Interface terminal'],
+      tools: ['Aucune dépendance externe']
+    }
   }
 ];
 
