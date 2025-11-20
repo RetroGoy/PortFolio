@@ -57,7 +57,7 @@ export const CVWindow = () => {
         <h3 className="font-light text-white/80 mb-3 uppercase text-xs tracking-wider border-b border-white/20 pb-2">Expériences Professionnelles</h3>
 
         <div className="space-y-4">
-          <div className="border-l-2 border-green-400 pl-4">
+          <div className="border-l-2 border-white/20 pl-4">
             <div className="flex justify-between items-start mb-2">
               <h4 className="text-sm font-medium text-white">QUALI RETRAITE / Alternant Développeur</h4>
               <span className="text-xs text-white/60">Sept 2024 - Sept 2025</span>
