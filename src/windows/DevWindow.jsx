@@ -124,7 +124,10 @@ export const DevWindow = ({ onNavigate, currentView }) => {
                 <div className="flex items-start gap-3">
                   <Code size={20} className="text-white/60 mt-0.5" strokeWidth={1} />
                   <div className="flex-1">
-                    <h4 className="text-sm mb-1">{project.title}</h4>
+                    <div className="flex items-start justify-between gap-2 mb-1">
+                      <h4 className="text-sm">{project.title}</h4>
+                      <span className="text-[10px] text-white/40 whitespace-nowrap">{project.date}</span>
+                    </div>
                     <p className="text-xs text-white/60 mb-2">{project.description}</p>
                     <div className="flex gap-2">
                       {project.tech.map((tech) => (

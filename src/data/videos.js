@@ -3,6 +3,7 @@ export const videos = [
     id: 'video-1',
     youtubeId: 'uMsgumidgy8',
     title: 'Genocide de poulets',
+    date: 'Avril 2023',
     thumbnail: 'https://img.youtube.com/vi/uMsgumidgy8/mqdefault.jpg',
     description: 'Un court-métrage explorant les thèmes de la mémoire et du temps à travers une narration visuelle poétique. Ce projet combine des techniques de prise de vue traditionnelles avec des effets visuels contemporains.',
     images: [
@@ -15,6 +16,7 @@ export const videos = [
     id: 'video-2',
     youtubeId: 'j8EFK4OFf0Q',
     title: 'Judason',
+    date: 'Janvier 2023',
     thumbnail: 'https://img.youtube.com/vi/j8EFK4OFf0Q/mqdefault.jpg',
     description: 'Une exploration visuelle des espaces urbains la nuit, capturant la solitude et la beauté des villes endormies. Réalisé entièrement en lumière naturelle et néons urbains.',
     images: [
@@ -27,6 +29,7 @@ export const videos = [
     id: 'video-3',
     youtubeId: 'RQWhuwgD9EU',
     title: 'Regdumatum',
+    date: 'Novembre 2022',
     thumbnail: 'https://img.youtube.com/vi/RQWhuwgD9EU/mqdefault.jpg',
     description: 'Projet de motion design pour une identité de marque, intégrant des animations fluides et des transitions organiques. Créé avec After Effects et Cinema 4D.',
     images: [
@@ -39,6 +42,7 @@ export const videos = [
     id: 'video-4',
     youtubeId: 'elOBRUXiOh4',
     title: 'drone test',
+    date: 'Août 2022',
     thumbnail: 'https://img.youtube.com/vi/elOBRUXiOh4/mqdefault.jpg',
     description: 'Animation 3D abstraite explorant les formes géométriques et les textures organiques. Un voyage visuel à travers des paysages numériques générés de manière procédurale.',
     images: [

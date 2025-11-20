@@ -96,7 +96,10 @@ export const ProjectsWindow = ({ onNavigate, currentView }) => {
               />
             </div>
             <div className="p-4 space-y-2">
-              <h3 className="text-sm font-light">{project.title}</h3>
+              <div className="flex items-start justify-between gap-2">
+                <h3 className="text-sm font-light">{project.title}</h3>
+                <span className="text-[10px] text-white/40 whitespace-nowrap">{project.date}</span>
+              </div>
               <p className="text-xs text-white/60 leading-relaxed">{project.summary}</p>
               <div className="flex flex-wrap gap-1 pt-2">
                 {project.tags.map((tag) => (

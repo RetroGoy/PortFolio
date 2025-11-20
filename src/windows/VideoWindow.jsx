@@ -89,7 +89,10 @@ export const VideoWindow = ({ onNavigate, currentView }) => {
               </div>
             </div>
             <div className="p-3">
-              <p className="text-sm text-white/90">{video.title}</p>
+              <div className="flex items-center justify-between gap-2">
+                <p className="text-sm text-white/90">{video.title}</p>
+                <span className="text-[10px] text-white/40 whitespace-nowrap">{video.date}</span>
+              </div>
             </div>
           </div>
         ))}
