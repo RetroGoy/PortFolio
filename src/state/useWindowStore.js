@@ -6,20 +6,20 @@ const getInitialWindows = () => {
   const cvWindow = {
     id: 'cv',
     title: 'CV',
-    x: isMobile ? 10 : 150,
-    y: isMobile ? 100 : 200,
-    width: isMobile ? window.innerWidth - 20 : 600,
-    height: isMobile ? window.innerHeight - 120 : 400,
+    x: isMobile ? 10 : 100,
+    y: isMobile ? 100 : 150,
+    width: isMobile ? window.innerWidth - 20 : 750,
+    height: isMobile ? window.innerHeight - 120 : 550,
     zIndex: 1
   };
 
   const aboutWindow = {
     id: 'about',
     title: 'À PROPOS',
-    x: isMobile ? 10 : 250,
+    x: isMobile ? 10 : window.innerWidth - 850,
     y: isMobile ? 100 : 150,
-    width: isMobile ? window.innerWidth - 20 : 600,
-    height: isMobile ? window.innerHeight - 120 : 400,
+    width: isMobile ? window.innerWidth - 20 : 750,
+    height: isMobile ? window.innerHeight - 120 : 550,
     zIndex: 2
   };
 
@@ -50,8 +50,8 @@ export const useWindowStore = create((set) => ({
     const defaultPosition = savedPosition || {
       x: isMobile ? 10 : Math.random() * 200 + 100,
       y: isMobile ? 100 : Math.random() * 100 + 150,
-      width: isMobile ? window.innerWidth - 20 : (windowData.width || 600),
-      height: isMobile ? window.innerHeight - 120 : (windowData.height || 400)
+      width: isMobile ? window.innerWidth - 20 : (windowData.width || 750),
+      height: isMobile ? window.innerHeight - 120 : (windowData.height || 550)
     };
 
     return {
