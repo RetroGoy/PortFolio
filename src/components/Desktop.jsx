@@ -7,7 +7,6 @@ import { Scanlines } from './Scanlines';
 import { FilmGrain } from './FilmGrain';
 import { AboutWindow } from '../windows/AboutWindow';
 import { CVWindow } from '../windows/CVWindow';
-import { ContactWindow } from '../windows/ContactWindow';
 import { VideoWindow } from '../windows/VideoWindow';
 import { ThreeDWindow } from '../windows/ThreeDWindow';
 import { ProjectsWindow } from '../windows/ProjectsWindow';
@@ -17,7 +16,6 @@ import { LabWindow } from '../windows/LabWindow';
 const windowComponents = {
   'about': AboutWindow,
   'cv': CVWindow,
-  'contact': ContactWindow,
   'videos': VideoWindow,
   'three-d': ThreeDWindow,
   'touchdesigner': ThreeDWindow,
