@@ -9,7 +9,7 @@ export const CVWindow = () => {
   };
 
   return (
-    <div className="space-y-6 max-h-[calc(100vh-200px)] overflow-y-auto pr-2">
+    <div className="space-y-6">
       <div className="flex items-center justify-between border-b border-white/20 pb-4">
         <div>
           <h2 className="text-2xl font-light tracking-wide text-green-400">Nathanaël NAVEAU</h2>
