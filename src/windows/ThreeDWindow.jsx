@@ -93,13 +93,15 @@ export const ThreeDWindow = ({ onNavigate, currentView }) => {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-light tracking-wide border-b border-white/20 pb-2">
-        3D
-      </h2>
+      <div className="space-y-3">
+        <h2 className="text-xl font-light tracking-wide border-b border-white/20 pb-2">
+          3D
+        </h2>
 
-      <p className="text-xs text-white/40 leading-relaxed">
-        Mes travaux en 3D incluent des rendus photoréalistes, des animations expérimentales et des projets interactifs. J'utilise Blender, Three.js et d'autres outils pour créer des univers visuels immersifs qui repoussent les limites du médium numérique.
-      </p>
+        <p className="text-xs text-white/40 leading-relaxed">
+          Mes travaux en 3D incluent des rendus photoréalistes, des animations expérimentales et des projets interactifs. J'utilise Blender, Three.js et d'autres outils pour créer des univers visuels immersifs qui repoussent les limites du médium numérique.
+        </p>
+      </div>
 
       <div className="grid grid-cols-2 gap-4">
         {threeDProjects.map((project) => (

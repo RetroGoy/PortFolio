@@ -131,13 +131,15 @@ export const DevWindow = ({ onNavigate, currentView }) => {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-light tracking-wide border-b border-white/20 pb-2">
-        DÉVELOPPEMENT
-      </h2>
+      <div className="space-y-3">
+        <h2 className="text-xl font-light tracking-wide border-b border-white/20 pb-2">
+          DÉVELOPPEMENT
+        </h2>
 
-      <p className="text-xs text-white/40 leading-relaxed">
-        Projets de développement web incluant des applications interactives, des sites vitrines et des expériences numériques. Spécialisé dans les technologies modernes comme React, Three.js et Node.js pour créer des interfaces performantes et engageantes.
-      </p>
+        <p className="text-xs text-white/40 leading-relaxed">
+          Projets de développement web incluant des applications interactives, des sites vitrines et des expériences numériques. Spécialisé dans les technologies modernes comme React, Three.js et Node.js pour créer des interfaces performantes et engageantes.
+        </p>
+      </div>
 
       <div className="space-y-4">
 

@@ -80,13 +80,15 @@ export const ProProjectsWindow = ({ onNavigate, currentView }) => {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-light tracking-wide border-b border-white/20 pb-2">
-        PROJETS PROFESSIONNELS
-      </h2>
+      <div className="space-y-3">
+        <h2 className="text-xl font-light tracking-wide border-b border-white/20 pb-2">
+          PROJETS PROFESSIONNELS
+        </h2>
 
-      <p className="text-xs text-white/40 leading-relaxed">
-        Collaborations avec des clients professionnels pour créer des solutions digitales sur mesure. Du développement web et mobile à l'identité visuelle animée, ces projets allient expertise technique et créativité pour répondre aux besoins stratégiques de chaque client.
-      </p>
+        <p className="text-xs text-white/40 leading-relaxed">
+          Collaborations avec des clients professionnels pour créer des solutions digitales sur mesure. Du développement web et mobile à l'identité visuelle animée, ces projets allient expertise technique et créativité pour répondre aux besoins stratégiques de chaque client.
+        </p>
+      </div>
 
       <div className="grid grid-cols-2 gap-4">
         {proProjects.map((project) => (
