@@ -24,7 +24,7 @@ const DockIcon = ({ icon, title, windowId, onIconClick, isOpen, href }) => {
         {icon}
       </button>
       {showTooltip && (
-        <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-[#051810] border border-white px-3 py-1 text-white text-[10px] uppercase tracking-wider whitespace-nowrap pointer-events-none z-20">
+        <div className="hidden md:block absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-[#051810] border border-white px-3 py-1 text-white text-[10px] uppercase tracking-wider whitespace-nowrap pointer-events-none z-20">
           {title}
         </div>
       )}
@@ -35,7 +35,7 @@ const DockIcon = ({ icon, title, windowId, onIconClick, isOpen, href }) => {
 const DockGroup = ({ label, icons, onIconClick, openWindows }) => {
   return (
     <div className="relative border-[1.5px] border-white px-5 py-3 flex items-center gap-6 flex-shrink-0">
-      <span className="absolute -top-2.5 left-4 bg-[#0a2f1f] px-2 text-white text-[10px] uppercase tracking-widest font-medium z-10">
+      <span className="absolute -top-1.5 left-4 bg-[#0a2f1f] px-2 text-white text-[10px] uppercase tracking-widest font-medium z-10">
         {label}
       </span>
       {icons.map((icon, idx) => (
