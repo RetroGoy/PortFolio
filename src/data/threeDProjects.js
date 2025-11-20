@@ -5,7 +5,9 @@ export const threeDProjects = [
     title: 'Branle-bas',
     date: 'Mars 2024',
     thumbnail: 'https://img.youtube.com/vi/kMJhW7gnmFw/mqdefault.jpg',
+    summary: 'Clip expérimental en 3D avec formes abstraites',
     description: 'Clip expérimental en 3D réalisé avec Blender et divers plugins. Une exploration visuelle abstraite mêlant formes organiques et géométriques.',
+    tags: ['Blender', '3D', 'Motion'],
     images: [
       'https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=800',
       'https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -18,7 +20,9 @@ export const threeDProjects = [
     title: 'Visualiseur 3D Interactif',
     date: 'Décembre 2024',
     thumbnail: 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800',
+    summary: 'Exploration interactive d\'objets 3D en temps réel',
     description: 'Visualiseur interactif permettant d\'explorer un objet 3D en temps réel. Navigation libre autour du modèle avec contrôles intuitifs.',
+    tags: ['Three.js', 'WebGL', 'Interactive'],
     images: [
       'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800',
       'https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&w=800',

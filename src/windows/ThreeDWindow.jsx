@@ -4,6 +4,7 @@ import { Play } from 'lucide-react';
 
 export const ThreeDWindow = ({ onNavigate, currentView }) => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [expandedImage, setExpandedImage] = useState(null);
 
   const handleProjectClick = (project) => {
     setSelectedProject(project);
@@ -112,10 +113,21 @@ export const ThreeDWindow = ({ onNavigate, currentView }) => {
                 </div>
               )}
             </div>
-            <div className="p-3">
-              <div className="flex items-center justify-between gap-2">
-                <p className="text-sm text-white/90">{project.title}</p>
+            <div className="p-4 space-y-2">
+              <div className="flex items-start justify-between gap-2">
+                <h3 className="text-sm font-light">{project.title}</h3>
                 <span className="text-[10px] text-white/40 whitespace-nowrap">{project.date}</span>
+              </div>
+              <p className="text-xs text-white/60 leading-relaxed">{project.summary}</p>
+              <div className="flex flex-wrap gap-1 pt-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[10px] border border-white/30 px-2 py-0.5 text-white/70"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
@@ -128,7 +140,10 @@ export const ThreeDWindow = ({ onNavigate, currentView }) => {
           {galleryImages.map((item) => (
             <div
               key={item.id}
-              className="aspect-square border border-white/20 hover:border-white/40 transition-colors cursor-pointer bg-white/5 overflow-hidden relative group"
+              className={`border border-white/20 hover:border-white/40 transition-all duration-300 cursor-pointer bg-white/5 overflow-hidden relative group ${
+                expandedImage === item.id ? 'col-span-3 aspect-video' : 'aspect-square'
+              }`}
+              onClick={() => setExpandedImage(expandedImage === item.id ? null : item.id)}
             >
               <img
                 src={item.src}

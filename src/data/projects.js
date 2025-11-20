@@ -28,36 +28,39 @@ export const projects = [
       'https://images.pexels.com/photos/2693212/pexels-photo-2693212.png?auto=compress&cs=tinysrgb&w=800',
       'https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&w=800'
     ]
+  }
+];
+
+export const projectGalleryImages = [
+  {
+    id: 'project-gallery-1',
+    src: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Performance VJ en temps réel'
   },
   {
-    slug: 'vj-set',
-    title: 'VJ Set',
-    cover: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800',
-    tags: ['VJ', 'Live', 'Music'],
-    date: 'Octobre 2022 - Décembre 2022',
-    summary: 'Performance audiovisuelle en temps réel',
-    youtubeId: 'dQw4w9WgXcQ',
-    description: 'Performance VJ créée pour un concert électro. Les visuels réagissent en temps réel à la musique et peuvent être manipulés live pendant la performance. Utilisation de Resolume Arena et contenu généré avec TouchDesigner.',
-    images: [
-      'https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800'
-    ]
+    id: 'project-gallery-2',
+    src: 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Visualisation de données 3D'
   },
   {
-    slug: 'data-viz',
-    title: 'Data Visualization',
-    cover: 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800',
-    tags: ['Data', 'WebGL', '3D'],
-    date: 'Juillet 2022 - Septembre 2022',
-    summary: 'Visualisation de données complexes en 3D',
-    youtubeId: 'dQw4w9WgXcQ',
-    description: 'Visualisation interactive de données complexes en trois dimensions. Le projet transforme des datasets abstraits en formes visuelles compréhensibles et esthétiques. Développé avec Three.js et D3.js.',
-    images: [
-      'https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=800'
-    ]
+    id: 'project-gallery-3',
+    src: 'https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Installation interactive lumineuse'
+  },
+  {
+    id: 'project-gallery-4',
+    src: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Projection mapping architectural'
+  },
+  {
+    id: 'project-gallery-5',
+    src: 'https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Sculpture numérique générative'
+  },
+  {
+    id: 'project-gallery-6',
+    src: 'https://images.pexels.com/photos/2693212/pexels-photo-2693212.png?auto=compress&cs=tinysrgb&w=800',
+    description: 'Étude de formes organiques'
   }
 ];
 

@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { projects } from '../data/projects';
+import { projects, projectGalleryImages } from '../data/projects';
 
 export const ProjectsWindow = ({ onNavigate, currentView }) => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [expandedImage, setExpandedImage] = useState(null);
 
   const handleProjectClick = (project) => {
     setSelectedProject(project);
@@ -114,6 +115,30 @@ export const ProjectsWindow = ({ onNavigate, currentView }) => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="border-t border-white/20 pt-4">
+        <h3 className="text-sm font-light tracking-wide text-white/70 uppercase mb-3">Galerie</h3>
+        <div className="grid grid-cols-3 gap-3">
+          {projectGalleryImages.map((item) => (
+            <div
+              key={item.id}
+              className={`border border-white/20 hover:border-white/40 transition-all duration-300 cursor-pointer bg-white/5 overflow-hidden relative group ${
+                expandedImage === item.id ? 'col-span-3 aspect-video' : 'aspect-square'
+              }`}
+              onClick={() => setExpandedImage(expandedImage === item.id ? null : item.id)}
+            >
+              <img
+                src={item.src}
+                alt={item.description}
+                className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
+              />
+              <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-3">
+                <p className="text-white text-xs text-center">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
