@@ -111,19 +111,6 @@ export const DevWindow = ({ onNavigate, currentView }) => {
       </h2>
 
       <div className="space-y-4">
-        <div>
-          <h3 className="text-xs uppercase tracking-wider text-white/60 mb-3">Stack Technique</h3>
-          <div className="grid grid-cols-3 gap-2">
-            {['React', 'Three.js', 'Node.js', 'WebGL', 'TypeScript', 'Python'].map((tech) => (
-              <div
-                key={tech}
-                className="border border-white/20 p-3 text-center text-sm hover:bg-white/5 transition-colors"
-              >
-                {tech}
-              </div>
-            ))}
-          </div>
-        </div>
 
         <div className="pt-4">
           <h3 className="text-xs uppercase tracking-wider text-white/60 mb-3">Projets</h3>
