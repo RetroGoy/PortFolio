@@ -84,42 +84,42 @@ export const devProjects = [
   },
   {
     id: 'dev-2',
-    title: 'Creative Platform',
+    title: 'ForkJam',
     date: 'Mai 2022 - Février 2023',
-    tech: ['Node.js', 'Express', 'MongoDB'],
-    description: 'Plateforme de partage de créations audiovisuelles',
-    link: 'https://example.com/platform',
-    iframeUrl: 'https://example.com/platform',
+    tech: ['React', 'Node.js', 'Web Audio API'],
+    description: 'Plateforme collaborative sous forme de forum musical avec noeuds de pistes',
+    link: 'https://forkjam.yourdomain.com',
+    iframeUrl: 'https://forkjam.yourdomain.com',
     screenshots: [
-      'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=800'
+      'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/1389429/pexels-photo-1389429.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg?auto=compress&cs=tinysrgb&w=800'
     ],
-    architecture: 'API REST développée avec Node.js et Express, suivant une architecture MVC. Base de données MongoDB pour la flexibilité des schémas. Authentification JWT et upload de médias via Cloudinary. Système de real-time avec WebSockets.',
+    architecture: 'Plateforme collaborative permettant aux musiciens de créer des threads musicaux. Chaque contribution peut être "forkée" sous forme de nœud, créant une arborescence de variations musicales. Système de pistes audio intégré avec Web Audio API pour la lecture synchronisée.',
     stack: {
-      backend: ['Node.js', 'Express', 'MongoDB'],
-      frontend: ['React', 'Redux', 'Material-UI'],
-      tools: ['JWT', 'Cloudinary', 'Socket.io', 'Docker']
+      backend: ['Node.js', 'Express', 'PostgreSQL'],
+      frontend: ['React', 'Web Audio API', 'D3.js'],
+      tools: ['WebSockets', 'FFmpeg', 'Redis', 'Docker']
     }
   },
   {
     id: 'dev-3',
-    title: 'Real-time Viz',
+    title: 'Kaarbon Komplite',
     date: 'Mars 2023 - Juin 2023',
-    tech: ['Socket.io', 'Canvas', 'WebRTC'],
-    description: 'Outil de visualisation en temps réel',
-    link: 'https://example.com/realtime',
-    iframeUrl: 'https://example.com/realtime',
+    tech: ['JavaScript', 'Canvas', 'Game Engine'],
+    description: 'Jeu vidéo point and click narratif',
+    link: 'https://kaarbon.yourdomain.com',
+    iframeUrl: 'https://kaarbon.yourdomain.com',
     screenshots: [
-      'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg?auto=compress&cs=tinysrgb&w=800'
+      'https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/2148217/pexels-photo-2148217.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=800'
     ],
-    architecture: 'Application full-stack temps réel utilisant WebSocket pour la communication bidirectionnelle. Canvas API pour le rendu graphique haute performance. WebRTC pour le streaming vidéo peer-to-peer. Architecture événementielle côté serveur.',
+    architecture: 'Jeu d\'aventure point-and-click développé en JavaScript vanilla. Moteur de jeu custom avec système d\'inventaire, dialogues interactifs et puzzles. Rendu Canvas 2D avec animations frame-by-frame. Système de sauvegarde local et gestion d\'états complexes.',
     stack: {
-      backend: ['Node.js', 'Socket.io', 'Redis'],
-      frontend: ['Vanilla JS', 'Canvas API', 'WebRTC'],
-      tools: ['Webpack', 'PM2', 'Nginx']
+      frontend: ['JavaScript', 'Canvas API', 'HTML5'],
+      features: ['Moteur de jeu custom', 'Système de dialogues', 'Inventaire'],
+      tools: ['Webpack', 'Howler.js', 'Local Storage']
     }
   },
   {
