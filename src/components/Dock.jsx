@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Calculator, Scale, Image, Briefcase, Hand, Plus, Square, Pen, Layers, Instagram, Youtube, Github, Linkedin } from 'lucide-react';
+import { User, FileText, Video, Palette, Box, Phone, Terminal, FlaskConical, Hand, Instagram, Youtube, Github, Linkedin } from 'lucide-react';
 import { useWindowStore } from '../state/useWindowStore';
 
 const DockIcon = ({ icon, title, windowId, onIconClick, isOpen, href }) => {
@@ -71,21 +71,21 @@ export const Dock = () => {
   const openWindowIds = windows.map(w => w.id);
 
   const infosIcons = [
-    { icon: <Calculator size={36} strokeWidth={2} />, title: 'À propos', windowId: 'about' },
-    { icon: <Scale size={36} strokeWidth={2} />, title: 'CV', windowId: 'cv' }
+    { icon: <User size={36} strokeWidth={2} />, title: 'À propos', windowId: 'about' },
+    { icon: <FileText size={36} strokeWidth={2} />, title: 'CV', windowId: 'cv' }
   ];
 
   const creationIcons = [
-    { icon: <Image size={36} strokeWidth={2} />, title: 'Vidéos', windowId: 'videos' },
-    { icon: <Briefcase size={36} strokeWidth={2} />, title: 'Projets Créatifs', windowId: 'projects' },
-    { icon: <Hand size={36} strokeWidth={2} />, title: '3D / Motion', windowId: 'three-d' }
+    { icon: <Video size={36} strokeWidth={2} />, title: 'Vidéos', windowId: 'videos' },
+    { icon: <Palette size={36} strokeWidth={2} />, title: 'Projets Créatifs', windowId: 'projects' },
+    { icon: <Box size={36} strokeWidth={2} />, title: '3D / Motion', windowId: 'three-d' }
   ];
 
   const techniqueIcons = [
-    { icon: <Plus size={36} strokeWidth={2} />, title: 'Contact', windowId: 'contact' },
-    { icon: <Square size={36} strokeWidth={2} />, title: 'Développement', windowId: 'dev' },
-    { icon: <Pen size={36} strokeWidth={2} />, title: 'Lab', windowId: 'lab' },
-    { icon: <Layers size={36} strokeWidth={2} />, title: 'TouchDesigner', windowId: 'touchdesigner' }
+    { icon: <Phone size={36} strokeWidth={2} />, title: 'Contact', windowId: 'contact' },
+    { icon: <Terminal size={36} strokeWidth={2} />, title: 'Développement', windowId: 'dev' },
+    { icon: <FlaskConical size={36} strokeWidth={2} />, title: 'Lab', windowId: 'lab' },
+    { icon: <Hand size={36} strokeWidth={2} />, title: 'TouchDesigner', windowId: 'touchdesigner' }
   ];
 
   const reseauxIcons = [
