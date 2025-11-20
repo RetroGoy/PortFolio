@@ -6,17 +6,17 @@ export const playOpenSound = () => {
   const oscillator = audioContext.createOscillator();
   const gainNode = audioContext.createGain();
 
+  oscillator.type = 'square';
   oscillator.connect(gainNode);
   gainNode.connect(audioContext.destination);
 
-  oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
-  oscillator.frequency.exponentialRampToValueAtTime(1200, audioContext.currentTime + 0.05);
+  oscillator.frequency.setValueAtTime(220, audioContext.currentTime);
 
-  gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-  gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.05);
+  gainNode.gain.setValueAtTime(0.03, audioContext.currentTime);
+  gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.025);
 
   oscillator.start(audioContext.currentTime);
-  oscillator.stop(audioContext.currentTime + 0.05);
+  oscillator.stop(audioContext.currentTime + 0.025);
 };
 
 export const playCloseSound = () => {
@@ -25,15 +25,15 @@ export const playCloseSound = () => {
   const oscillator = audioContext.createOscillator();
   const gainNode = audioContext.createGain();
 
+  oscillator.type = 'square';
   oscillator.connect(gainNode);
   gainNode.connect(audioContext.destination);
 
-  oscillator.frequency.setValueAtTime(1200, audioContext.currentTime);
-  oscillator.frequency.exponentialRampToValueAtTime(600, audioContext.currentTime + 0.04);
+  oscillator.frequency.setValueAtTime(180, audioContext.currentTime);
 
-  gainNode.gain.setValueAtTime(0.08, audioContext.currentTime);
-  gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.04);
+  gainNode.gain.setValueAtTime(0.025, audioContext.currentTime);
+  gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.02);
 
   oscillator.start(audioContext.currentTime);
-  oscillator.stop(audioContext.currentTime + 0.04);
+  oscillator.stop(audioContext.currentTime + 0.02);
 };
