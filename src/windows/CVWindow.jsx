@@ -24,19 +24,25 @@ export const CVWindow = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
         <div className="flex items-center gap-2">
-          <MapPin size={14} className="text-white/60" />
+          <MapPin size={16} className="text-white/60" />
           <span>69400, Permis B véhiculé</span>
         </div>
-        <div className="flex items-center gap-2">
-          <Phone size={14} className="text-white/60" />
+        <a
+          href="tel:+33601826094"
+          className="flex items-center gap-2 hover:text-green-400 transition-colors"
+        >
+          <Phone size={16} className="text-white/60" />
           <span>+33 6 01 82 60 94</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <Mail size={14} className="text-white/60" />
+        </a>
+        <a
+          href="mailto:n.naveau@icloud.com"
+          className="flex items-center gap-2 hover:text-green-400 transition-colors"
+        >
+          <Mail size={16} className="text-white/60" />
           <span>n.naveau@icloud.com</span>
-        </div>
+        </a>
       </div>
 
       <div className="bg-white/5 border border-white/20 p-4 rounded">
