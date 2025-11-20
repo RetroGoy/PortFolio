@@ -12,7 +12,7 @@ export const CVWindow = () => {
     <div className="space-y-6">
       <div className="flex items-center justify-between border-b border-white/20 pb-4">
         <div>
-          <h2 className="text-2xl tracking-wide text-green-400">Nathanaël NAVEAU</h2>
+          <h2 className="text-2xl tracking-wide text-green-500">Nathanaël NAVEAU</h2>
           <p className="text-xs text-white/60 mt-1">Développeur full-stack en alternance</p>
         </div>
         <button
