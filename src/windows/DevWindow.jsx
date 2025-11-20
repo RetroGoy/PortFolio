@@ -1,14 +1,27 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { devProjects } from '../data/projects';
-import { Code, ExternalLink } from 'lucide-react';
+import { Code, ExternalLink, Maximize2 } from 'lucide-react';
 
 export const DevWindow = ({ onNavigate, currentView }) => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const iframeContainerRef = useRef(null);
 
   const handleProjectClick = (project) => {
     setSelectedProject(project);
     if (onNavigate) {
       onNavigate(project.title);
+    }
+  };
+
+  const handleFullscreen = () => {
+    if (iframeContainerRef.current) {
+      if (iframeContainerRef.current.requestFullscreen) {
+        iframeContainerRef.current.requestFullscreen();
+      } else if (iframeContainerRef.current.webkitRequestFullscreen) {
+        iframeContainerRef.current.webkitRequestFullscreen();
+      } else if (iframeContainerRef.current.mozRequestFullScreen) {
+        iframeContainerRef.current.mozRequestFullScreen();
+      }
     }
   };
 
@@ -47,13 +60,25 @@ export const DevWindow = ({ onNavigate, currentView }) => {
           ))}
         </div>
 
-        <div className="aspect-video bg-black border border-white/20 overflow-hidden">
-          <iframe
-            src={selectedProject.iframeUrl}
-            title={selectedProject.title}
-            className="w-full h-full"
-            frameBorder="0"
-          ></iframe>
+        <div className="relative">
+          <button
+            onClick={handleFullscreen}
+            className="absolute top-2 right-2 z-10 bg-black/80 border border-white/40 p-2 hover:bg-white/10 transition-colors"
+            title="Plein écran"
+          >
+            <Maximize2 size={16} className="text-white/70" />
+          </button>
+          <div
+            ref={iframeContainerRef}
+            className="aspect-video bg-black border border-white/20 overflow-hidden"
+          >
+            <iframe
+              src={selectedProject.iframeUrl}
+              title={selectedProject.title}
+              className="w-full h-full"
+              frameBorder="0"
+            ></iframe>
+          </div>
         </div>
 
         <div>
