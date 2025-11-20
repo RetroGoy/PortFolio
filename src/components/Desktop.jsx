@@ -8,22 +8,18 @@ import { FilmGrain } from './FilmGrain';
 import { CRTEffects } from './CRTEffects';
 import { Tooltip } from './Tooltip';
 import { Footer } from './Footer';
-import { AboutWindow } from '../windows/AboutWindow';
 import { CVWindow } from '../windows/CVWindow';
 import { VideoWindow } from '../windows/VideoWindow';
 import { ThreeDWindow } from '../windows/ThreeDWindow';
 import { ProjectsWindow } from '../windows/ProjectsWindow';
 import { DevWindow } from '../windows/DevWindow';
-import { ProProjectsWindow } from '../windows/ProProjectsWindow';
 
 const windowComponents = {
-  'about': AboutWindow,
   'cv': CVWindow,
   'videos': VideoWindow,
   'three-d': ThreeDWindow,
   'projects': ProjectsWindow,
-  'dev': DevWindow,
-  'pro-projects': ProProjectsWindow
+  'dev': DevWindow
 };
 
 export const Desktop = () => {

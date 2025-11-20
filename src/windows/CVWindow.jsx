@@ -1,6 +1,29 @@
 import { Download, MapPin, Phone, Mail } from 'lucide-react';
+import { useWindowStore } from '../state/useWindowStore';
 
 export const CVWindow = () => {
+  const { openWindow } = useWindowStore();
+
+  const skills = [
+    { name: 'TouchDesigner', windowId: 'projects' },
+    { name: 'Three.js', windowId: 'dev' },
+    { name: 'React', windowId: 'dev' },
+    { name: 'WebGL', windowId: 'dev' },
+    { name: 'DaVinci Resolve', windowId: 'videos' },
+    { name: 'Blender', windowId: 'three-d' },
+    { name: 'After Effects', windowId: 'videos' },
+    { name: 'Motion Design', windowId: 'three-d' },
+    { name: 'Node.js', windowId: 'dev' },
+    { name: 'WebRTC', windowId: 'dev' }
+  ];
+
+  const handleSkillClick = (windowId) => {
+    openWindow({
+      id: windowId,
+      title: windowId.replace(/-/g, ' ').toUpperCase()
+    });
+  };
+
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = '/CVmastereV4.pdf';
@@ -13,7 +36,8 @@ export const CVWindow = () => {
       <div className="flex items-center justify-between border-b border-white/20 pb-4">
         <div>
           <h2 className="text-2xl font-light tracking-wide text-green-600">Nathanaël NAVEAU</h2>
-          <p className="text-xs text-white/60 mt-1">Développeur full-stack en alternance</p>
+          <p className="text-xs text-white/60 mt-1">Développeur • Artiste Visuel • Creative Coder</p>
+          <p className="text-xs text-white/60 mt-0.5">Développeur full-stack en alternance</p>
         </div>
         <button
           onClick={handleDownload}
@@ -47,10 +71,21 @@ export const CVWindow = () => {
 
       <div className="bg-white/5 border border-white/20 p-4 rounded">
         <h3 className="font-light text-white/80 mb-2 uppercase text-xs tracking-wider">Profil</h3>
-        <p className="text-sm text-white/80 leading-relaxed">
-          Développeur full-stack en alternance (Mastère Architecture Logiciel) avec 3 ans d'expérience dans le développement d'applications et l'industrialisation logicielle (.NET, React, Docker).
-          Je recherche une alternance de 24 mois pour contribuer à des projets innovants et approfondir mes compétences en cloud-native, qualité logicielle et développement web.
-        </p>
+        <div className="space-y-3 text-sm text-white/80 leading-relaxed">
+          <p>
+            Développeur full-stack en alternance (Mastère Architecture Logiciel) avec 3 ans d'expérience dans le développement d'applications et l'industrialisation logicielle (.NET, React, Docker).
+            Je recherche une alternance de 24 mois pour contribuer à des projets innovants et approfondir mes compétences en cloud-native, qualité logicielle et développement web.
+          </p>
+          <p>
+            Créatif numérique passionné par l'intersection entre art, technologie et interaction.
+          </p>
+          <p>
+            Mon travail explore les possibilités offertes par les outils de création en temps réel, la visualisation de données, et les installations interactives.
+          </p>
+          <p>
+            Spécialisé dans TouchDesigner, Three.js, et les technologies web créatives, je crée des expériences visuelles immersives pour des événements, performances live, et installations artistiques.
+          </p>
+        </div>
       </div>
 
       <div className="space-y-4">
@@ -147,6 +182,21 @@ export const CVWindow = () => {
               <p className="text-white/80">Adaptabilité · Autonomie · Créativité</p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 className="font-light text-white/80 mb-3 uppercase text-xs tracking-wider border-b border-white/20 pb-2">Compétences Créatives</h3>
+        <div className="flex flex-wrap gap-2">
+          {skills.map(skill => (
+            <button
+              key={skill.name}
+              onClick={() => handleSkillClick(skill.windowId)}
+              className="border border-white/30 px-3 py-1 text-xs hover:bg-white/10 hover:border-white/50 transition-colors cursor-pointer"
+            >
+              {skill.name}
+            </button>
+          ))}
         </div>
       </div>
 
