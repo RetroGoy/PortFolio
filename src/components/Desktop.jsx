@@ -6,6 +6,7 @@ import { Background } from './Background';
 import { Scanlines } from './Scanlines';
 import { FilmGrain } from './FilmGrain';
 import { Tooltip } from './Tooltip';
+import { Footer } from './Footer';
 import { AboutWindow } from '../windows/AboutWindow';
 import { CVWindow } from '../windows/CVWindow';
 import { VideoWindow } from '../windows/VideoWindow';
@@ -52,6 +53,7 @@ export const Desktop = () => {
 
         <Dock />
         <Tooltip />
+        <Footer />
 
         {windows.map((window) => {
           const WindowContent = windowComponents[window.id];

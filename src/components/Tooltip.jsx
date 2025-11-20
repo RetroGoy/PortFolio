@@ -24,7 +24,7 @@ export const Tooltip = () => {
       <div className="animate-float">
         <div className="bg-[#051810] border border-white px-3 py-2 md:px-4 text-white text-xs md:text-sm uppercase tracking-wider text-center">
           <span className="hidden md:inline">Essayez de cliquer sur les icônes pour ouvrir les fenêtres</span>
-          <span className="md:hidden">Cliquez sur les icônes<br />Scrollez pour voir toutes les options</span>
+          <span className="md:hidden">Scrollez pour voir toutes les options</span>
         </div>
       </div>
     </div>
