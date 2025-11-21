@@ -80,7 +80,7 @@ export const devProjects = [
     date: "2024 - en cours",
     tech: ["Next.js", "React", "Tailwind", "Supabase", "Web Audio API", "Zustand"],
     description:
-      "Plateforme collaborative musicale basée sur des graphes de riffs et de pistes audio.",
+      "Plateforme collaborative musicale basée sur des graphes de pistes audio.",
     link: "https://forkjam.dumatus.fr",
     iframeUrl: "https://forkjam.dumatus.fr",
     thumbnail: "/dev/ForkJam.jpeg",
