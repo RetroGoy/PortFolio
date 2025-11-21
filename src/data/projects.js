@@ -83,7 +83,7 @@ export const devProjects = [
       "Plateforme collaborative musicale basée sur des graphes de riffs et de pistes audio.",
     link: "https://forkjam.dumatus.fr",
     iframeUrl: "https://forkjam.dumatus.fr",
-    thumbnail: "/dev/forkjam.jpeg",
+    thumbnail: "/dev/ForkJam.jpeg",
     screenshots: [
       {
         src: "https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800",
