@@ -85,7 +85,17 @@ export const galleryImages = [
   },
   {
     id: 'gallery-3',
-    src: 'https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Vêtement simulé dans Marvelous Designer sur un modèle sculpté (Nomad Sculpt)'
+    isCarousel: true,
+    images: [
+      {
+        src: '/3D/MarvelPic.jpeg',
+        description: 'Vêtement simulé dans Marvelous Designer sur un modèle sculpté (Nomad Sculpt)'
+      },
+      {
+        src: '/3D/MarvelVid.jpeg',
+        description: 'Animation du vêtement simulé',
+        isVideo: true
+      }
+    ]
   }
 ];
