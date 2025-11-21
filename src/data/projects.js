@@ -1,6 +1,3 @@
-// ==========================
-// PROJETS CRÉATIFS (2 GROS)
-// ==========================
 export const projects = [
   {
     slug: "reactive-motion-wall",
