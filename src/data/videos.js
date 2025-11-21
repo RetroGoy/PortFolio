@@ -1,6 +1,18 @@
 export const videos = [
   {
     id: 'video-0',
+    title: 'Chic Chicken',
+    date: '2025',
+    thumbnail: '/video/chchicThumb.jpeg',
+    summary: 'Projet en cours de réalisation',
+    description: `Nouveau projet en développement. Plus d'informations bientôt.`,
+    tags: ['À venir'],
+    comingSoon: true,
+    images: []
+  },
+
+  {
+    id: 'video-1',
     title: 'Blunder cactus',
     date: '2025',
     thumbnail: '/video/blunder1.jpeg',
@@ -15,7 +27,7 @@ export const videos = [
   },
 
   {
-    id: 'video-1',
+    id: 'video-2',
     title: 'Avorted 3rd',
     date: '2024',
     thumbnail: '/video/avort3.jpeg',
@@ -35,7 +47,7 @@ Cette sélection rassemble les images les plus abouties, vestiges d'un projet d'
   },
 
   {
-    id: 'video-2',
+    id: 'video-3',
     youtubeId: 'uMsgumidgy8',
     title: 'Génocide de poulets',
     date: '2024',
@@ -54,7 +66,7 @@ une narration volontairement floue pour laisser le spectateur interpréter ce qu
   },
 
   {
-    id: 'video-3',
+    id: 'video-4',
     youtubeId: 'j8EFK4OFf0Q',
     title: 'Judason',
     date: '2022',
@@ -73,7 +85,7 @@ et une esthétique légèrement lynchienne.`,
   },
 
   {
-    id: 'video-4',
+    id: 'video-5',
     youtubeId: 'RQWhuwgD9EU',
     title: 'Regdumatum',
     date: '2022',
@@ -92,7 +104,7 @@ de montage/étalonnage axé sur le rythme et la cohérence visuelle.`,
   },
 
   {
-    id: 'video-5',
+    id: 'video-6',
     youtubeId: 'elOBRUXiOh4',
     title: 'Test drone – montage',
     date: '2023',

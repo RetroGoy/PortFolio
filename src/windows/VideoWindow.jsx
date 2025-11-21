@@ -6,6 +6,7 @@ export const VideoWindow = ({ onNavigate, currentView }) => {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   const handleVideoClick = (video) => {
+    if (video.comingSoon) return;
     setSelectedVideo(video);
     if (onNavigate) {
       onNavigate(video.title);
@@ -123,17 +124,33 @@ export const VideoWindow = ({ onNavigate, currentView }) => {
         {videos.map((video) => (
           <div
             key={video.id}
-            className="border border-white/20 hover:border-white/40 transition-colors cursor-pointer group"
+            className={`border border-white/20 transition-colors group ${
+              video.comingSoon
+                ? 'cursor-default opacity-70'
+                : 'hover:border-white/40 cursor-pointer'
+            }`}
             onClick={() => handleVideoClick(video)}
           >
             <div className="aspect-video bg-white/5 relative overflow-hidden">
               <img
                 src={video.thumbnail}
                 alt={video.title}
-                className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
+                className={`w-full h-full object-cover ${
+                  video.comingSoon
+                    ? 'opacity-50'
+                    : 'opacity-70 group-hover:opacity-100'
+                } transition-opacity`}
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
-                <Play size={32} className="text-white" strokeWidth={1} />
+              <div className={`absolute inset-0 flex items-center justify-center ${
+                video.comingSoon
+                  ? 'bg-black/50'
+                  : 'bg-black/30 group-hover:bg-black/20'
+              } transition-colors`}>
+                {video.comingSoon ? (
+                  <span className="text-white text-sm font-light tracking-wider">À VENIR</span>
+                ) : (
+                  <Play size={32} className="text-white" strokeWidth={1} />
+                )}
               </div>
             </div>
             <div className="p-4 space-y-2">
