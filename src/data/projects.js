@@ -129,5 +129,5 @@ export const devProjects = [
       features: ['Moteur de jeu custom', 'Système de dialogues', 'Inventaire'],
       tools: ['Webpack', 'Howler.js', 'Local Storage']
     }
-  },
+  }
 ];
