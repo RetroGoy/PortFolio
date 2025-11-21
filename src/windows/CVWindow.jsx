@@ -6,15 +6,9 @@ export const CVWindow = () => {
 
   const skills = [
     { name: 'TouchDesigner', windowId: 'projects' },
-    { name: 'Three.js', windowId: 'dev' },
-    { name: 'React', windowId: 'dev' },
-    { name: 'WebGL', windowId: 'dev' },
     { name: 'DaVinci Resolve', windowId: 'videos' },
     { name: 'Blender', windowId: 'three-d' },
-    { name: 'After Effects', windowId: 'videos' },
-    { name: 'Motion Design', windowId: 'three-d' },
-    { name: 'Node.js', windowId: 'dev' },
-    { name: 'WebRTC', windowId: 'dev' }
+    { name: 'Photoshop', windowId: 'projects' }
   ];
 
   const handleSkillClick = (windowId) => {
