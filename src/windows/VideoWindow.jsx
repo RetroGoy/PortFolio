@@ -41,9 +41,14 @@ export const VideoWindow = ({ onNavigate, currentView }) => {
   if (selectedVideo) {
     return (
       <div className="space-y-6">
-        <h2 className="text-2xl font-light tracking-wide pb-2">
-          {selectedVideo.title}
-        </h2>
+        <div className="space-y-3">
+          <h2 className="text-2xl font-light tracking-wide">
+            {selectedVideo.title}
+          </h2>
+          <p className="text-sm text-white/70 leading-relaxed">
+            {selectedVideo.summary}
+          </p>
+        </div>
 
         {selectedVideo.isInstagram ? (
           <div className="flex justify-center">

@@ -35,19 +35,24 @@ export const DevWindow = ({ onNavigate, currentView }) => {
   if (selectedProject) {
     return (
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-light tracking-wide">
-            {selectedProject.title}
-          </h2>
-          <a
-            href={selectedProject.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-white/70 hover:text-white border border-white/20 hover:border-white/40 px-3 py-1 transition-colors"
-          >
-            <ExternalLink size={14} />
-            Voir le projet
-          </a>
+        <div className="space-y-3">
+          <div className="flex items-center justify-between">
+            <h2 className="text-2xl font-light tracking-wide">
+              {selectedProject.title}
+            </h2>
+            <a
+              href={selectedProject.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-white/70 hover:text-white border border-white/20 hover:border-white/40 px-3 py-1 transition-colors"
+            >
+              <ExternalLink size={14} />
+              Voir le projet
+            </a>
+          </div>
+          <p className="text-sm text-white/70 leading-relaxed">
+            {selectedProject.description}
+          </p>
         </div>
 
         <div className="flex flex-wrap gap-2">

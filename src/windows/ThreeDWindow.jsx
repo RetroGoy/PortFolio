@@ -29,9 +29,14 @@ export const ThreeDWindow = ({ onNavigate, currentView }) => {
   if (selectedProject) {
     return (
       <div className="space-y-6">
-        <h2 className="text-2xl font-light tracking-wide pb-2">
-          {selectedProject.title}
-        </h2>
+        <div className="space-y-3">
+          <h2 className="text-2xl font-light tracking-wide">
+            {selectedProject.title}
+          </h2>
+          <p className="text-sm text-white/70 leading-relaxed">
+            {selectedProject.summary}
+          </p>
+        </div>
 
         {selectedProject.youtubeId ? (
           <div className="aspect-video bg-black border border-white/20">
