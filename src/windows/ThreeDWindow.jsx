@@ -69,7 +69,7 @@ export const ThreeDWindow = ({ onNavigate, currentView }) => {
                 alt={`${selectedProject.title} - image ${idx + 1}`}
                 className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
               />
-              <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-3">
+              <div className="md:hidden absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-3">
                 <p className="text-white text-xs text-center">{img.caption}</p>
               </div>
             </div>
@@ -202,9 +202,11 @@ export const ThreeDWindow = ({ onNavigate, currentView }) => {
                   alt={currentImage.description}
                   className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
                 />
-                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-3">
-                  <p className="text-white text-xs text-center">{currentImage.description}</p>
-                </div>
+                {!isExpanded && (
+                  <div className="md:hidden absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-3">
+                    <p className="text-white text-xs text-center">{currentImage.description}</p>
+                  </div>
+                )}
 
                 {isExpanded && isCarousel && (
                   <>
