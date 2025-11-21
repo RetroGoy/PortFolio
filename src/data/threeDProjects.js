@@ -62,7 +62,7 @@ export const galleryImages = [
     images: [
       {
         src: '/3D/00FD4966-C17B-4261-88F4-7C1797D56721_1_105_c.jpeg',
-        description: 'Collection de modèles sculptés (Nomad Sculpt) - Image 1'
+        description: 'Collection de modèles sculptés (Nomad Sculpt)'
       },
       {
         src: '/3D/258D0963-2B4A-454A-A6E1-D7B0D8E4F24A_1_105_c.jpeg',
