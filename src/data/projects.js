@@ -77,7 +77,7 @@ export const devProjects = [
   {
     id: "dev-2",
     title: "ForkJam",
-    date: "2024 - en cours",
+    date: "en cours",
     tech: ["Next.js", "React", "Tailwind", "Supabase", "Web Audio API", "Zustand"],
     description:
       "Plateforme collaborative musicale basée sur des graphes de pistes audio.",
