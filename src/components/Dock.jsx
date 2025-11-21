@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { User, Palette, Box, Terminal, Hand, Instagram, Youtube, Github, ExternalLink } from 'lucide-react';
+import { User, Palette, Box, Terminal, Hand, Instagram, Github, ExternalLink, Camera, Play } from 'lucide-react';
 import { useWindowStore } from '../state/useWindowStore';
 
 const DockIcon = ({ icon, title, windowId, onIconClick, isOpen, href, isReseaux }) => {
@@ -88,15 +88,15 @@ export const Dock = () => {
   ];
 
   const creationIcons = [
-    { icon: <Hand size={36} strokeWidth={1.5} />, title: 'Vidéos', windowId: 'videos' },
-    { icon: <Palette size={36} strokeWidth={1.5} />, title: 'Projets Créatifs', windowId: 'projects' },
+    { icon: <Camera size={36} strokeWidth={1.5} />, title: 'Vidéos', windowId: 'videos' },
+    { icon: <Hand size={36} strokeWidth={1.5} />, title: 'Projets Créatifs', windowId: 'projects' },
     { icon: <Box size={36} strokeWidth={1.5} />, title: '3D', windowId: 'three-d' }
   ];
 
 
   const reseauxIcons = [
     { icon: <Instagram size={36} strokeWidth={1.5} />, title: 'Instagram', href: 'https://www.instagram.com/retro.goy/?hl=fr' },
-    { icon: <Youtube size={36} strokeWidth={1.5} />, title: 'YouTube', href: 'https://www.youtube.com/@retrogoy/videos' },
+    { icon: <Play size={36} strokeWidth={1.5} />, title: 'YouTube', href: 'https://www.youtube.com/@retrogoy/videos' },
     { icon: <Github size={36} strokeWidth={1.5} />, title: 'GitHub', href: 'https://github.com/RetroGoy' }
   ];
 
