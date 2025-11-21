@@ -186,7 +186,7 @@ export const DevWindow = ({ onNavigate, currentView }) => {
               >
                 <div className="aspect-video relative overflow-hidden bg-black">
                   <img
-                    src={project.screenshots[0].src}
+                    src={project.thumbnail || project.screenshots[0].src}
                     alt={project.title}
                     className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-300"
                   />
@@ -225,7 +225,7 @@ export const DevWindow = ({ onNavigate, currentView }) => {
                   alt={image.title}
                   className="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
                 />
-                <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2">
+                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2">
                   <p className="text-xs text-white text-center">{image.title}</p>
                 </div>
               </div>
