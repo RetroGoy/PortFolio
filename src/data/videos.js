@@ -1,14 +1,29 @@
 export const videos = [
   {
     id: 'video-0',
+    title: 'Blunder cactus',
+    date: '2025',
+    thumbnail: '/video/blunder1.jpeg',
+    summary: 'Nouvelle création visuelle',
+    description: `Court projet expérimental explorant des ambiances visuelles et narratives.`,
+    tags: ['Expérimental', 'Fiction'],
+    isInstagram: true,
+    instagramUrl: 'https://www.instagram.com/p/DOvlRcGDKa3/',
+    images: [
+      { src: '/video/blunder1.jpeg', caption: 'Aperçu visuel' }
+    ]
+  },
+
+  {
+    id: 'video-1',
     title: 'Avorted 3rd',
     date: '2024',
-    thumbnail: 'https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=600',
-    summary: 'Sélection d’extraits d’un projet de fiction avorté',
-    description: `Compilation de plans issus d’un long projet de film de zombies abandonné
+    thumbnail: '/video/avort3.jpeg',
+    summary: 'Sélection d\'extraits d\'un projet de fiction avorté',
+    description: `Compilation de plans issus d'un long projet de film de zombies abandonné
 pour des raisons logistiques. Tourné avec plusieurs acteurs et une petite équipe,
-ce troisième épisode inachevé est devenu un terrain d’expérimentation visuelle et narrative.
-Cette sélection rassemble les images les plus abouties, vestiges d’un projet d’enfance ambitieux.`,
+ce troisième épisode inachevé est devenu un terrain d'expérimentation visuelle et narrative.
+Cette sélection rassemble les images les plus abouties, vestiges d'un projet d'enfance ambitieux.`,
     tags: ['Fiction', 'Expérimental', 'Extraits'],
     isInstagram: true,
     instagramUrl: 'https://www.instagram.com/p/DNrAs4m2t5B/',
@@ -20,34 +35,34 @@ Cette sélection rassemble les images les plus abouties, vestiges d’un projet 
   },
 
   {
-    id: 'video-1',
+    id: 'video-2',
     youtubeId: 'uMsgumidgy8',
     title: 'Génocide de poulets',
     date: '2024',
     thumbnail: 'https://img.youtube.com/vi/uMsgumidgy8/mqdefault.jpg',
     summary: 'Court-métrage sombre et atmosphérique',
-    description: `Court-métrage expérimental qui interroge la violence industrialisée 
-à travers une approche visuelle inspirée par le cinéma de Lynch. 
-Plutôt qu’un discours frontal, le film joue sur l’ambiance, les symboles et 
-une narration volontairement floue pour laisser le spectateur interpréter ce qu’il voit.`,
+    description: `Court-métrage expérimental qui interroge la violence industrialisée
+à travers une approche visuelle inspirée par le cinéma de Lynch.
+Plutôt qu'un discours frontal, le film joue sur l'ambiance, les symboles et
+une narration volontairement floue pour laisser le spectateur interpréter ce qu'il voit.`,
     tags: ['Fiction', 'Expérimental', 'Ambiance'],
     images: [
-      { src: 'https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Ambiance visuelle' },
-      { src: 'https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Travail sur la lumière' },
-      { src: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Composition d’image' }
+      { src: '/video/genoc1.jpeg', caption: 'Ambiance visuelle' },
+      { src: '/video/genoc2.jpeg', caption: 'Travail sur la lumière' },
+      { src: '/video/genoc3.jpeg', caption: 'Composition d\'image' }
     ]
   },
 
   {
-    id: 'video-2',
+    id: 'video-3',
     youtubeId: 'j8EFK4OFf0Q',
     title: 'Judason',
     date: '2022',
     thumbnail: 'https://img.youtube.com/vi/j8EFK4OFf0Q/mqdefault.jpg',
-    summary: 'Exploration visuelle d’un lieu isolé',
-    description: `Projet tourné en solitaire, Judason capture l’atmosphère de lieux ruraux
+    summary: 'Exploration visuelle d\'un lieu isolé',
+    description: `Projet tourné en solitaire, Judason capture l'atmosphère de lieux ruraux
 et un peu perdus. Une errance visuelle presque introspective, où l'ambiance
-compte plus que l’histoire. Les images jouent avec la solitude, le vide
+compte plus que l'histoire. Les images jouent avec la solitude, le vide
 et une esthétique légèrement lynchienne.`,
     tags: ['Expérimental', 'Rural', 'Ambiance'],
     images: [
@@ -58,15 +73,15 @@ et une esthétique légèrement lynchienne.`,
   },
 
   {
-    id: 'video-3',
+    id: 'video-4',
     youtubeId: 'RQWhuwgD9EU',
     title: 'Regdumatum',
     date: '2022',
     thumbnail: 'https://img.youtube.com/vi/RQWhuwgD9EU/mqdefault.jpg',
     summary: 'Film collaboratif façon western rural',
-    description: `Projet tourné avec une petite équipe, centré moins sur un scénario 
-que sur l’expérience du tournage collectif. Entre western rural et délire entre amis,
-Regdumatum mélange jeu d’acteur amateur, mise en scène improvisée et un travail
+    description: `Projet tourné avec une petite équipe, centré moins sur un scénario
+que sur l'expérience du tournage collectif. Entre western rural et délire entre amis,
+Regdumatum mélange jeu d'acteur amateur, mise en scène improvisée et un travail
 de montage/étalonnage axé sur le rythme et la cohérence visuelle.`,
     tags: ['Fiction', 'Collaboration', 'Western'],
     images: [
@@ -77,15 +92,15 @@ de montage/étalonnage axé sur le rythme et la cohérence visuelle.`,
   },
 
   {
-    id: 'video-4',
+    id: 'video-5',
     youtubeId: 'elOBRUXiOh4',
     title: 'Test drone – montage',
     date: '2023',
     thumbnail: 'https://img.youtube.com/vi/elOBRUXiOh4/mqdefault.jpg',
-    summary: 'Montage d’essai avec plans aériens',
+    summary: 'Montage d\'essai avec plans aériens',
     description: `Série de plans aériens montés pour tester un style visuel rythmé.
-Le projet intègre également une courte musique que j’ai composée spécialement
-pour l’exercice, une prod instrumentale un peu tendue et percussive qui accompagne
+Le projet intègre également une courte musique que j'ai composée spécialement
+pour l'exercice, une prod instrumentale un peu tendue et percussive qui accompagne
 les mouvements du drone.`,
     tags: ['Drone', 'Montage', 'Musique'],
     images: [
