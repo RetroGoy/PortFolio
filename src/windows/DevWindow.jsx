@@ -131,7 +131,7 @@ export const DevWindow = ({ onNavigate, currentView }) => {
   }
 
   const featuredProjects = devProjects.filter(p => p.title === 'Kaarbon Komplite' || p.title === 'ForkJam');
-  const galleryImages = devProjects.flatMap(p => p.screenshots);
+  const galleryImages = devProjects.flatMap(p => p.screenshots).slice(0, 8);
 
   return (
     <>
