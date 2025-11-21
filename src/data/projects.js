@@ -122,7 +122,7 @@ export const devProjects = [
       "Jeu narratif point-and-click hybride présenté comme un bureau interactif.",
     link: "https://kaarbon.yourdomain.com",
     iframeUrl: "https://kaarbon.yourdomain.com",
-    thumbnail: "/dev/kaarbkomp.png",
+    thumbnail: "/dev/kaarbkomp.jpeg",
     screenshots: [
       {
         src: "https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=800",
