@@ -54,10 +54,6 @@ export const projects = [
   },
 ];
 
-// ======================================
-// MINI-GALERIE (3 PETITS PROJETS)
-// 2 TouchDesigner + 1 autre outil (AE)
-// ======================================
 export const projectGalleryImages = [
   {
     id: "project-gallery-1",
@@ -76,9 +72,7 @@ export const projectGalleryImages = [
   },
 ];
 
-// ======================================
-// PROJETS DEV (stack réaliste + propre)
-// ======================================
+// PROJETS DEV 
 export const devProjects = [
   {
     id: "dev-2",
