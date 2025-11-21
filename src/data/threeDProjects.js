@@ -59,7 +59,7 @@ export const galleryImages = [
   {
     id: 'gallery-1',
     src: 'https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Étude d’éclairage sur un modèle 3D (Blender)'
+    description: 'Collection de modèles sculptés (Nomad Sculpt)'
   },
   {
     id: 'gallery-2',
