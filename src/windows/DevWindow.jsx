@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { devProjects } from '../data/projects';
-import { Code, ExternalLink, Maximize2 } from 'lucide-react';
+import { Code, ExternalLink, Maximize2, X } from 'lucide-react';
 
 export const DevWindow = ({ onNavigate, currentView }) => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [enlargedImage, setEnlargedImage] = useState(null);
   const iframeContainerRef = useRef(null);
 
   const handleProjectClick = (project) => {
@@ -129,54 +130,97 @@ export const DevWindow = ({ onNavigate, currentView }) => {
     );
   }
 
+  const featuredProjects = devProjects.filter(p => p.title === 'Kaarbon Komplite' || p.title === 'ForkJam');
+  const galleryImages = devProjects.flatMap(p => p.screenshots);
+
   return (
-    <div className="space-y-6">
-      <div className="space-y-3">
-        <h2 className="text-xl font-light tracking-wide border-b border-white/20 pb-2">
-          DÉVELOPPEMENT
-        </h2>
+    <>
+      {enlargedImage && (
+        <div
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          onClick={() => setEnlargedImage(null)}
+        >
+          <button
+            className="absolute top-4 right-4 text-white/70 hover:text-white"
+            onClick={() => setEnlargedImage(null)}
+          >
+            <X size={32} strokeWidth={1.5} />
+          </button>
+          <img
+            src={enlargedImage}
+            alt="Agrandissement"
+            className="max-w-full max-h-full object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
 
-        <p className="text-xs text-white/40 leading-relaxed">
-          Projets de développement web incluant des applications interactives, des sites vitrines et des expériences numériques. Spécialisé dans les technologies modernes comme React, Three.js et Node.js pour créer des interfaces performantes et engageantes.
-        </p>
-      </div>
+      <div className="space-y-6">
+        <div className="space-y-3">
+          <h2 className="text-xl font-light tracking-wide border-b border-white/20 pb-2">
+            DÉVELOPPEMENT
+          </h2>
 
-      <div className="space-y-4">
+          <p className="text-xs text-white/40 leading-relaxed">
+            Projets de développement web incluant des applications interactives, des sites vitrines et des expériences numériques. Spécialisé dans les technologies modernes comme React, Three.js et Node.js pour créer des interfaces performantes et engageantes.
+          </p>
+        </div>
 
-        <div className="pt-4">
-          <h3 className="text-xs uppercase tracking-wider text-white/60 mb-3">Projets</h3>
-          <div className="space-y-3">
-            {devProjects.map((project) => (
+        <div>
+          <h3 className="text-xs uppercase tracking-wider text-white/60 mb-3">Projets Principaux</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {featuredProjects.map((project) => (
               <div
                 key={project.id}
-                className="border border-white/20 p-4 hover:border-white/40 transition-colors cursor-pointer"
+                className="border border-white/20 hover:border-white/40 transition-colors cursor-pointer overflow-hidden group"
                 onClick={() => handleProjectClick(project)}
               >
-                <div className="flex items-start gap-3">
-                  <Code size={20} className="text-white/60 mt-0.5" strokeWidth={1} />
-                  <div className="flex-1">
-                    <div className="flex items-start justify-between gap-2 mb-1">
-                      <h4 className="text-sm">{project.title}</h4>
-                      <span className="text-[10px] text-white/40 whitespace-nowrap">{project.date}</span>
-                    </div>
-                    <p className="text-xs text-white/60 mb-2">{project.description}</p>
-                    <div className="flex gap-2">
-                      {project.tech.map((tech) => (
-                        <span
-                          key={tech}
-                          className="text-[10px] text-white/50"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                <div className="aspect-video relative overflow-hidden bg-black">
+                  <img
+                    src={project.screenshots[0]}
+                    alt={project.title}
+                    className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-3">
+                    <h4 className="text-sm font-medium mb-1">{project.title}</h4>
+                    <p className="text-xs text-white/60">{project.description}</p>
                   </div>
+                </div>
+                <div className="p-3 flex flex-wrap gap-2">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-[10px] border border-white/20 px-2 py-0.5 text-white/50"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))}
           </div>
         </div>
+
+        <div>
+          <h3 className="text-xs uppercase tracking-wider text-white/60 mb-3">Galerie</h3>
+          <div className="grid grid-cols-3 md:grid-cols-4 gap-2">
+            {galleryImages.map((image, idx) => (
+              <div
+                key={idx}
+                className="aspect-square border border-white/20 overflow-hidden cursor-pointer group"
+                onClick={() => setEnlargedImage(image)}
+              >
+                <img
+                  src={image}
+                  alt={`Galerie ${idx + 1}`}
+                  className="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
