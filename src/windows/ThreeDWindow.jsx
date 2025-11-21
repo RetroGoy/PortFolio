@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { threeDProjects, galleryImages } from '../data/threeDProjects';
-import { Play } from 'lucide-react';
+import { Play, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const ThreeDWindow = ({ onNavigate, currentView }) => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [expandedImage, setExpandedImage] = useState(null);
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  const expandedImageRef = useRef(null);
 
   const handleProjectClick = (project) => {
     setSelectedProject(project);
@@ -151,24 +153,96 @@ export const ThreeDWindow = ({ onNavigate, currentView }) => {
       <div className="border-t border-white/20 pt-4">
         <h3 className="text-sm font-light tracking-wide text-white/70 uppercase mb-3">Galerie</h3>
         <div className="grid grid-cols-3 gap-3">
-          {galleryImages.map((item) => (
-            <div
-              key={item.id}
-              className={`border border-white/20 hover:border-white/40 transition-all duration-300 cursor-pointer bg-white/5 overflow-hidden relative group ${
-                expandedImage === item.id ? 'col-span-3 aspect-video' : 'aspect-square'
-              }`}
-              onClick={() => setExpandedImage(expandedImage === item.id ? null : item.id)}
-            >
-              <img
-                src={item.src}
-                alt={item.description}
-                className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
-              />
-              <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-3">
-                <p className="text-white text-xs text-center">{item.description}</p>
+          {galleryImages.map((item) => {
+            const isExpanded = expandedImage === item.id;
+            const isCarousel = item.isCarousel;
+            const currentImage = isCarousel ? item.images[carouselIndex] : { src: item.src, description: item.description };
+            const totalImages = isCarousel ? item.images.length : 1;
+
+            const handlePrevious = (e) => {
+              e.stopPropagation();
+              if (carouselIndex > 0) {
+                setCarouselIndex(carouselIndex - 1);
+              }
+            };
+
+            const handleNext = (e) => {
+              e.stopPropagation();
+              if (carouselIndex < totalImages - 1) {
+                setCarouselIndex(carouselIndex + 1);
+              }
+            };
+
+            const handleClick = () => {
+              if (expandedImage === item.id) {
+                setExpandedImage(null);
+                setCarouselIndex(0);
+              } else {
+                setExpandedImage(item.id);
+                setCarouselIndex(0);
+                setTimeout(() => {
+                  if (expandedImageRef.current) {
+                    expandedImageRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }
+                }, 100);
+              }
+            };
+
+            return (
+              <div
+                key={item.id}
+                ref={isExpanded ? expandedImageRef : null}
+                className={`border border-white/20 hover:border-white/40 transition-all duration-300 cursor-pointer bg-white/5 overflow-hidden relative group ${
+                  isExpanded ? 'col-span-3 aspect-video' : 'aspect-square'
+                }`}
+                onClick={handleClick}
+              >
+                <img
+                  src={currentImage.src}
+                  alt={currentImage.description}
+                  className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
+                />
+                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-3">
+                  <p className="text-white text-xs text-center">{currentImage.description}</p>
+                </div>
+
+                {isExpanded && isCarousel && (
+                  <>
+                    <button
+                      onClick={handlePrevious}
+                      disabled={carouselIndex === 0}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/80 border border-white/40 p-2 hover:bg-white/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed z-10"
+                    >
+                      <ChevronLeft size={24} className="text-white" />
+                    </button>
+                    <button
+                      onClick={handleNext}
+                      disabled={carouselIndex === totalImages - 1}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/80 border border-white/40 p-2 hover:bg-white/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed z-10"
+                    >
+                      <ChevronRight size={24} className="text-white" />
+                    </button>
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                      {item.images.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setCarouselIndex(idx);
+                          }}
+                          className={`w-2 h-2 rounded-full transition-all ${
+                            idx === carouselIndex
+                              ? 'bg-white w-6'
+                              : 'bg-white/40 hover:bg-white/60'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

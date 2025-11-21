@@ -58,8 +58,25 @@ export const threeDProjects = [
 export const galleryImages = [
   {
     id: 'gallery-1',
-    src: 'https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Collection de modèles sculptés (Nomad Sculpt)'
+    isCarousel: true,
+    images: [
+      {
+        src: 'https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Collection de modèles sculptés (Nomad Sculpt) - Image 1'
+      },
+      {
+        src: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Collection de modèles sculptés (Nomad Sculpt) - Image 2'
+      },
+      {
+        src: 'https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Collection de modèles sculptés (Nomad Sculpt) - Image 3'
+      },
+      {
+        src: 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Collection de modèles sculptés (Nomad Sculpt) - Image 4'
+      }
+    ]
   },
   {
     id: 'gallery-2',
