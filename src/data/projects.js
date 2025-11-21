@@ -117,7 +117,7 @@ export const devProjects = [
   {
     id: "dev-3",
     title: "Kaarbon Komplite",
-    date: "2025 - en cours",
+    date: "en cours",
     tech: ["React", "Vite", "Phaser.js", "Supabase", "Zustand"],
     description:
       "Jeu narratif point-and-click hybride présenté comme un bureau interactif.",
