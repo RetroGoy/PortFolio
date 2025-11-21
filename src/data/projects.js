@@ -74,9 +74,21 @@ export const devProjects = [
     link: 'https://example.com/portfolio',
     iframeUrl: 'https://example.com/portfolio',
     screenshots: [
-      'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=800'
+      {
+        src: 'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: 'Interface principale',
+        description: 'Vue d\'ensemble du desktop virtuel avec les fenêtres interactives'
+      },
+      {
+        src: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: 'Navigation',
+        description: 'Système de navigation entre les différentes sections du portfolio'
+      },
+      {
+        src: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: 'Effets visuels',
+        description: 'Shaders WebGL et effets de post-processing'
+      }
     ],
     architecture: 'Application React moderne utilisant Vite comme bundler. Architecture basée sur des composants réutilisables avec gestion d\'état via Zustand. Les animations 3D sont gérées par Three.js avec des shaders personnalisés pour les effets visuels.',
     stack: {
@@ -94,9 +106,21 @@ export const devProjects = [
     link: 'https://forkjam.dumatus.fr',
     iframeUrl: 'https://forkjam.dumatus.fr',
     screenshots: [
-      'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/1389429/pexels-photo-1389429.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg?auto=compress&cs=tinysrgb&w=800'
+      {
+        src: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: 'Interface de collaboration',
+        description: 'Vue des threads musicaux et de l\'arborescence des forks'
+      },
+      {
+        src: 'https://images.pexels.com/photos/1389429/pexels-photo-1389429.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: 'Lecteur audio',
+        description: 'Système de lecture multipiste avec synchronisation en temps réel'
+      },
+      {
+        src: 'https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: 'Visualisation des pistes',
+        description: 'Graphique de nœuds montrant les relations entre les contributions musicales'
+      }
     ],
     architecture: 'Plateforme collaborative permettant aux musiciens de créer des threads musicaux. Chaque contribution peut être "forkée" sous forme de nœud, créant une arborescence de variations musicales. Système de pistes audio intégré avec Web Audio API pour la lecture synchronisée.',
     stack: {
@@ -114,9 +138,21 @@ export const devProjects = [
     link: 'https://kaarbon.yourdomain.com',
     iframeUrl: 'https://kaarbon.yourdomain.com',
     screenshots: [
-      'https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/2148217/pexels-photo-2148217.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=800'
+      {
+        src: 'https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: 'Scène du jeu',
+        description: 'Environnement narratif avec système de point-and-click'
+      },
+      {
+        src: 'https://images.pexels.com/photos/2148217/pexels-photo-2148217.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: 'Interface d\'inventaire',
+        description: 'Système de gestion des objets et puzzles interactifs'
+      },
+      {
+        src: 'https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: 'Dialogues',
+        description: 'Système de conversation avec choix multiples et conséquences'
+      }
     ],
     architecture: 'Jeu d\'aventure point-and-click développé en JavaScript vanilla. Moteur de jeu custom avec système d\'inventaire, dialogues interactifs et puzzles. Rendu Canvas 2D avec animations frame-by-frame. Système de sauvegarde local et gestion d\'états complexes.',
     stack: {
@@ -134,9 +170,21 @@ export const devProjects = [
     link: '/translator500/index.html',
     iframeUrl: '/translator500/index.html',
     screenshots: [
-      'https://images.pexels.com/photos/1407322/pexels-photo-1407322.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/1916824/pexels-photo-1916824.jpeg?auto=compress&cs=tinysrgb&w=800'
+      {
+        src: 'https://images.pexels.com/photos/1407322/pexels-photo-1407322.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: 'Interface terminal',
+        description: 'Design rétro inspiré des terminaux avec affichage vert phosphorescent'
+      },
+      {
+        src: 'https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: 'Conversion MIDI',
+        description: 'Algorithme de transposition entre différentes tessitures d\'instruments'
+      },
+      {
+        src: 'https://images.pexels.com/photos/1916824/pexels-photo-1916824.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: 'Sélection d\'instrument',
+        description: 'Interface pour choisir les instruments source et destination'
+      }
     ],
     architecture: 'Application web légère en JavaScript vanilla sans dépendances. Utilise des algorithmes de transposition MIDI pour convertir les notes entre différentes tessitures d\'instruments. Interface rétro inspirée des terminaux avec thème vert phosphorescent.',
     stack: {

@@ -20,7 +20,7 @@ const DockIcon = ({ icon, title, windowId, onIconClick, isOpen, href, isReseaux 
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
         className={`hover:opacity-70 transition-opacity relative ${
-          isReseaux ? 'text-white/40' : 'text-white'
+          isReseaux ? 'text-white/70' : 'text-white'
         } ${isOpen ? 'after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-[2px] after:bg-white' : ''}`}
       >
         {icon}
@@ -38,10 +38,10 @@ const DockGroup = ({ label, icons, onIconClick, openWindows, showExternalIndicat
   const isReseaux = label === 'RÉSEAUX';
   return (
     <div className={`relative border-[1.5px] px-5 py-3 flex items-center gap-6 flex-shrink-0 ${
-      isReseaux ? 'border-white/40' : 'border-white'
+      isReseaux ? 'border-white/70' : 'border-white'
     }`}>
       <span className={`absolute -top-1.5 left-4 bg-[#0a2f1f] px-2 text-[10px] uppercase tracking-widest font-medium z-10 flex items-center gap-1 ${
-        isReseaux ? 'text-white/40' : 'text-white'
+        isReseaux ? 'text-white/70' : 'text-white'
       }`}>
         {label}
         {showExternalIndicator && <ExternalLink size={10} className="opacity-60" />}

@@ -88,8 +88,8 @@ export const DevWindow = ({ onNavigate, currentView }) => {
             {selectedProject.screenshots.map((screenshot, idx) => (
               <div key={idx} className="aspect-video border border-white/20 overflow-hidden">
                 <img
-                  src={screenshot}
-                  alt={`${selectedProject.title} - screenshot ${idx + 1}`}
+                  src={screenshot.src}
+                  alt={screenshot.title}
                   className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
                 />
               </div>
@@ -137,7 +137,7 @@ export const DevWindow = ({ onNavigate, currentView }) => {
     <>
       {enlargedImage && (
         <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/90 z-50 flex flex-col items-center justify-center p-4"
           onClick={() => setEnlargedImage(null)}
         >
           <button
@@ -147,11 +147,15 @@ export const DevWindow = ({ onNavigate, currentView }) => {
             <X size={32} strokeWidth={1.5} />
           </button>
           <img
-            src={enlargedImage}
-            alt="Agrandissement"
-            className="max-w-full max-h-full object-contain"
+            src={enlargedImage.src}
+            alt={enlargedImage.title}
+            className="max-w-full max-h-[70vh] object-contain mb-4"
             onClick={(e) => e.stopPropagation()}
           />
+          <div className="text-center max-w-2xl" onClick={(e) => e.stopPropagation()}>
+            <h3 className="text-lg font-light mb-2">{enlargedImage.title}</h3>
+            <p className="text-sm text-white/70">{enlargedImage.description}</p>
+          </div>
         </div>
       )}
 
@@ -177,7 +181,7 @@ export const DevWindow = ({ onNavigate, currentView }) => {
               >
                 <div className="aspect-video relative overflow-hidden bg-black">
                   <img
-                    src={project.screenshots[0]}
+                    src={project.screenshots[0].src}
                     alt={project.title}
                     className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-300"
                   />
@@ -203,19 +207,22 @@ export const DevWindow = ({ onNavigate, currentView }) => {
         </div>
 
         <div>
-          <h3 className="text-xs uppercase tracking-wider text-white/60 mb-3">Galerie</h3>
+          <h3 className="text-xs uppercase tracking-wider text-white/60 mb-3">Divers</h3>
           <div className="grid grid-cols-3 md:grid-cols-4 gap-2">
             {galleryImages.map((image, idx) => (
               <div
                 key={idx}
-                className="aspect-square border border-white/20 overflow-hidden cursor-pointer group"
+                className="aspect-square border border-white/20 overflow-hidden cursor-pointer group relative"
                 onClick={() => setEnlargedImage(image)}
               >
                 <img
-                  src={image}
-                  alt={`Galerie ${idx + 1}`}
+                  src={image.src}
+                  alt={image.title}
                   className="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
                 />
+                <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2">
+                  <p className="text-xs text-white text-center">{image.title}</p>
+                </div>
               </div>
             ))}
           </div>
