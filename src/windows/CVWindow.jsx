@@ -67,17 +67,13 @@ export const CVWindow = () => {
         <h3 className="font-light text-white/80 mb-2 uppercase text-xs tracking-wider">Profil</h3>
         <div className="space-y-3 text-sm text-white/80 leading-relaxed">
           <p>
-            Développeur full-stack en alternance (Mastère Architecture Logiciel) avec 3 ans d'expérience dans le développement d'applications et l'industrialisation logicielle (.NET, React, Docker).
-            Je recherche une alternance de 24 mois pour contribuer à des projets innovants et approfondir mes compétences en cloud-native, qualité logicielle et développement web.
+            Développeur <span className="font-semibold">full-stack</span> en alternance (Mastère <span className="font-semibold">Architecture Logicielle</span>), avec 3 ans d'expérience entre développement web et industrialisation logicielle (<span className="font-semibold">.NET</span>, <span className="font-semibold">Docker</span>, <span className="font-semibold">React</span>). Je cherche une <span className="font-semibold">alternance de 24 mois</span> pour continuer à progresser, apprendre auprès de nouvelles équipes et participer à des projets mêlant technologie et création.
           </p>
           <p>
-            Créatif numérique passionné par l'intersection entre art, technologie et interaction.
+            J'aime explorer les façons dont le <span className="font-semibold">code</span> peut devenir un outil <span className="font-semibold">visuel</span> ou <span className="font-semibold">interactif</span>. Je m'intéresse à <span className="font-semibold">TouchDesigner</span>, <span className="font-semibold">Three.js</span>, <span className="font-semibold">Blender</span> et aux outils <span className="font-semibold">temps réel</span>, que j'apprends encore à maîtriser mais qui m'inspirent énormément.
           </p>
           <p>
-            Mon travail explore les possibilités offertes par les outils de création en temps réel, la visualisation de données, et les installations interactives.
-          </p>
-          <p>
-            Spécialisé dans TouchDesigner, Three.js, et les technologies web créatives, je crée des expériences visuelles immersives pour des événements, performances live, et installations artistiques.
+            Mon objectif est simple : développer mes <span className="font-semibold">compétences techniques</span> tout en construisant des <span className="font-semibold">expériences créatives</span> et <span className="font-semibold">utiles</span>.
           </p>
         </div>
       </div>
