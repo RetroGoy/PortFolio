@@ -213,7 +213,7 @@ export const DevWindow = ({ onNavigate, currentView }) => {
 
         <div>
           <h3 className="text-xs uppercase tracking-wider text-white/60 mb-3">Divers</h3>
-          <div className="grid grid-cols-3 md:grid-cols-4 gap-2">
+          <div className="grid grid-cols-3 gap-3">
             {galleryImages.map((image, idx) => (
               <div
                 key={idx}
