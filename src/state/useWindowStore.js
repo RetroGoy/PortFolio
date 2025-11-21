@@ -2,7 +2,19 @@ import { create } from 'zustand';
 import { playOpenSound, playCloseSound } from '../utils/soundEffects';
 
 const getInitialWindows = () => {
-  return [];
+  const isMobile = window.innerWidth <= 768;
+
+  const cvWindow = {
+    id: 'cv',
+    title: 'PROFIL',
+    x: isMobile ? 10 : 100,
+    y: isMobile ? 100 : 150,
+    width: isMobile ? window.innerWidth - 20 : 550,
+    height: isMobile ? window.innerHeight - 120 : 550,
+    zIndex: 1
+  };
+
+  return [cvWindow];
 };
 
 export const useWindowStore = create((set) => ({
