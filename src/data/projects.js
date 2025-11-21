@@ -131,6 +131,7 @@ export const devProjects = [
       "Jeu narratif point-and-click hybride présenté comme un bureau interactif.",
     link: "https://kaarbon.yourdomain.com",
     iframeUrl: "https://kaarbon.yourdomain.com",
+    thumbnail: "/dev/kaarbkomp.png",
     screenshots: [
       {
         src: "https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -140,7 +141,7 @@ export const devProjects = [
       },
       {
         src: "https://images.pexels.com/photos/2148217/pexels-photo-2148217.jpeg?auto=compress&cs=tinysrgb&w=800",
-        title: "Interface d’inventaire",
+        title: "Interface d'inventaire",
         description:
           "Système de puzzles et objets interactifs.",
       },
@@ -148,7 +149,7 @@ export const devProjects = [
         src: "https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=800",
         title: "Dialogues",
         description:
-          "Choix narratifs influençant l’état global de la ville.",
+          "Choix narratifs influençant l'état global de la ville.",
       },
     ],
     architecture:
