@@ -30,7 +30,7 @@ export const CVWindow = () => {
       <div className="flex items-center justify-between border-b border-white/20 pb-4">
         <div>
           <h2 className="text-2xl font-light tracking-wide text-green-600">Nathanaël NAVEAU</h2>
-          <p className="text-[15px] font-semibold text-white/80 mt-1.5">Développeur créatif full-stack</p>
+          <p className="text-[15px] text-white/80 mt-1.5">Développeur créatif full-stack</p>
         </div>
         <button
           onClick={handleDownload}

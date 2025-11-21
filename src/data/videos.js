@@ -1,5 +1,57 @@
 export const videos = [
   {
+    id: 'video-0',
+    title: 'Avorted Third',
+    date: 'Décembre 2024',
+    thumbnail: 'https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=600',
+    summary: 'Série de clips expérimentaux et visuels',
+    description: 'Collection de 7 clips expérimentaux explorant différentes techniques visuelles et narratives. Ce carrousel présente des expérimentations visuelles mêlant effets pratiques et post-production.',
+    tags: ['Expérimental', 'Clips', 'Visuel'],
+    isCarousel: true,
+    carouselVideos: [
+      {
+        youtubeId: 'VIDEO_ID_1',
+        title: 'Clip 1',
+        description: 'Première vidéo du carrousel'
+      },
+      {
+        youtubeId: 'VIDEO_ID_2',
+        title: 'Clip 2',
+        description: 'Deuxième vidéo du carrousel'
+      },
+      {
+        youtubeId: 'VIDEO_ID_3',
+        title: 'Clip 3',
+        description: 'Troisième vidéo du carrousel'
+      },
+      {
+        youtubeId: 'VIDEO_ID_4',
+        title: 'Clip 4',
+        description: 'Quatrième vidéo du carrousel'
+      },
+      {
+        youtubeId: 'VIDEO_ID_5',
+        title: 'Clip 5',
+        description: 'Cinquième vidéo du carrousel'
+      },
+      {
+        youtubeId: 'VIDEO_ID_6',
+        title: 'Clip 6',
+        description: 'Sixième vidéo du carrousel'
+      },
+      {
+        youtubeId: 'VIDEO_ID_7',
+        title: 'Clip 7',
+        description: 'Septième vidéo du carrousel'
+      }
+    ],
+    images: [
+      { src: 'https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Aperçu visuel 1' },
+      { src: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Aperçu visuel 2' },
+      { src: 'https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Aperçu visuel 3' }
+    ]
+  },
+  {
     id: 'video-1',
     youtubeId: 'uMsgumidgy8',
     title: 'Genocide de poulets',
