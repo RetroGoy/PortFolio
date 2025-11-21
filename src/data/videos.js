@@ -13,9 +13,9 @@ Cette sélection rassemble les images les plus abouties, vestiges d’un projet 
     isInstagram: true,
     instagramUrl: 'https://www.instagram.com/p/DNrAs4m2t5B/',
     images: [
-      { src: 'https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Aperçu visuel 1' },
-      { src: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Aperçu visuel 2' },
-      { src: 'https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Aperçu visuel 3' }
+      { src: '/video/avort1.jpeg', caption: 'Aperçu visuel 1' },
+      { src: '/video/avort2.jpeg', caption: 'Aperçu visuel 2' },
+      { src: '/video/avort3.jpeg', caption: 'Aperçu visuel 3' }
     ]
   },
 
