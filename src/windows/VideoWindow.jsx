@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { videos } from '../data/videos';
-import { Play, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Play } from 'lucide-react';
 
 export const VideoWindow = ({ onNavigate, currentView }) => {
   const [selectedVideo, setSelectedVideo] = useState(null);
-  const [currentCarouselIndex, setCurrentCarouselIndex] = useState(0);
 
   const handleVideoClick = (video) => {
     setSelectedVideo(video);
@@ -26,76 +25,58 @@ export const VideoWindow = ({ onNavigate, currentView }) => {
     }
   }, [currentView]);
 
+  useEffect(() => {
+    if (selectedVideo?.isInstagram) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = '//www.instagram.com/embed.js';
+      document.body.appendChild(script);
+
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, [selectedVideo]);
+
   if (selectedVideo) {
-    const isCarousel = selectedVideo.isCarousel;
-    const currentVideoId = isCarousel
-      ? selectedVideo.carouselVideos[currentCarouselIndex].youtubeId
-      : selectedVideo.youtubeId;
-    const totalVideos = isCarousel ? selectedVideo.carouselVideos.length : 1;
-
-    const handlePrevious = () => {
-      if (currentCarouselIndex > 0) {
-        setCurrentCarouselIndex(currentCarouselIndex - 1);
-      }
-    };
-
-    const handleNext = () => {
-      if (currentCarouselIndex < totalVideos - 1) {
-        setCurrentCarouselIndex(currentCarouselIndex + 1);
-      }
-    };
-
     return (
       <div className="space-y-6">
         <h2 className="text-2xl font-light tracking-wide pb-2">
           {selectedVideo.title}
         </h2>
 
-        <div className="relative">
+        {selectedVideo.isInstagram ? (
+          <div className="flex justify-center">
+            <blockquote
+              className="instagram-media"
+              data-instgrm-permalink={selectedVideo.instagramUrl}
+              data-instgrm-version="14"
+              style={{
+                background: '#000',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                borderRadius: '0',
+                margin: '0',
+                maxWidth: '540px',
+                minWidth: '326px',
+                padding: '0',
+                width: '100%'
+              }}
+            >
+            </blockquote>
+          </div>
+        ) : (
           <div className="aspect-video bg-black border border-white/20">
             <iframe
               width="100%"
               height="100%"
-              src={`https://www.youtube.com/embed/${currentVideoId}`}
+              src={`https://www.youtube.com/embed/${selectedVideo.youtubeId}`}
               title={selectedVideo.title}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </div>
-
-          {isCarousel && (
-            <>
-              <button
-                onClick={handlePrevious}
-                disabled={currentCarouselIndex === 0}
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/80 border border-white/40 p-2 hover:bg-white/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-              >
-                <ChevronLeft size={24} className="text-white" />
-              </button>
-              <button
-                onClick={handleNext}
-                disabled={currentCarouselIndex === totalVideos - 1}
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/80 border border-white/40 p-2 hover:bg-white/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-              >
-                <ChevronRight size={24} className="text-white" />
-              </button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
-                {selectedVideo.carouselVideos.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrentCarouselIndex(idx)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      idx === currentCarouselIndex
-                        ? 'bg-white w-6'
-                        : 'bg-white/40 hover:bg-white/60'
-                    }`}
-                  />
-                ))}
-              </div>
-            </>
-          )}
-        </div>
+        )}
 
         <div className="grid grid-cols-3 gap-3">
           {selectedVideo.images.map((img, idx) => (
