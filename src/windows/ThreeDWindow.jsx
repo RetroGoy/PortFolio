@@ -7,7 +7,6 @@ export const ThreeDWindow = ({ onNavigate, currentView }) => {
   const [expandedImage, setExpandedImage] = useState(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
   const expandedImageRef = useRef(null);
-  const videoRef = useRef(null);
 
   const handleProjectClick = (project) => {
     setSelectedProject(project);
@@ -198,23 +197,11 @@ export const ThreeDWindow = ({ onNavigate, currentView }) => {
                 }`}
                 onClick={handleClick}
               >
-                {currentImage.isVideo ? (
-                  <video
-                    ref={isExpanded ? videoRef : null}
-                    src={currentImage.src}
-                    autoPlay={isExpanded}
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
-                  />
-                ) : (
-                  <img
-                    src={currentImage.src}
-                    alt={currentImage.description}
-                    className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
-                  />
-                )}
+                <img
+                  src={currentImage.src}
+                  alt={currentImage.description}
+                  className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
+                />
                 <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-3">
                   <p className="text-white text-xs text-center">{currentImage.description}</p>
                 </div>

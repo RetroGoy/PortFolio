@@ -62,19 +62,19 @@ export const galleryImages = [
     images: [
       {
         src: '/3D/00FD4966-C17B-4261-88F4-7C1797D56721_1_105_c.jpeg',
-        description: 'Collection de modèles sculptés (Nomad Sculpt)'
+        description: 'Collection de modèles sculptés (Nomad Sculpt) - Image 1'
       },
       {
         src: '/3D/258D0963-2B4A-454A-A6E1-D7B0D8E4F24A_1_105_c.jpeg',
-        description: 'Collection de modèles sculptés (Nomad Sculpt)'
+        description: 'Collection de modèles sculptés (Nomad Sculpt) - Image 2'
       },
       {
         src: '/3D/83166112-5AB0-4C77-A7AD-D75FCBB04404_1_201_a.jpeg',
-        description: 'Collection de modèles sculptés (Nomad Sculpt)'
+        description: 'Collection de modèles sculptés (Nomad Sculpt) - Image 3'
       },
       {
         src: '/3D/BA4C282E-D0D3-49F7-9012-5CB50EC67635.jpeg',
-        description: 'Collection de modèles sculptés (Nomad Sculpt)'
+        description: 'Collection de modèles sculptés (Nomad Sculpt) - Image 4'
       }
     ]
   },
@@ -85,17 +85,7 @@ export const galleryImages = [
   },
   {
     id: 'gallery-3',
-    isCarousel: true,
-    images: [
-      {
-        src: '/3D/MarvelPic.jpeg',
-        description: 'Vêtement simulé dans Marvelous Designer sur un modèle sculpté (Nomad Sculpt)'
-      },
-      {
-        src: '/3D/MarvelVid.jpeg',
-        description: 'Animation du vêtement simulé',
-        isVideo: true
-      }
-    ]
+    src: 'https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Vêtement simulé dans Marvelous Designer sur un modèle sculpté (Nomad Sculpt)'
   }
 ];
