@@ -2,7 +2,7 @@ export const videos = [
   {
     id: 'video-0',
     title: 'Avorted 3rd',
-    date: 'Décembre 2024',
+    date: '2024',
     thumbnail: 'https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=600',
     summary: 'Sélection d’extraits d’un projet de fiction avorté',
     description: `Compilation de plans issus d’un long projet de film de zombies abandonné
@@ -23,7 +23,7 @@ Cette sélection rassemble les images les plus abouties, vestiges d’un projet 
     id: 'video-1',
     youtubeId: 'uMsgumidgy8',
     title: 'Génocide de poulets',
-    date: 'Avril 2023',
+    date: '2024',
     thumbnail: 'https://img.youtube.com/vi/uMsgumidgy8/mqdefault.jpg',
     summary: 'Court-métrage sombre et atmosphérique',
     description: `Court-métrage expérimental qui interroge la violence industrialisée 
@@ -42,7 +42,7 @@ une narration volontairement floue pour laisser le spectateur interpréter ce qu
     id: 'video-2',
     youtubeId: 'j8EFK4OFf0Q',
     title: 'Judason',
-    date: 'Janvier 2023',
+    date: '2022',
     thumbnail: 'https://img.youtube.com/vi/j8EFK4OFf0Q/mqdefault.jpg',
     summary: 'Exploration visuelle d’un lieu isolé',
     description: `Projet tourné en solitaire, Judason capture l’atmosphère de lieux ruraux
@@ -61,7 +61,7 @@ et une esthétique légèrement lynchienne.`,
     id: 'video-3',
     youtubeId: 'RQWhuwgD9EU',
     title: 'Regdumatum',
-    date: 'Novembre 2022',
+    date: '2022',
     thumbnail: 'https://img.youtube.com/vi/RQWhuwgD9EU/mqdefault.jpg',
     summary: 'Film collaboratif façon western rural',
     description: `Projet tourné avec une petite équipe, centré moins sur un scénario 
@@ -80,7 +80,7 @@ de montage/étalonnage axé sur le rythme et la cohérence visuelle.`,
     id: 'video-4',
     youtubeId: 'elOBRUXiOh4',
     title: 'Test drone – montage',
-    date: 'Août 2022',
+    date: '2023',
     thumbnail: 'https://img.youtube.com/vi/elOBRUXiOh4/mqdefault.jpg',
     summary: 'Montage d’essai avec plans aériens',
     description: `Série de plans aériens montés pour tester un style visuel rythmé.
