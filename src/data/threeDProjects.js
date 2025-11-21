@@ -70,11 +70,11 @@ export const galleryImages = [
       },
       {
         src: '/3D/83166112-5AB0-4C77-A7AD-D75FCBB04404_1_201_a.jpeg',
-        description: 'Collection de modèles sculptés (Nomad Sculpt) - Image 3'
+        description: 'Collection de modèles sculptés (Nomad Sculpt)'
       },
       {
         src: '/3D/BA4C282E-D0D3-49F7-9012-5CB50EC67635.jpeg',
-        description: 'Collection de modèles sculptés (Nomad Sculpt) - Image 4'
+        description: 'Collection de modèles sculptés (Nomad Sculpt)'
       }
     ]
   },
