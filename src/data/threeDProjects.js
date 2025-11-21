@@ -68,7 +68,7 @@ export const galleryImages = [
   },
   {
     id: 'gallery-3',
-    src: 'https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Animation simple d’un objet pour étude de motion'
+    src: 'https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Vêtement simulé dans Marvelous Designer sur un modèle sculpté (Nomad Sculpt)'
   }
 ];
