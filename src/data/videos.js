@@ -78,6 +78,21 @@ une narration volontairement floue pour laisser le spectateur interpréter ce qu
 
   {
     id: 'video-4',
+    youtubeId: 'Ws_mpFyjFh0',
+    title: 'Sacrifice de poulets',
+    date: '2021',
+    thumbnail: 'https://img.youtube.com/vi/Ws_mpFyjFh0/mqdefault.jpg',
+    summary: 'Projet d\'école sur l\'assassinat de poulets',
+    description: `Projet réalisé dans le cadre scolaire explorant la thématique de l'assassinat de poulets pour anéantir une maladie virale. Une approche documentaire sur un sujet délicat.`,
+    tags: ['Documentaire', 'École', 'Expérimental'],
+    images: [
+      { src: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Aperçu du projet' },
+      { src: 'https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Travail visuel' }
+    ]
+  },
+
+  {
+    id: 'video-5',
     title: 'Chic Chicken',
     date: '2025',
     thumbnail: '/video/chchicThumb.jpeg',
@@ -89,7 +104,7 @@ une narration volontairement floue pour laisser le spectateur interpréter ce qu
   },
 
   {
-    id: 'video-5',
+    id: 'video-6',
     title: 'Blunder cactus',
     date: '2025',
     thumbnail: '/video/blunder1.jpeg',
@@ -104,7 +119,22 @@ une narration volontairement floue pour laisser le spectateur interpréter ce qu
   },
 
   {
-    id: 'video-6',
+    id: 'video-7',
+    youtubeId: 'A5P6RauqZsw',
+    title: 'Star Wars AMV',
+    date: '2021',
+    thumbnail: 'https://img.youtube.com/vi/A5P6RauqZsw/mqdefault.jpg',
+    summary: 'Projet de montage rythmé sur une musique',
+    description: `Montage rythmé combinant des extraits de Star Wars avec une musique dynamique. Un exercice de synchronisation visuelle et musicale explorant le montage au rythme.`,
+    tags: ['Montage', 'AMV', 'Musique'],
+    images: [
+      { src: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Montage rythmique' },
+      { src: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Synchronisation visuelle' }
+    ]
+  },
+
+  {
+    id: 'video-8',
     youtubeId: 'elOBRUXiOh4',
     title: 'Test drone – montage',
     date: '2023',
