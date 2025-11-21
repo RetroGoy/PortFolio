@@ -1,33 +1,6 @@
 export const videos = [
   {
     id: 'video-0',
-    title: 'Chic Chicken',
-    date: '2025',
-    thumbnail: '/video/chchicThumb.jpeg',
-    summary: 'Projet en cours de réalisation',
-    description: `Nouveau projet en développement. Plus d'informations bientôt.`,
-    tags: ['À venir'],
-    comingSoon: true,
-    images: []
-  },
-
-  {
-    id: 'video-1',
-    title: 'Blunder cactus',
-    date: '2025',
-    thumbnail: '/video/blunder1.jpeg',
-    summary: 'Nouvelle création visuelle',
-    description: `Court projet expérimental explorant des ambiances visuelles et narratives.`,
-    tags: ['Expérimental', 'Fiction'],
-    isInstagram: true,
-    instagramUrl: 'https://www.instagram.com/p/DOvlRcGDKa3/',
-    images: [
-      { src: '/video/blunder1.jpeg', caption: 'Aperçu visuel' }
-    ]
-  },
-
-  {
-    id: 'video-2',
     title: 'Avorted 3rd',
     date: '2024',
     thumbnail: '/video/avort3.jpeg',
@@ -43,6 +16,44 @@ Cette sélection rassemble les images les plus abouties, vestiges d'un projet d'
       { src: '/video/avort1.jpeg', caption: 'Aperçu visuel 1' },
       { src: '/video/avort2.jpeg', caption: 'Aperçu visuel 2' },
       { src: '/video/avort3.jpeg', caption: 'Aperçu visuel 3' }
+    ]
+  },
+
+  {
+    id: 'video-1',
+    youtubeId: 'RQWhuwgD9EU',
+    title: 'Regdumatum',
+    date: '2022',
+    thumbnail: 'https://img.youtube.com/vi/RQWhuwgD9EU/mqdefault.jpg',
+    summary: 'Film collaboratif façon western rural',
+    description: `Projet tourné avec une petite équipe, centré moins sur un scénario
+que sur l'expérience du tournage collectif. Entre western rural et délire entre amis,
+Regdumatum mélange jeu d'acteur amateur, mise en scène improvisée et un travail
+de montage/étalonnage axé sur le rythme et la cohérence visuelle.`,
+    tags: ['Fiction', 'Collaboration', 'Western'],
+    images: [
+      { src: 'https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Ambiance western' },
+      { src: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Travail du montage' },
+      { src: 'https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Identité visuelle' }
+    ]
+  },
+
+  {
+    id: 'video-2',
+    youtubeId: 'j8EFK4OFf0Q',
+    title: 'Judason',
+    date: '2022',
+    thumbnail: 'https://img.youtube.com/vi/j8EFK4OFf0Q/mqdefault.jpg',
+    summary: 'Exploration visuelle d\'un lieu isolé',
+    description: `Projet tourné en solitaire, Judason capture l'atmosphère de lieux ruraux
+et un peu perdus. Une errance visuelle presque introspective, où l'ambiance
+compte plus que l'histoire. Les images jouent avec la solitude, le vide
+et une esthétique légèrement lynchienne.`,
+    tags: ['Expérimental', 'Rural', 'Ambiance'],
+    images: [
+      { src: 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Textures rurales' },
+      { src: 'https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Ambiance nocturne' },
+      { src: 'https://images.pexels.com/photos/2693212/pexels-photo-2693212.png?auto=compress&cs=tinysrgb&w=800', caption: 'Lieux isolés' }
     ]
   },
 
@@ -67,39 +78,28 @@ une narration volontairement floue pour laisser le spectateur interpréter ce qu
 
   {
     id: 'video-4',
-    youtubeId: 'j8EFK4OFf0Q',
-    title: 'Judason',
-    date: '2022',
-    thumbnail: 'https://img.youtube.com/vi/j8EFK4OFf0Q/mqdefault.jpg',
-    summary: 'Exploration visuelle d\'un lieu isolé',
-    description: `Projet tourné en solitaire, Judason capture l'atmosphère de lieux ruraux
-et un peu perdus. Une errance visuelle presque introspective, où l'ambiance
-compte plus que l'histoire. Les images jouent avec la solitude, le vide
-et une esthétique légèrement lynchienne.`,
-    tags: ['Expérimental', 'Rural', 'Ambiance'],
-    images: [
-      { src: 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Textures rurales' },
-      { src: 'https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Ambiance nocturne' },
-      { src: 'https://images.pexels.com/photos/2693212/pexels-photo-2693212.png?auto=compress&cs=tinysrgb&w=800', caption: 'Lieux isolés' }
-    ]
+    title: 'Chic Chicken',
+    date: '2025',
+    thumbnail: '/video/chchicThumb.jpeg',
+    summary: 'Projet en cours de réalisation',
+    description: `Nouveau projet en développement. Plus d'informations bientôt.`,
+    tags: ['À venir'],
+    comingSoon: true,
+    images: []
   },
 
   {
     id: 'video-5',
-    youtubeId: 'RQWhuwgD9EU',
-    title: 'Regdumatum',
-    date: '2022',
-    thumbnail: 'https://img.youtube.com/vi/RQWhuwgD9EU/mqdefault.jpg',
-    summary: 'Film collaboratif façon western rural',
-    description: `Projet tourné avec une petite équipe, centré moins sur un scénario
-que sur l'expérience du tournage collectif. Entre western rural et délire entre amis,
-Regdumatum mélange jeu d'acteur amateur, mise en scène improvisée et un travail
-de montage/étalonnage axé sur le rythme et la cohérence visuelle.`,
-    tags: ['Fiction', 'Collaboration', 'Western'],
+    title: 'Blunder cactus',
+    date: '2025',
+    thumbnail: '/video/blunder1.jpeg',
+    summary: 'Nouvelle création visuelle',
+    description: `Court projet expérimental explorant des ambiances visuelles et narratives.`,
+    tags: ['Expérimental', 'Fiction'],
+    isInstagram: true,
+    instagramUrl: 'https://www.instagram.com/p/DOvlRcGDKa3/',
     images: [
-      { src: 'https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Ambiance western' },
-      { src: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Travail du montage' },
-      { src: 'https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=800', caption: 'Identité visuelle' }
+      { src: '/video/blunder1.jpeg', caption: 'Aperçu visuel' }
     ]
   },
 
