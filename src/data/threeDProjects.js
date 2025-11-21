@@ -3,7 +3,7 @@ export const threeDProjects = [
     id: '3d-1',
     youtubeId: 'kMJhW7gnmFw',
     title: 'Branle-bas',
-    date: 'Mars 2024',
+    date: '2024',
     thumbnail: 'https://img.youtube.com/vi/kMJhW7gnmFw/mqdefault.jpg',
     summary: 'Clip expérimental en 3D mêlant animation, modélisation et composition musicale.',
     description:
@@ -29,7 +29,7 @@ export const threeDProjects = [
   {
     id: '3d-2',
     title: 'Visualiseur 3D Interactif',
-    date: 'Décembre 2024',
+    date: '2025',
     thumbnail:
       'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800',
     summary: 'Exploration interactive d’un modèle 3D en temps réel.',
