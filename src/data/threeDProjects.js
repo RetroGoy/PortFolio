@@ -1,6 +1,3 @@
-// =============================
-//   PROJETS 3D (2 GROS)
-// =============================
 export const threeDProjects = [
   {
     id: '3d-1',
@@ -58,10 +55,6 @@ export const threeDProjects = [
   }
 ];
 
-
-// =============================
-//   GALERIE (3 MINI-PROJETS)
-// =============================
 export const galleryImages = [
   {
     id: 'gallery-1',
