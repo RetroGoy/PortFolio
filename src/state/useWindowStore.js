@@ -8,7 +8,7 @@ const getInitialWindows = () => {
     id: 'cv',
     title: 'PROFIL',
     x: isMobile ? 10 : 100,
-    y: isMobile ? 100 : 150,
+    y: isMobile ? 100 : 120,
     width: isMobile ? window.innerWidth - 20 : 550,
     height: isMobile ? window.innerHeight - 120 : 550,
     zIndex: 1
@@ -41,7 +41,7 @@ export const useWindowStore = create((set) => ({
 
     const defaultPosition = savedPosition || {
       x: isMobile ? 10 : Math.random() * 200 + 100,
-      y: isMobile ? 100 : Math.random() * 100 + 150,
+      y: isMobile ? 100 : Math.random() * 50 + 100,
       width: isMobile ? window.innerWidth - 20 : (windowData.width || 550),
       height: isMobile ? window.innerHeight - 120 : (windowData.height || 550)
     };

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { User, Palette, Box, Terminal, Hand, Instagram, Youtube, Github, Linkedin, ExternalLink } from 'lucide-react';
 import { useWindowStore } from '../state/useWindowStore';
 
-const DockIcon = ({ icon, title, windowId, onIconClick, isOpen, href }) => {
+const DockIcon = ({ icon, title, windowId, onIconClick, isOpen, href, isReseaux }) => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   const handleClick = () => {
@@ -19,7 +19,9 @@ const DockIcon = ({ icon, title, windowId, onIconClick, isOpen, href }) => {
         onClick={handleClick}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
-        className={`text-white hover:opacity-70 transition-opacity relative ${isOpen ? 'after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-[2px] after:bg-white' : ''}`}
+        className={`hover:opacity-70 transition-opacity relative ${
+          isReseaux ? 'text-white/40' : 'text-white'
+        } ${isOpen ? 'after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-[2px] after:bg-white' : ''}`}
       >
         {icon}
       </button>
@@ -33,9 +35,14 @@ const DockIcon = ({ icon, title, windowId, onIconClick, isOpen, href }) => {
 };
 
 const DockGroup = ({ label, icons, onIconClick, openWindows, showExternalIndicator }) => {
+  const isReseaux = label === 'RÉSEAUX';
   return (
-    <div className="relative border-[1.5px] border-white px-5 py-3 flex items-center gap-6 flex-shrink-0">
-      <span className="absolute -top-1.5 left-4 bg-[#0a2f1f] px-2 text-white text-[10px] uppercase tracking-widest font-medium z-10 flex items-center gap-1">
+    <div className={`relative border-[1.5px] px-5 py-3 flex items-center gap-6 flex-shrink-0 ${
+      isReseaux ? 'border-white/40' : 'border-white'
+    }`}>
+      <span className={`absolute -top-1.5 left-4 bg-[#0a2f1f] px-2 text-[10px] uppercase tracking-widest font-medium z-10 flex items-center gap-1 ${
+        isReseaux ? 'text-white/40' : 'text-white'
+      }`}>
         {label}
         {showExternalIndicator && <ExternalLink size={10} className="opacity-60" />}
       </span>
@@ -48,6 +55,7 @@ const DockGroup = ({ label, icons, onIconClick, openWindows, showExternalIndicat
           onIconClick={onIconClick}
           isOpen={openWindows.includes(icon.windowId)}
           href={icon.href}
+          isReseaux={isReseaux}
         />
       ))}
     </div>
