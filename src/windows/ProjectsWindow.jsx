@@ -89,7 +89,7 @@ export const ProjectsWindow = ({ onNavigate, currentView }) => {
     <div className="space-y-6">
       <div className="space-y-3">
         <h2 className="text-xl font-light tracking-wide border-b border-white/20 pb-2">
-          Projets créatifs
+          PROJETS CRÉATIFS
         </h2>
 
         <p className="text-xs text-white/40 leading-relaxed">
