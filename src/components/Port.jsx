@@ -10,7 +10,7 @@ export default function Port({ windowId }) {
   return (
     <div
       id={`port-${windowId}`}
-      className="absolute -bottom-3 left-1/2 -translate-x-1/2 z-50 cursor-pointer group"
+      className="relative z-50 cursor-pointer group mr-3"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
