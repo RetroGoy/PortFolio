@@ -21,6 +21,8 @@ export const useWindowStore = create((set) => ({
   windows: getInitialWindows(),
   maxZIndex: 2,
   closedWindowsPositions: {},
+  connection: null,
+  backgroundMode: 'none',
 
   openWindow: (windowData) => set((state) => {
     const existing = state.windows.find(w => w.id === windowData.id);
@@ -93,5 +95,34 @@ export const useWindowStore = create((set) => ({
     windows: state.windows.map(w =>
       w.id === id ? { ...w, ...updates } : w
     )
-  }))
+  })),
+
+  setConnection: (fromId, toId) => set((state) => {
+    if (!fromId || !toId || fromId === toId) {
+      return { connection: null, backgroundMode: 'none' };
+    }
+
+    const connectionKey = [fromId, toId].sort().join('-');
+    const reverseKey = [toId, fromId].sort().join('-');
+
+    const connectionMap = {
+      '3d-creatif': 'wireframe-liquid',
+      '3d-films': 'showreel',
+      'cv-dev': 'dataflow',
+      'creatif-dev': 'dataflow-fast',
+      'creatif-cv': 'wireframe-soft',
+      'creatif-films': 'showreel-soft',
+      '3d-dev': 'wireframe-fractal',
+      'cv-films': 'showreel-muted'
+    };
+
+    const backgroundMode = connectionMap[connectionKey] || connectionMap[reverseKey] || 'none';
+
+    return {
+      connection: { from: fromId, to: toId },
+      backgroundMode
+    };
+  }),
+
+  clearConnection: () => set({ connection: null, backgroundMode: 'none' })
 }));

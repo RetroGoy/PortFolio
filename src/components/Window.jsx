@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { X, ChevronLeft } from 'lucide-react';
 import { useWindowStore } from '../state/useWindowStore';
+import Port from './Port';
 
 export const Window = ({ id, title, children, x, y, width, height, zIndex, breadcrumb, onBreadcrumbClick }) => {
   const { closeWindow, focusWindow, updateWindow } = useWindowStore();
@@ -118,6 +119,8 @@ export const Window = ({ id, title, children, x, y, width, height, zIndex, bread
       >
         <div className="absolute bottom-1 right-1 w-2 h-2 border-r border-b border-white/50" />
       </div>
+
+      {!isMobile && <Port windowId={id} />}
     </div>
   );
 };

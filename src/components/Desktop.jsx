@@ -8,6 +8,7 @@ import { FilmGrain } from './FilmGrain';
 import { CRTEffects } from './CRTEffects';
 import { Tooltip } from './Tooltip';
 import { Footer } from './Footer';
+import CableManager from './CableManager';
 import { CVWindow } from '../windows/CVWindow';
 import { VideoWindow } from '../windows/VideoWindow';
 import { ThreeDWindow } from '../windows/ThreeDWindow';
@@ -51,6 +52,7 @@ export const Desktop = () => {
         <Dock />
         <Tooltip />
         <Footer />
+        <CableManager />
 
         {windows.map((window) => {
           const WindowContent = windowComponents[window.id];
