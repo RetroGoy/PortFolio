@@ -32,11 +32,11 @@ export default function Port({ windowId }) {
           transform: isHovered ? 'scale(1.2)' : 'scale(1)',
         }}
       />
-      {isHovered && (
+      {/* {isHovered && (
         <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-black/80 text-white text-xs whitespace-nowrap rounded pointer-events-none">
           {isConnected ? 'Connected' : 'Connect'}
         </div>
-      )}
+      )} */}
     </div>
   );
 }
