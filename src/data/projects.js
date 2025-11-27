@@ -72,8 +72,37 @@ export const projectGalleryImages = [
   },
 ];
 
-// PROJETS DEV 
+// PROJETS DEV
 export const devProjects = [
+  {
+    id: "dev-1",
+    title: "GlobalExam Bot",
+    date: "2024",
+    tech: ["JavaScript", "OpenAI API", "Browser Automation"],
+    description:
+      "Script d'automatisation qui analyse chaque question GlobalExam, extrait le contexte et utilise l'API OpenAI pour sélectionner automatiquement les meilleures réponses.",
+    thumbnail: "/dev/ForkJam.jpeg",
+    fullDescription: `GlobalExam Auto-Filler (GPT Automation)
+
+Un script d'automatisation qui analyse chaque question GlobalExam, extrait le contexte (texte, transcription, images) et utilise l'API OpenAI pour sélectionner automatiquement les meilleures réponses.
+Il gère aussi la navigation, ferme les pop-ups, maintient la page active et enchaîne les activités jusqu'à la fin.
+
+À quoi ça sert ?
+→ Accélérer les sessions d'entraînement et observer les choix d'un modèle GPT sur de longs QCM, sans passer son temps à cliquer.
+(Uniquement pour le mode entraînement, respect des CGU.)
+
+⸻
+
+Fonctionnalités
+	•	Extraction automatique du contenu des questions
+	•	Appel GPT (4o / 4o-mini) pour générer les réponses
+	•	Marquage et sélection des bonnes options
+	•	Anti-idle (scroll + mouvements souris)
+	•	Passage automatique aux pages/activités suivantes
+	•	Commande d'arrêt : stopAutoQCM()`,
+    codeSnippet: "",
+    videoUrl: "",
+  },
   {
     id: "dev-2",
     title: "ForkJam",
