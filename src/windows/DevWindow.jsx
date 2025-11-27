@@ -205,7 +205,7 @@ export const DevWindow = ({ onNavigate, currentView }) => {
     document.querySelector('button svg.fa-times, button [data-icon="times"]')
       ?.closest('button')?.click();
 
-    console.log(`📄 Transcription capturée : ${text.length} caractères`);
+    console.log(`Transcription capturée : ${text.length} caractères`);
     return text;
   }
 
