@@ -6,7 +6,17 @@ import { CodeBlock } from '../components/CodeBlock';
 export const DevWindow = ({ onNavigate, currentView }) => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [enlargedImage, setEnlargedImage] = useState(null);
+  const [loadedCode, setLoadedCode] = useState('');
   const iframeContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (selectedProject?.id === 'dev-1' && selectedProject.codeUrl) {
+      fetch(selectedProject.codeUrl)
+        .then(res => res.text())
+        .then(code => setLoadedCode(code))
+        .catch(err => console.error('Error loading code:', err));
+    }
+  }, [selectedProject]);
 
   const handleProjectClick = (project) => {
     setSelectedProject(project);
@@ -94,7 +104,7 @@ export const DevWindow = ({ onNavigate, currentView }) => {
 
             <div className="border-t border-white/20 pt-4">
               <h3 className="text-sm uppercase tracking-wider text-white/60 mb-3">Code JavaScript</h3>
-              <CodeBlock code={selectedProject.codeSnippet} />
+              <CodeBlock code={loadedCode} />
             </div>
           </>
         ) : (
