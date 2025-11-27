@@ -1,26 +1,36 @@
 export const CodeBlock = ({ code }) => {
   const highlightJavaScript = (code) => {
-    const keywords = /\b(const|let|var|function|if|else|return|for|while|async|await|try|catch|throw|new|class|import|export|from|default|break|continue|switch|case|typeof|instanceof)\b/g;
-    const strings = /(".*?"|'.*?'|`.*?`)/g;
-    const numbers = /\b(\d+\.?\d*)\b/g;
-    const comments = /(\/\/.*$|\/\*[\s\S]*?\*\/)/gm;
-    const functions = /\b([a-zA-Z_$][a-zA-Z0-9_$]*)\s*(?=\()/g;
-    const properties = /\.([a-zA-Z_$][a-zA-Z0-9_$]*)/g;
+    const lines = code.split('\n');
 
-    let highlighted = code
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;');
+    return lines.map((line, idx) => {
+      let highlighted = line
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
 
-    highlighted = highlighted
-      .replace(comments, '<span class="text-green-400">$1</span>')
-      .replace(strings, '<span class="text-orange-300">$1</span>')
-      .replace(keywords, '<span class="text-purple-400">$1</span>')
-      .replace(numbers, '<span class="text-blue-300">$1</span>')
-      .replace(functions, '<span class="text-yellow-300">$1</span>')
-      .replace(properties, '.<span class="text-cyan-300">$1</span>');
+      const commentMatch = highlighted.match(/(\/\/.*$|\/\*[\s\S]*?\*\/)/);
+      if (commentMatch) {
+        const commentIndex = highlighted.indexOf(commentMatch[0]);
+        const beforeComment = highlighted.substring(0, commentIndex);
+        const comment = highlighted.substring(commentIndex);
 
-    return highlighted;
+        const processedBefore = beforeComment
+          .replace(/(".*?"|'.*?'|`.*?`)/g, '<span style="color: #ce9178;">$1</span>')
+          .replace(/\b(const|let|var|function|if|else|return|for|while|async|await|try|catch|throw|new|class|import|export|from|default|break|continue|switch|case|typeof|instanceof)\b/g, '<span style="color: #c586c0;">$1</span>')
+          .replace(/\b(\d+\.?\d*)\b/g, '<span style="color: #b5cea8;">$1</span>')
+          .replace(/\b([a-zA-Z_$][a-zA-Z0-9_$]*)\s*(?=\()/g, '<span style="color: #dcdcaa;">$1</span>');
+
+        return `<div key="${idx}">${processedBefore}<span style="color: #6a9955;">${comment}</span></div>`;
+      }
+
+      highlighted = highlighted
+        .replace(/(".*?"|'.*?'|`.*?`)/g, '<span style="color: #ce9178;">$1</span>')
+        .replace(/\b(const|let|var|function|if|else|return|for|while|async|await|try|catch|throw|new|class|import|export|from|default|break|continue|switch|case|typeof|instanceof)\b/g, '<span style="color: #c586c0;">$1</span>')
+        .replace(/\b(\d+\.?\d*)\b/g, '<span style="color: #b5cea8;">$1</span>')
+        .replace(/\b([a-zA-Z_$][a-zA-Z0-9_$]*)\s*(?=\()/g, '<span style="color: #dcdcaa;">$1</span>');
+
+      return `<div key="${idx}">${highlighted}</div>`;
+    }).join('');
   };
 
   if (!code || code.trim() === '') {
@@ -35,7 +45,7 @@ export const CodeBlock = ({ code }) => {
 
   return (
     <div className="bg-[#1e1e1e] border border-white/20 p-4 overflow-x-auto max-h-[600px] overflow-y-auto">
-      <pre className="text-xs font-mono leading-relaxed">
+      <pre className="text-xs font-mono leading-relaxed text-white/90" style={{ whiteSpace: 'pre', tabSize: 2 }}>
         <code
           dangerouslySetInnerHTML={{
             __html: highlightJavaScript(code)
