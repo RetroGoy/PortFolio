@@ -4,7 +4,6 @@ export const Footer = () => {
       <div className="overflow-x-auto scrollbar-hide">
         <div className="text-white text-xs whitespace-nowrap text-center">
           <span className="opacity-70">© 2025 Nathanaël Von Eggis</span>
-          <span className="mx-2 opacity-40">|</span>
         </div>
       </div>
     </footer>
