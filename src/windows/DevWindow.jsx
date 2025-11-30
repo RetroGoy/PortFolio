@@ -180,9 +180,9 @@ export const DevWindow = ({ onNavigate, currentView }) => {
     );
   }
 
-  const featuredProjects = devProjects.filter(p => p.title === 'Kaarbon Komplite' || p.title === 'ForkJam');
-  const galleryProjects = devProjects.filter(p => p.id === 'dev-1');
-  const galleryImages = devProjects.filter(p => p.screenshots).flatMap(p => p.screenshots).slice(0, 2);
+  const forkJamProject = devProjects.find(p => p.title === 'ForkJam');
+  const galleryProjects = devProjects.filter(p => p.title === 'Kaarbon Komplite' || p.id === 'dev-1');
+  const galleryImages = devProjects.filter(p => p.screenshots).flatMap(p => p.screenshots).slice(0, 1);
 
   return (
     <>
@@ -221,41 +221,38 @@ export const DevWindow = ({ onNavigate, currentView }) => {
           </p>
         </div>
 
-        <div>
-          <h3 className="text-xs uppercase tracking-wider text-white/60 mb-3">Projets Principaux</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {featuredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="border border-white/20 hover:border-white/40 transition-colors cursor-pointer overflow-hidden group"
-                onClick={() => handleProjectClick(project)}
-              >
-                <div className="aspect-video relative overflow-hidden bg-black">
-                  <img
-                    src={project.thumbnail || project.screenshots[0].src}
-                    alt={project.title}
-                    className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-3">
-                    <h4 className="text-sm font-medium mb-1">{project.title}</h4>
-                    <p className="text-xs text-white/60">{project.description}</p>
-                  </div>
-                </div>
-                <div className="p-3 flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-[10px] border border-white/20 px-2 py-0.5 text-white/50"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+        {forkJamProject && (
+          <div>
+            <h3 className="text-xs uppercase tracking-wider text-white/60 mb-3">Projet Principal</h3>
+            <div
+              className="border border-white/20 hover:border-white/40 transition-colors cursor-pointer overflow-hidden group"
+              onClick={() => handleProjectClick(forkJamProject)}
+            >
+              <div className="aspect-video relative overflow-hidden bg-black">
+                <img
+                  src={forkJamProject.thumbnail || forkJamProject.screenshots[0].src}
+                  alt={forkJamProject.title}
+                  className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h4 className="text-lg font-medium mb-1">{forkJamProject.title}</h4>
+                  <p className="text-sm text-white/70">{forkJamProject.description}</p>
                 </div>
               </div>
-            ))}
+              <div className="p-4 flex flex-wrap gap-2">
+                {forkJamProject.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-xs border border-white/20 px-2 py-1 text-white/60"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
+        )}
 
         <div>
           <h3 className="text-xs uppercase tracking-wider text-white/60 mb-3">Divers</h3>

@@ -11,14 +11,12 @@ import { Footer } from './Footer';
 import { CVWindow } from '../windows/CVWindow';
 import { VideoWindow } from '../windows/VideoWindow';
 import { ThreeDWindow } from '../windows/ThreeDWindow';
-import { ProjectsWindow } from '../windows/ProjectsWindow';
 import { DevWindow } from '../windows/DevWindow';
 
 const windowComponents = {
   'cv': CVWindow,
   'videos': VideoWindow,
   'three-d': ThreeDWindow,
-  'projects': ProjectsWindow,
   'dev': DevWindow
 };
 
