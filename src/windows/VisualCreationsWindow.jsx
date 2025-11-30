@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { videos } from '../data/videos';
-import { threeDProjects, galleryImages } from '../data/threeDProjects';
+import { videos, threeDProjects, galleryImages } from '../data/creativeProjects.jsx';
 import { Play, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const VisualCreationsWindow = ({ onNavigate, currentView }) => {
@@ -182,16 +181,6 @@ export const VisualCreationsWindow = ({ onNavigate, currentView }) => {
                 <span className="text-[10px] text-white/40 whitespace-nowrap">{item.date}</span>
               </div>
               <p className="text-xs text-white/60 leading-relaxed">{item.summary}</p>
-              <div className="flex flex-wrap gap-1 pt-2">
-                {item.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-[10px] border border-white/30 px-2 py-0.5 text-white/70"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
         ))}

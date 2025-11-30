@@ -6,7 +6,6 @@ import { Background } from './Background';
 import { Scanlines } from './Scanlines';
 import { FilmGrain } from './FilmGrain';
 import { CRTEffects } from './CRTEffects';
-import { Tooltip } from './Tooltip';
 import { Footer } from './Footer';
 import { CVWindow } from '../windows/CVWindow';
 import { VisualCreationsWindow } from '../windows/VisualCreationsWindow';

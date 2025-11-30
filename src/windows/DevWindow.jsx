@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { devProjects } from '../data/projects';
+import { devProjects } from '../data/devProjects.jsx';
 import { Code, ExternalLink, Maximize2, X } from 'lucide-react';
 import { CodeBlock } from '../components/CodeBlock';
 
