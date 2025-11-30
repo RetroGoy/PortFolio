@@ -27,7 +27,7 @@ const DockIcon = ({ icon, title, windowId, onIconClick, isOpen }) => {
 const DockGroup = ({ label, icons, onIconClick, openWindows }) => {
   return (
     <div className="relative border-[1.5px] px-5 py-3 flex items-center gap-6 flex-shrink-0 border-white">
-      <span className="absolute -top-1.5 left-4 bg-[#0a2f1f] px-2 text-[10px] uppercase tracking-widest font-medium z-10 text-white">
+      <span className="hidden md:block absolute -top-1.5 left-4 bg-[#0a2f1f] px-2 text-[10px] uppercase tracking-widest font-medium z-10 text-white">
         {label}
       </span>
       {icons.map((icon, idx) => (
@@ -71,10 +71,10 @@ export const Dock = () => {
   ];
 
   return (
-    <div className="fixed top-6 left-1/2 -translate-x-1/2 z-[200] w-full max-w-[100vw] md:w-auto">
-      <div className="overflow-x-auto overflow-y-visible md:overflow-visible px-4 scrollbar-hide">
-        <div className="flex items-center gap-6 w-max">
-          <DockGroup label="TECHNIQUE" icons={techniqueIcons} onIconClick={handleIconClick} openWindows={openWindowIds} />
+    <div className="fixed top-6 left-1/2 -translate-x-1/2 z-[200] w-auto">
+      <div className="overflow-x-auto overflow-y-visible md:overflow-visible">
+        <div className="flex items-center justify-center gap-6">
+          <DockGroup label="PROJETS" icons={techniqueIcons} onIconClick={handleIconClick} openWindows={openWindowIds} />
         </div>
       </div>
     </div>

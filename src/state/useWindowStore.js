@@ -5,13 +5,14 @@ const getInitialWindows = () => {
   const isMobile = window.innerWidth <= 768;
 
   if (isMobile) {
+    const availableHeight = window.innerHeight - 200;
     return [{
       id: 'cv',
       title: 'PROFIL',
       x: 10,
       y: 100,
       width: window.innerWidth - 20,
-      height: window.innerHeight - 120,
+      height: Math.min(availableHeight, 600),
       zIndex: 2
     }];
   }
@@ -66,7 +67,7 @@ export const useWindowStore = create((set) => ({
       x: isMobile ? 10 : Math.random() * 200 + 100,
       y: isMobile ? 100 : Math.random() * 50 + 100,
       width: isMobile ? window.innerWidth - 20 : (windowData.width || 550),
-      height: isMobile ? window.innerHeight - 120 : (windowData.height || 550)
+      height: isMobile ? Math.min(window.innerHeight - 200, 600) : (windowData.height || 550)
     };
 
     playOpenSound();
