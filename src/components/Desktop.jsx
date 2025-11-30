@@ -9,14 +9,12 @@ import { CRTEffects } from './CRTEffects';
 import { Tooltip } from './Tooltip';
 import { Footer } from './Footer';
 import { CVWindow } from '../windows/CVWindow';
-import { VideoWindow } from '../windows/VideoWindow';
-import { ThreeDWindow } from '../windows/ThreeDWindow';
+import { VisualCreationsWindow } from '../windows/VisualCreationsWindow';
 import { DevWindow } from '../windows/DevWindow';
 
 const windowComponents = {
   'cv': CVWindow,
-  'videos': VideoWindow,
-  'three-d': ThreeDWindow,
+  'visual-creations': VisualCreationsWindow,
   'dev': DevWindow
 };
 

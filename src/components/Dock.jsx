@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { User, Box, Terminal, Camera } from 'lucide-react';
+import { User, Terminal, Hand } from 'lucide-react';
 import { useWindowStore } from '../state/useWindowStore';
 
 const DockIcon = ({ icon, title, windowId, onIconClick, isOpen }) => {
@@ -67,8 +67,7 @@ export const Dock = () => {
   const techniqueIcons = [
     { icon: <User size={36} strokeWidth={1.5} />, title: 'Profil', windowId: 'cv' },
     { icon: <Terminal size={36} strokeWidth={1.5} />, title: 'Développement', windowId: 'dev' },
-    { icon: <Camera size={36} strokeWidth={1.5} />, title: 'Vidéos', windowId: 'videos' },
-    { icon: <Box size={36} strokeWidth={1.5} />, title: '3D', windowId: 'three-d' }
+    { icon: <Hand size={36} strokeWidth={1.5} />, title: 'Créations Visuelles', windowId: 'visual-creations' }
   ];
 
   return (

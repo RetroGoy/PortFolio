@@ -1,58 +1,85 @@
 import { useState, useEffect, useRef } from 'react';
+import { videos } from '../data/videos';
 import { threeDProjects, galleryImages } from '../data/threeDProjects';
 import { Play, ChevronLeft, ChevronRight } from 'lucide-react';
 
-export const ThreeDWindow = ({ onNavigate, currentView }) => {
-  const [selectedProject, setSelectedProject] = useState(null);
+export const VisualCreationsWindow = ({ onNavigate, currentView }) => {
+  const [selectedItem, setSelectedItem] = useState(null);
   const [expandedImage, setExpandedImage] = useState(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
   const expandedImageRef = useRef(null);
 
-  const handleProjectClick = (project) => {
-    setSelectedProject(project);
+  const handleItemClick = (item) => {
+    if (item.comingSoon) return;
+    setSelectedItem(item);
     if (onNavigate) {
-      onNavigate(project.title);
-    }
-  };
-
-  const handleBackClick = () => {
-    setSelectedProject(null);
-    if (onNavigate) {
-      onNavigate(null);
+      onNavigate(item.title);
     }
   };
 
   useEffect(() => {
-    if (currentView === null && selectedProject) {
-      setSelectedProject(null);
+    if (currentView === null && selectedItem) {
+      setSelectedItem(null);
     }
   }, [currentView]);
 
-  if (selectedProject) {
+  useEffect(() => {
+    if (selectedItem?.isInstagram) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = '//www.instagram.com/embed.js';
+      document.body.appendChild(script);
+
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, [selectedItem]);
+
+  if (selectedItem) {
     return (
       <div className="space-y-6">
         <div className="space-y-3">
           <h2 className="text-2xl font-light tracking-wide">
-            {selectedProject.title}
+            {selectedItem.title}
           </h2>
           <p className="text-sm text-white/70 leading-relaxed">
-            {selectedProject.summary}
+            {selectedItem.summary}
           </p>
         </div>
 
-        {selectedProject.youtubeId ? (
+        {selectedItem.isInstagram ? (
+          <div className="flex justify-center">
+            <blockquote
+              className="instagram-media"
+              data-instgrm-permalink={selectedItem.instagramUrl}
+              data-instgrm-version="14"
+              style={{
+                background: '#000',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                borderRadius: '0',
+                margin: '0',
+                maxWidth: '540px',
+                minWidth: '326px',
+                padding: '0',
+                width: '100%'
+              }}
+            >
+            </blockquote>
+          </div>
+        ) : selectedItem.youtubeId ? (
           <div className="aspect-video bg-black border border-white/20">
             <iframe
               width="100%"
               height="100%"
-              src={`https://www.youtube.com/embed/${selectedProject.youtubeId}`}
-              title={selectedProject.title}
+              src={`https://www.youtube.com/embed/${selectedItem.youtubeId}`}
+              title={selectedItem.title}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </div>
-        ) : selectedProject.isInteractive ? (
+        ) : selectedItem.isInteractive ? (
           <div className="aspect-video bg-white/5 border border-white/20 flex items-center justify-center">
             <div className="text-center text-white/60">
               <div className="text-sm mb-2">Visualiseur 3D Interactif</div>
@@ -62,11 +89,11 @@ export const ThreeDWindow = ({ onNavigate, currentView }) => {
         ) : null}
 
         <div className="grid grid-cols-3 gap-3">
-          {selectedProject.images.map((img, idx) => (
+          {selectedItem.images.map((img, idx) => (
             <div key={idx} className="aspect-video border border-white/20 overflow-hidden relative group">
               <img
                 src={img.src}
-                alt={`${selectedProject.title} - image ${idx + 1}`}
+                alt={`${selectedItem.title} - image ${idx + 1}`}
                 className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
               />
               <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-3">
@@ -78,14 +105,14 @@ export const ThreeDWindow = ({ onNavigate, currentView }) => {
 
         <div className="border-t border-white/20 pt-4 space-y-3">
           <p className="text-sm text-white/80 leading-relaxed">
-            {selectedProject.description}
+            {selectedItem.description}
           </p>
 
-          {selectedProject.tools && (
+          {selectedItem.tools && (
             <div>
               <p className="text-xs text-white/50 uppercase tracking-wider mb-2">Outils utilisés</p>
               <div className="flex flex-wrap gap-2">
-                {selectedProject.tools.map((tool, idx) => (
+                {selectedItem.tools.map((tool, idx) => (
                   <span key={idx} className="text-xs border border-white/20 px-2 py-1 text-white/70">
                     {tool}
                   </span>
@@ -98,56 +125,120 @@ export const ThreeDWindow = ({ onNavigate, currentView }) => {
     );
   }
 
+  const filteredVideos = videos.filter(v =>
+    !['video-4', 'video-6', 'video-7', 'video-8'].includes(v.id)
+  );
+
   return (
     <div className="space-y-6">
       <div className="space-y-3">
         <h2 className="text-xl font-light tracking-wide border-b border-white/20 pb-2">
-          3D
+          CRÉATIONS VISUELLES
         </h2>
 
         <p className="text-xs text-white/40 leading-relaxed">
-          Mes travaux en 3D incluent des rendus photoréalistes, des animations expérimentales et des projets interactifs. J'utilise Blender, Three.js et d'autres outils pour créer des univers visuels immersifs qui repoussent les limites du médium numérique.
+          Mes projets visuels combinent courts-métrages, animations 3D et expérimentations créatives. Entre fiction narrative et exploration visuelle, je cherche à créer des univers qui mêlent techniques traditionnelles et outils numériques.
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
-        {threeDProjects.map((project) => (
-          <div
-            key={project.id}
-            className="border border-white/20 hover:border-white/40 transition-colors cursor-pointer group"
-            onClick={() => handleProjectClick(project)}
-          >
-            <div className="aspect-video bg-white/5 relative overflow-hidden">
-              <img
-                src={project.thumbnail}
-                alt={project.title}
-                className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
-              />
-              {project.youtubeId && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
-                  <Play size={32} className="text-white" strokeWidth={1} />
+      <div>
+        <h3 className="text-xs uppercase tracking-wider text-white/60 mb-3">Courts-métrages</h3>
+        <div className="grid grid-cols-2 gap-4">
+          {filteredVideos.map((video) => (
+            <div
+              key={video.id}
+              className={`border border-white/20 transition-colors group ${
+                video.comingSoon
+                  ? 'cursor-default opacity-70'
+                  : 'hover:border-white/40 cursor-pointer'
+              }`}
+              onClick={() => handleItemClick(video)}
+            >
+              <div className="aspect-video bg-white/5 relative overflow-hidden">
+                <img
+                  src={video.thumbnail}
+                  alt={video.title}
+                  className={`w-full h-full object-cover ${
+                    video.comingSoon
+                      ? 'opacity-50'
+                      : 'opacity-70 group-hover:opacity-100'
+                  } transition-opacity`}
+                />
+                <div className={`absolute inset-0 flex items-center justify-center ${
+                  video.comingSoon
+                    ? 'bg-black/50'
+                    : 'bg-black/30 group-hover:bg-black/20'
+                } transition-colors`}>
+                  {video.comingSoon ? (
+                    <span className="text-white text-sm font-light tracking-wider">À VENIR</span>
+                  ) : (
+                    <Play size={32} className="text-white" strokeWidth={1} />
+                  )}
                 </div>
-              )}
-            </div>
-            <div className="p-4 space-y-2">
-              <div className="flex items-start justify-between gap-2">
-                <h3 className="text-sm font-light">{project.title}</h3>
-                <span className="text-[10px] text-white/40 whitespace-nowrap">{project.date}</span>
               </div>
-              <p className="text-xs text-white/60 leading-relaxed">{project.summary}</p>
-              <div className="flex flex-wrap gap-1 pt-2">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-[10px] border border-white/30 px-2 py-0.5 text-white/70"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div className="p-4 space-y-2">
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="text-sm font-light">{video.title}</h3>
+                  <span className="text-[10px] text-white/40 whitespace-nowrap">{video.date}</span>
+                </div>
+                <p className="text-xs text-white/60 leading-relaxed">{video.summary}</p>
+                <div className="flex flex-wrap gap-1 pt-2">
+                  {video.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-[10px] border border-white/30 px-2 py-0.5 text-white/70"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3 className="text-xs uppercase tracking-wider text-white/60 mb-3">3D</h3>
+        <div className="grid grid-cols-2 gap-4">
+          {threeDProjects.map((project) => (
+            <div
+              key={project.id}
+              className="border border-white/20 hover:border-white/40 transition-colors cursor-pointer group"
+              onClick={() => handleItemClick(project)}
+            >
+              <div className="aspect-video bg-white/5 relative overflow-hidden">
+                <img
+                  src={project.thumbnail}
+                  alt={project.title}
+                  className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
+                />
+                {project.youtubeId && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
+                    <Play size={32} className="text-white" strokeWidth={1} />
+                  </div>
+                )}
+              </div>
+              <div className="p-4 space-y-2">
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="text-sm font-light">{project.title}</h3>
+                  <span className="text-[10px] text-white/40 whitespace-nowrap">{project.date}</span>
+                </div>
+                <p className="text-xs text-white/60 leading-relaxed">{project.summary}</p>
+                <div className="flex flex-wrap gap-1 pt-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-[10px] border border-white/30 px-2 py-0.5 text-white/70"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="border-t border-white/20 pt-4">
