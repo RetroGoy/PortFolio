@@ -1,4 +1,4 @@
-import { Download, MapPin, Phone, Mail } from 'lucide-react';
+import { Download, MapPin, Phone, Mail, Instagram, Github, Youtube } from 'lucide-react';
 import { useWindowStore } from '../state/useWindowStore';
 
 export const CVWindow = () => {
@@ -41,25 +41,57 @@ export const CVWindow = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-        <div className="flex items-center gap-2">
-          <MapPin size={16} className="text-white/60" />
-          <span>69400, Permis B véhiculé</span>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-3 text-sm">
+          <div className="flex items-center gap-2">
+            <MapPin size={16} className="text-white/60" />
+            <span>69400, Permis B véhiculé</span>
+          </div>
+          <a
+            href="tel:+33601826094"
+            className="flex items-center gap-2 hover:text-green-400 transition-colors"
+          >
+            <Phone size={16} className="text-white/60" />
+            <span>+33 6 01 82 60 94</span>
+          </a>
+          <a
+            href="mailto:n.naveau@icloud.com"
+            className="flex items-center gap-2 hover:text-green-400 transition-colors"
+          >
+            <Mail size={16} className="text-white/60" />
+            <span>n.naveau@icloud.com</span>
+          </a>
         </div>
-        <a
-          href="tel:+33601826094"
-          className="flex items-center gap-2 hover:text-green-400 transition-colors"
-        >
-          <Phone size={16} className="text-white/60" />
-          <span>+33 6 01 82 60 94</span>
-        </a>
-        <a
-          href="mailto:n.naveau@icloud.com"
-          className="flex items-center gap-2 hover:text-green-400 transition-colors"
-        >
-          <Mail size={16} className="text-white/60" />
-          <span>n.naveau@icloud.com</span>
-        </a>
+
+        <div className="space-y-3 text-sm">
+          <a
+            href="https://www.instagram.com/retro.goy/?hl=fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:text-green-400 transition-colors"
+          >
+            <Instagram size={16} className="text-white/60" />
+            <span>Instagram</span>
+          </a>
+          <a
+            href="https://www.youtube.com/@retrogoy/videos"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:text-green-400 transition-colors"
+          >
+            <Youtube size={16} className="text-white/60" />
+            <span>YouTube</span>
+          </a>
+          <a
+            href="https://github.com/RetroGoy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:text-green-400 transition-colors"
+          >
+            <Github size={16} className="text-white/60" />
+            <span>GitHub</span>
+          </a>
+        </div>
       </div>
 
       <div className="bg-white/5 border border-white/20 p-4 rounded">

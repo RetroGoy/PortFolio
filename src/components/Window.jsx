@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { X, ChevronLeft } from 'lucide-react';
 import { useWindowStore } from '../state/useWindowStore';
-import Port from './Port';
 
 export const Window = ({ id, title, children, x, y, width, height, zIndex, breadcrumb, onBreadcrumbClick }) => {
   const { closeWindow, focusWindow, updateWindow } = useWindowStore();
@@ -86,7 +85,6 @@ export const Window = ({ id, title, children, x, y, width, height, zIndex, bread
         onMouseDown={handleMouseDown}
       >
         <div className="flex items-center gap-2 flex-1">
-          {!isMobile && <Port windowId={id} />}
           {breadcrumb && onBreadcrumbClick && (
             <button
               className="text-white hover:bg-white/10 p-1 transition-colors"

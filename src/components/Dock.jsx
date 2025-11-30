@@ -1,27 +1,17 @@
 import { useState } from 'react';
-import { User, Palette, Box, Terminal, Hand, Instagram, Github, ExternalLink, Camera, Play } from 'lucide-react';
+import { User, Box, Terminal, Hand, Camera } from 'lucide-react';
 import { useWindowStore } from '../state/useWindowStore';
 
-const DockIcon = ({ icon, title, windowId, onIconClick, isOpen, href, isReseaux }) => {
+const DockIcon = ({ icon, title, windowId, onIconClick, isOpen }) => {
   const [showTooltip, setShowTooltip] = useState(false);
-
-  const handleClick = () => {
-    if (href) {
-      window.open(href, '_blank');
-    } else {
-      onIconClick(windowId);
-    }
-  };
 
   return (
     <div className="relative">
       <button
-        onClick={handleClick}
+        onClick={() => onIconClick(windowId)}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
-        className={`hover:opacity-70 transition-opacity relative ${
-          isReseaux ? 'text-white/80' : 'text-white'
-        } ${isOpen ? 'after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-[2px] after:bg-white' : ''}`}
+        className={`hover:opacity-70 transition-opacity relative text-white ${isOpen ? 'after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-[2px] after:bg-white' : ''}`}
       >
         {icon}
       </button>
@@ -34,17 +24,11 @@ const DockIcon = ({ icon, title, windowId, onIconClick, isOpen, href, isReseaux 
   );
 };
 
-const DockGroup = ({ label, icons, onIconClick, openWindows, showExternalIndicator }) => {
-  const isReseaux = label === 'RÉSEAUX';
+const DockGroup = ({ label, icons, onIconClick, openWindows }) => {
   return (
-    <div className={`relative border-[1.5px] px-5 py-3 flex items-center gap-6 flex-shrink-0 ${
-      isReseaux ? 'border-white/80' : 'border-white'
-    }`}>
-      <span className={`absolute -top-1.5 left-4 bg-[#0a2f1f] px-2 text-[10px] uppercase tracking-widest font-medium z-10 flex items-center gap-1 ${
-        isReseaux ? 'text-white/80' : 'text-white'
-      }`}>
+    <div className="relative border-[1.5px] px-5 py-3 flex items-center gap-6 flex-shrink-0 border-white">
+      <span className="absolute -top-1.5 left-4 bg-[#0a2f1f] px-2 text-[10px] uppercase tracking-widest font-medium z-10 text-white">
         {label}
-        {showExternalIndicator && <ExternalLink size={10} className="opacity-60" />}
       </span>
       {icons.map((icon, idx) => (
         <DockIcon
@@ -54,8 +38,6 @@ const DockGroup = ({ label, icons, onIconClick, openWindows, showExternalIndicat
           windowId={icon.windowId}
           onIconClick={onIconClick}
           isOpen={openWindows.includes(icon.windowId)}
-          href={icon.href}
-          isReseaux={isReseaux}
         />
       ))}
     </div>
@@ -84,20 +66,10 @@ export const Dock = () => {
 
   const techniqueIcons = [
     { icon: <User size={36} strokeWidth={1.5} />, title: 'Profil', windowId: 'cv' },
-    { icon: <Terminal size={36} strokeWidth={1.5} />, title: 'Développement', windowId: 'dev' }
-  ];
-
-  const creationIcons = [
+    { icon: <Terminal size={36} strokeWidth={1.5} />, title: 'Développement', windowId: 'dev' },
     { icon: <Camera size={36} strokeWidth={1.5} />, title: 'Vidéos', windowId: 'videos' },
     { icon: <Hand size={36} strokeWidth={1.5} />, title: 'Projets Créatifs', windowId: 'projects' },
     { icon: <Box size={36} strokeWidth={1.5} />, title: '3D', windowId: 'three-d' }
-  ];
-
-
-  const reseauxIcons = [
-    { icon: <Instagram size={36} strokeWidth={1.5} />, title: 'Instagram', href: 'https://www.instagram.com/retro.goy/?hl=fr' },
-    { icon: <Play size={36} strokeWidth={1.5} />, title: 'YouTube', href: 'https://www.youtube.com/@retrogoy/videos' },
-    { icon: <Github size={36} strokeWidth={1.5} />, title: 'GitHub', href: 'https://github.com/RetroGoy' }
   ];
 
   return (
@@ -105,8 +77,6 @@ export const Dock = () => {
       <div className="overflow-x-auto overflow-y-visible md:overflow-visible px-4 scrollbar-hide">
         <div className="flex items-center gap-6 w-max">
           <DockGroup label="TECHNIQUE" icons={techniqueIcons} onIconClick={handleIconClick} openWindows={openWindowIds} />
-          <DockGroup label="CRÉATION" icons={creationIcons} onIconClick={handleIconClick} openWindows={openWindowIds} />
-          <DockGroup label="RÉSEAUX" icons={reseauxIcons} onIconClick={handleIconClick} openWindows={openWindowIds} showExternalIndicator={true} />
         </div>
       </div>
     </div>
