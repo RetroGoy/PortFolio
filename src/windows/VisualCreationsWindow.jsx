@@ -126,8 +126,10 @@ export const VisualCreationsWindow = ({ onNavigate, currentView }) => {
   }
 
   const filteredVideos = videos.filter(v =>
-    !['video-4', 'video-6', 'video-7', 'video-8'].includes(v.id)
+    !['video-2', 'video-4', 'video-6', 'video-7', 'video-8'].includes(v.id)
   );
+
+  const allProjects = [...filteredVideos, ...threeDProjects];
 
   return (
     <div className="space-y-6">
@@ -141,104 +143,58 @@ export const VisualCreationsWindow = ({ onNavigate, currentView }) => {
         </p>
       </div>
 
-      <div>
-        <h3 className="text-xs uppercase tracking-wider text-white/60 mb-3">Courts-métrages</h3>
-        <div className="grid grid-cols-2 gap-4">
-          {filteredVideos.map((video) => (
-            <div
-              key={video.id}
-              className={`border border-white/20 transition-colors group ${
-                video.comingSoon
-                  ? 'cursor-default opacity-70'
-                  : 'hover:border-white/40 cursor-pointer'
-              }`}
-              onClick={() => handleItemClick(video)}
-            >
-              <div className="aspect-video bg-white/5 relative overflow-hidden">
-                <img
-                  src={video.thumbnail}
-                  alt={video.title}
-                  className={`w-full h-full object-cover ${
-                    video.comingSoon
-                      ? 'opacity-50'
-                      : 'opacity-70 group-hover:opacity-100'
-                  } transition-opacity`}
-                />
-                <div className={`absolute inset-0 flex items-center justify-center ${
-                  video.comingSoon
-                    ? 'bg-black/50'
-                    : 'bg-black/30 group-hover:bg-black/20'
-                } transition-colors`}>
-                  {video.comingSoon ? (
-                    <span className="text-white text-sm font-light tracking-wider">À VENIR</span>
-                  ) : (
-                    <Play size={32} className="text-white" strokeWidth={1} />
-                  )}
-                </div>
-              </div>
-              <div className="p-4 space-y-2">
-                <div className="flex items-start justify-between gap-2">
-                  <h3 className="text-sm font-light">{video.title}</h3>
-                  <span className="text-[10px] text-white/40 whitespace-nowrap">{video.date}</span>
-                </div>
-                <p className="text-xs text-white/60 leading-relaxed">{video.summary}</p>
-                <div className="flex flex-wrap gap-1 pt-2">
-                  {video.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-[10px] border border-white/30 px-2 py-0.5 text-white/70"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+      <div className="grid grid-cols-2 gap-4">
+        {allProjects.map((item) => (
+          <div
+            key={item.id}
+            className={`border border-white/20 transition-colors group ${
+              item.comingSoon
+                ? 'cursor-default opacity-70'
+                : 'hover:border-white/40 cursor-pointer'
+            }`}
+            onClick={() => handleItemClick(item)}
+          >
+            <div className="aspect-video bg-white/5 relative overflow-hidden">
+              <img
+                src={item.thumbnail}
+                alt={item.title}
+                className={`w-full h-full object-cover ${
+                  item.comingSoon
+                    ? 'opacity-50'
+                    : 'opacity-70 group-hover:opacity-100'
+                } transition-opacity`}
+              />
+              <div className={`absolute inset-0 flex items-center justify-center ${
+                item.comingSoon
+                  ? 'bg-black/50'
+                  : item.youtubeId ? 'bg-black/30 group-hover:bg-black/20' : ''
+              } transition-colors`}>
+                {item.comingSoon ? (
+                  <span className="text-white text-sm font-light tracking-wider">À VENIR</span>
+                ) : item.youtubeId || item.isInstagram ? (
+                  <Play size={32} className="text-white" strokeWidth={1} />
+                ) : null}
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <h3 className="text-xs uppercase tracking-wider text-white/60 mb-3">3D</h3>
-        <div className="grid grid-cols-2 gap-4">
-          {threeDProjects.map((project) => (
-            <div
-              key={project.id}
-              className="border border-white/20 hover:border-white/40 transition-colors cursor-pointer group"
-              onClick={() => handleItemClick(project)}
-            >
-              <div className="aspect-video bg-white/5 relative overflow-hidden">
-                <img
-                  src={project.thumbnail}
-                  alt={project.title}
-                  className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
-                />
-                {project.youtubeId && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
-                    <Play size={32} className="text-white" strokeWidth={1} />
-                  </div>
-                )}
+            <div className="p-4 space-y-2">
+              <div className="flex items-start justify-between gap-2">
+                <h3 className="text-sm font-light">{item.title}</h3>
+                <span className="text-[10px] text-white/40 whitespace-nowrap">{item.date}</span>
               </div>
-              <div className="p-4 space-y-2">
-                <div className="flex items-start justify-between gap-2">
-                  <h3 className="text-sm font-light">{project.title}</h3>
-                  <span className="text-[10px] text-white/40 whitespace-nowrap">{project.date}</span>
-                </div>
-                <p className="text-xs text-white/60 leading-relaxed">{project.summary}</p>
-                <div className="flex flex-wrap gap-1 pt-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-[10px] border border-white/30 px-2 py-0.5 text-white/70"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+              <p className="text-xs text-white/60 leading-relaxed">{item.summary}</p>
+              <div className="flex flex-wrap gap-1 pt-2">
+                {item.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[10px] border border-white/30 px-2 py-0.5 text-white/70"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
 
       <div className="border-t border-white/20 pt-4">

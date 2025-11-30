@@ -4,17 +4,38 @@ import { playOpenSound, playCloseSound } from '../utils/soundEffects';
 const getInitialWindows = () => {
   const isMobile = window.innerWidth <= 768;
 
-  const cvWindow = {
-    id: 'cv',
-    title: 'PROFIL',
-    x: isMobile ? 10 : 100,
-    y: isMobile ? 100 : 120,
-    width: isMobile ? window.innerWidth - 20 : 550,
-    height: isMobile ? window.innerHeight - 120 : 550,
-    zIndex: 1
-  };
+  if (isMobile) {
+    return [{
+      id: 'cv',
+      title: 'PROFIL',
+      x: 10,
+      y: 100,
+      width: window.innerWidth - 20,
+      height: window.innerHeight - 120,
+      zIndex: 2
+    }];
+  }
 
-  return [cvWindow];
+  return [
+    {
+      id: 'dev',
+      title: 'DÉVELOPPEMENT',
+      x: 80,
+      y: 130,
+      width: 550,
+      height: 550,
+      zIndex: 1
+    },
+    {
+      id: 'cv',
+      title: 'PROFIL',
+      x: window.innerWidth - 650,
+      y: 110,
+      width: 550,
+      height: 550,
+      zIndex: 2
+    }
+  ];
 };
 
 export const useWindowStore = create((set) => ({
