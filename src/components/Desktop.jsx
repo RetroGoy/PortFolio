@@ -44,7 +44,6 @@ export const Desktop = () => {
         <FilmGrain />
 
         <Dock />
-        <Tooltip />
         <Footer />
 
         {windows.map((window) => {
