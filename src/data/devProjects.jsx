@@ -35,8 +35,8 @@ Fonctionnalités
     tech: ["Next.js", "React", "Tailwind", "Supabase", "Web Audio API", "Zustand"],
     description:
       "Plateforme collaborative musicale basée sur des graphes de pistes audio.",
-    link: "https://forkjam.dumatus.fr",
-    iframeUrl: "https://forkjam.dumatus.fr",
+    link: "https://forkjam.app",
+    iframeUrl: "https://forkjam.app",
     thumbnail: "/dev/ForkJam.jpeg",
     screenshots: [
       {
