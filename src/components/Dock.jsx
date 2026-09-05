@@ -53,7 +53,8 @@ export const Dock = () => {
       closeWindow(windowId);
     } else {
       const titleMap = {
-        'cv': 'PROFIL'
+        'cv': 'PROFIL',
+        'visual-creations': 'CRÉATIONS VISUELLES'
       };
       openWindow({
         id: windowId,
@@ -67,7 +68,7 @@ export const Dock = () => {
   const techniqueIcons = [
     { icon: <User size={36} strokeWidth={1.5} />, title: 'Profil', windowId: 'cv' },
     { icon: <Terminal size={36} strokeWidth={1.5} />, title: 'Développement', windowId: 'dev' },
-//    { icon: <Hand size={36} strokeWidth={1.5} />, title: 'Créations', windowId: 'visual-creations' }
+    { icon: <Hand size={36} strokeWidth={1.5} />, title: 'Créations', windowId: 'visual-creations' }
   ];
 
   return (
