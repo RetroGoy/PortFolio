@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { videos, threeDProjects } from '../data/creativeProjects.jsx';
 import { Play } from 'lucide-react';
+import { Gallery, Moodboard, HowItWorks } from '../components/ProjectBlocks';
 
 export const VisualCreationsWindow = ({ onNavigate, currentView }) => {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -77,27 +78,18 @@ export const VisualCreationsWindow = ({ onNavigate, currentView }) => {
           </div>
         ) : null}
 
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-3">
-          {selectedItem.images.map((img, idx) => (
-            <div key={idx} className="aspect-video border border-white/20 overflow-hidden relative group">
-              <img
-                src={img.src}
-                alt={`${selectedItem.title} - image ${idx + 1}`}
-                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-              />
-              <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-3">
-                <p className="text-white text-xs text-center">{img.caption}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="border-t border-white/20 pt-4 space-y-3">
+        <div className="border-t border-white/20 pt-4">
           <p className="text-sm text-white/80 leading-relaxed">
             {selectedItem.description}
           </p>
+        </div>
 
-          {selectedItem.tools && (
+        <HowItWorks steps={selectedItem.howItWorks} />
+        <Gallery images={selectedItem.images} />
+        <Moodboard moodboard={selectedItem.moodboard} />
+
+        {selectedItem.tools && (
+          <div className="border-t border-white/20 pt-4">
             <div>
               <p className="text-xs text-white/50 uppercase tracking-wider mb-2">Outils utilisés</p>
               <div className="flex flex-wrap gap-2">
@@ -108,8 +100,8 @@ export const VisualCreationsWindow = ({ onNavigate, currentView }) => {
                 ))}
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     );
   }
