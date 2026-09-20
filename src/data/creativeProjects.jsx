@@ -94,15 +94,15 @@ silhouettes — du mystique posé sur de l'industriel.`,
       items: [
         {
           src: '/3D/kk-ref-1.jpeg',
-          caption: "Tarik Azzouz — « Big Body » ft. Hamza & La Fève (visualizer). Le rouge et rien d'autre."
+          caption: "Tarik Azzouz — « Big Body » ft. Hamza & La Fève (visualizer)"
         },
         {
           src: '/3D/kk-ref-2.jpeg',
-          caption: "Même visualizer."
+          caption: "Tarik Azzouz — « Big Body » ft. Hamza & La Fève (visualizer)"
         },
         {
           src: '/3D/kk-ref-3.jpeg',
-          caption: "Need for Speed Most Wanted (2012), cinématique. Les contre-jours viennent de là."
+          caption: "Need for Speed Most Wanted (2012), cinématique"
         }
       ]
     },
