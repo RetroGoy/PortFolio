@@ -78,6 +78,23 @@ floue. L'idée était d'apprendre à raconter par l'image et le montage plutôt 
 
 export const threeDProjects = [
   {
+    id: '3d-4',
+    youtubeId: '1ypWno5iIqE',
+    title: 'Kaarbon Komplite',
+    date: '2026-2027',
+    thumbnail: 'https://img.youtube.com/vi/1ypWno5iIqE/mqdefault.jpg',
+    summary: "Visualiseur 3D pour le premier album de Kaarbon Komplite, groupe de rock psychédélique lyonnais",
+    description: `Visualiseur destiné à accompagner le premier album de Kaarbon Komplite, groupe de
+rock psychédélique lyonnais, dont la sortie est prévue avant l'été 2027. Le personnage principal du film,
+c'est la ville : une cité industrielle fictive montée sous Blender en kit-bashing, filmée sous toutes
+ses faces — avenues, toundra, carrière, salle souterraine — pour faire tenir ensemble le mystique et
+l'industriel. Le gros du travail se joue dans l'ambiance : lumière, brume, densité du décor,
+présence des machines.`,
+    images: [],
+    tools: ['Blender', 'Kit-bashing', 'Génération procédurale (Python)', 'Compositing']
+  },
+
+  {
     id: '3d-3',
     isInstagram: true,
     instagramUrl: 'https://www.instagram.com/p/DY2PuGtTfVz/',
