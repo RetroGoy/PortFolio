@@ -1,8 +1,48 @@
-import { Download, MapPin, Phone, Mail, Instagram, Github, Youtube } from 'lucide-react';
+import { useState } from 'react';
+import { Download, MapPin, Phone, Mail, Instagram, Github, Youtube, ChevronRight } from 'lucide-react';
+import { useViewMode } from '../state/useViewMode';
 
 const creativeSkills = ['TouchDesigner', 'Blender', 'DaVinci Resolve', 'Photoshop'];
 
+const sectionTitle =
+  'font-light text-white/80 uppercase text-xs tracking-wider';
+
+// En mode page le CV est long : les trois gros blocs se déplient au clic.
+// En mode bureau ils restent ouverts, comme avant.
+const Section = ({ title, collapsible, children }) => {
+  const [open, setOpen] = useState(false);
+
+  if (!collapsible) {
+    return (
+      <div className="space-y-4">
+        <h3 className={`${sectionTitle} mb-3 border-b border-white/20 pb-2`}>{title}</h3>
+        {children}
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={() => setOpen((value) => !value)}
+        aria-expanded={open}
+        className="w-full flex items-center gap-2 border-b border-white/20 pb-2 text-left group"
+      >
+        <ChevronRight
+          size={14}
+          className={`text-white/50 transition-transform duration-200 ${open ? 'rotate-90' : ''}`}
+        />
+        <h3 className={`${sectionTitle} group-hover:text-white transition-colors`}>{title}</h3>
+      </button>
+      {open && <div className="pt-4">{children}</div>}
+    </div>
+  );
+};
+
 export const CVWindow = () => {
+  const isPage = useViewMode((state) => state.mode) === 'page';
+
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = '/CV-Nathanael-Naveau.pdf';
@@ -88,8 +128,7 @@ export const CVWindow = () => {
         </div>
       </div>
 
-      <div className="space-y-4">
-        <h3 className="font-light text-white/80 mb-3 uppercase text-xs tracking-wider border-b border-white/20 pb-2">Expériences Professionnelles</h3>
+      <Section title="Expériences Professionnelles" collapsible={isPage}>
 
         <div className="space-y-4">
           <div className="border-l-2 border-white/20 pl-4">
@@ -120,10 +159,9 @@ export const CVWindow = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </Section>
 
-      <div className="space-y-4">
-        <h3 className="font-light text-white/80 mb-3 uppercase text-xs tracking-wider border-b border-white/20 pb-2">Formations</h3>
+      <Section title="Formations" collapsible={isPage}>
 
         <div className="space-y-3">
           <div className="border-l-2 border-green-400 pl-4">
@@ -148,10 +186,9 @@ export const CVWindow = () => {
             <p className="text-xs text-white/80 mt-1">Développement et systèmes</p>
           </div>
         </div>
-      </div>
+      </Section>
 
-      <div className="space-y-4">
-        <h3 className="font-light text-white/80 mb-3 uppercase text-xs tracking-wider border-b border-white/20 pb-2">Parcours Complémentaire</h3>
+      <Section title="Parcours Complémentaire" collapsible={isPage}>
 
         <div className="space-y-3">
           <div className="border-l-2 border-white/20 pl-4">
@@ -175,7 +212,7 @@ export const CVWindow = () => {
             <p className="text-xs text-white/80 mt-1">Pratique du montage et de l'étalonnage (DaVinci Resolve).</p>
           </div>
         </div>
-      </div>
+      </Section>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
