@@ -4,6 +4,7 @@ export const devProjects = [
     title: "ForkJam",
     date: "en cours",
     featured: true,
+    mediaAspect: "aspect-[21/9]",
     tech: ["Next.js", "React", "Tailwind", "Supabase", "Web Audio API", "Zustand"],
     description:
       "Plateforme collaborative musicale basée sur des graphes de pistes audio.",
