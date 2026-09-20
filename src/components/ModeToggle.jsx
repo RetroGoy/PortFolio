@@ -19,7 +19,7 @@ export const ModeToggle = () => {
   const { mode, setMode } = useViewMode();
 
   return (
-    <div className="fixed top-5 right-3 md:right-5 z-[300]">
+    <div className="fixed bottom-1.5 right-3 md:right-5 z-[300]">
       <div className="flex items-stretch border border-white/20 bg-black/40 backdrop-blur-sm">
         <Segment
           active={mode === 'desktop'}

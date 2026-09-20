@@ -72,7 +72,7 @@ export const Dock = () => {
   ];
 
   return (
-    <div className="fixed top-6 left-4 md:left-1/2 md:-translate-x-1/2 z-[200] w-auto">
+    <div className="fixed top-6 left-1/2 -translate-x-1/2 z-[200] w-auto">
       <div className="overflow-x-auto overflow-y-visible md:overflow-visible">
         <div className="flex items-center justify-center gap-6">
           <DockGroup label="PROJETS" icons={techniqueIcons} onIconClick={handleIconClick} openWindows={openWindowIds} />

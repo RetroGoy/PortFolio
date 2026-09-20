@@ -82,7 +82,7 @@ export const threeDProjects = [
     youtubeId: '1ypWno5iIqE',
     title: 'Kaarbon Komplite — Visualiseur',
     date: '2026-2027',
-    thumbnail: 'https://img.youtube.com/vi/1ypWno5iIqE/mqdefault.jpg',
+    thumbnail: '/3D/kk-thumb.jpeg',
     summary: "Visualiseur pour le premier album du groupe lyonnais Kaarbon Komplite",
     description: `Visualiseur du premier album de Kaarbon Komplite, groupe de rock psychédélique
 lyonnais, prévu avant l'été 2027. Une ville industrielle fictive, assemblée sous Blender en

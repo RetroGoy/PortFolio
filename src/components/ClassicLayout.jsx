@@ -14,8 +14,8 @@ import { VisualCreationsWindow } from '../windows/VisualCreationsWindow';
 // c'est cette page qui stocke le fil d'Ariane de chaque section.
 const sections = [
   { id: 'cv', title: 'Profil', Component: CVWindow },
-  { id: 'dev', title: 'Développement', Component: DevWindow },
-  { id: 'visual-creations', title: 'Créations visuelles', Component: VisualCreationsWindow }
+  { id: 'visual-creations', title: 'Créations visuelles', Component: VisualCreationsWindow },
+  { id: 'dev', title: 'Développement', Component: DevWindow }
 ];
 
 export const ClassicLayout = () => {
@@ -101,7 +101,7 @@ export const ClassicLayout = () => {
         <FilmGrain />
 
         <header className="sticky top-0 z-[150] bg-[#041810]/90 backdrop-blur-sm border-b border-white/20">
-          <div className="mx-auto max-w-4xl px-4 py-3 pr-20 sm:pr-32 flex flex-wrap items-baseline gap-x-6 gap-y-1">
+          <div className="mx-auto max-w-4xl px-4 py-3 flex flex-wrap items-baseline gap-x-6 gap-y-1">
             <span className="text-green-400 text-sm tracking-wide">Nathanaël Naveau</span>
             <span className="hidden md:inline text-white/40 text-xs">
               Développeur créatif / interactif

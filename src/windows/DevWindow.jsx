@@ -1,8 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
 import { devProjects } from '../data/devProjects.jsx';
-import { ExternalLink, Maximize2 } from 'lucide-react';
+import { ExternalLink, Maximize2, Bot, Download, FolderTree } from 'lucide-react';
 import { CodeBlock } from '../components/CodeBlock';
 import { Moodboard } from '../components/ProjectBlocks';
+
+// Les utilitaires n'ont pas de capture : une icône vaut mieux qu'une case noire.
+const projectIcons = {
+  bot: Bot,
+  download: Download,
+  'folder-tree': FolderTree
+};
 
 export const DevWindow = ({ onNavigate, currentView }) => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -286,31 +293,45 @@ export const DevWindow = ({ onNavigate, currentView }) => {
           <div>
             <h3 className="text-xs uppercase tracking-wider text-white/60 mb-3">Divers</h3>
             <div className="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-3">
-              {otherProjects.map((project) => (
-                <div
-                  key={project.id}
-                  className="aspect-square border border-white/20 overflow-hidden cursor-pointer group relative bg-white/5"
-                  onClick={() => handleProjectClick(project)}
-                >
-                  {project.thumbnail && (
-                    <img
-                      src={project.thumbnail}
-                      alt={project.title}
-                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                      className="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
-                    />
-                  )}
+              {otherProjects.map((project) => {
+                const Icon = projectIcons[project.icon];
+                const contain = project.thumbnailFit === 'contain';
+
+                return (
                   <div
-                    className={`absolute inset-0 flex items-center justify-center p-3 text-center transition-opacity ${
-                      project.thumbnail
-                        ? 'bg-black/70 opacity-0 group-hover:opacity-100'
-                        : 'opacity-100'
-                    }`}
+                    key={project.id}
+                    className="aspect-square border border-white/20 overflow-hidden cursor-pointer group relative bg-white/5"
+                    onClick={() => handleProjectClick(project)}
                   >
-                    <p className="text-xs text-white leading-snug">{project.title}</p>
+                    {project.thumbnail ? (
+                      <>
+                        <img
+                          src={project.thumbnail}
+                          alt={project.title}
+                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                          className={`w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-300 ${
+                            contain ? 'object-contain p-3' : 'object-cover group-hover:scale-110'
+                          }`}
+                        />
+                        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent px-2 py-2">
+                          <p className="text-[11px] text-white leading-snug">{project.title}</p>
+                        </div>
+                      </>
+                    ) : (
+                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-3 text-center">
+                        {Icon && (
+                          <Icon
+                            size={34}
+                            strokeWidth={1}
+                            className="text-white/30 group-hover:text-white/60 transition-colors"
+                          />
+                        )}
+                        <p className="text-xs text-white leading-snug">{project.title}</p>
+                      </div>
+                    )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}

@@ -25,12 +25,11 @@ export const devProjects = [
     id: "dev-3",
     title: "DeviceDeck",
     date: "2025",
-    featured: true,
-    mediaAspect: "aspect-[3/1]",
     tech: ["Python", "HID / MIDI", "CircuitPython", "launchd", "macOS"],
     description:
       "Gestionnaire de périphériques : rend utilisables hors de leur logiciel d'origine un clavier Blackmagic Speed Editor, un OP-Z et une manette DualShock 4, et les route vers différents contextes (bureau, Logic, DaVinci, TouchDesigner, gimbal DJI Ronin).",
     thumbnail: "/dev/devicedeck.png",
+    thumbnailFit: "contain",
     heroImage: "/dev/devicedeck.png",
     architecture:
       "Le point de départ : le Speed Editor de DaVinci Resolve est un excellent clavier d'édition, mais bridé — il ne parle qu'à Resolve. DeviceDeck le débloque : un daemon Python répond à son défi d'authentification HID (l'algo vient du reverse engineering de smunaut), lit ensuite ses touches et sa molette, et les retraduit selon l'application au premier plan, avec un profil par logiciel et plusieurs couches par touche (clic, double-clic, maintien + molette). La molette est exposée à Logic comme une vraie surface Mackie Control via un port MIDI virtuel, pour un scrub naturel de la tête de lecture. Dès que Resolve est ouvert, le daemon relâche immédiatement le clavier pour lui laisser son fonctionnement natif. Le même daemon lit aussi un OP-Z — décodé directement depuis son flux SysEx plutôt que via l'app officielle — et une manette DualShock 4, pour piloter le bureau ou le gimbal. Le point le plus tordu du projet, c'est le pont vers le gimbal DJI Ronin : l'app DJI ne propose aucune API, seulement un support natif des manettes DualShock 4. Un Raspberry Pi Pico, câblé en USB, se fait donc passer pour une DS4 aux yeux du système — il reçoit les commandes de DeviceDeck (molette du Speed Editor, gestes du DS4, encodeurs de l'OP-Z) et les retranscrit en trames DS4 valides. Le Ronin, persuadé de parler à une vraie manette, obéit. Côté interface : un tableau de bord web et une petite app menu-barre ; l'ensemble tourne en fond via launchd.",
@@ -84,6 +83,7 @@ def kbd_auth(challenge: int) -> int:
     title: "GlobalExam Bot",
     date: "2024",
     tech: ["JavaScript", "OpenAI API", "Browser Automation"],
+    icon: "bot",
     description:
       "Script de console qui répond tout seul aux QCM d'entraînement GlobalExam via l'API OpenAI.",
     thumbnail: "",
@@ -116,6 +116,7 @@ window.stopAutoQCM = () => { run = false; clearInterval(keepAliveId); };`,
     title: "dl — téléchargeur audio",
     date: "2025",
     tech: ["Bash", "yt-dlp", "spotdl", "ffmpeg"],
+    icon: "download",
     description:
       "Alias shell qui récupère le son de presque n'importe quel lien en MP3 rangé, avec pochette et métadonnées.",
     thumbnail: "",
@@ -145,6 +146,7 @@ fi`,
     title: "file-sorter",
     date: "2025",
     tech: ["Python", "launchd", "macOS"],
+    icon: "folder-tree",
     description:
       "Démon de rangement qui trie ~/Downloads et le Bureau par catégorie, sans jamais toucher un dossier de projet.",
     thumbnail: "",
