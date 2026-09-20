@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import { devProjects } from '../data/devProjects.jsx';
-import { ExternalLink, Maximize2, Bot, Download, FolderTree } from 'lucide-react';
+import { ExternalLink, Maximize2, Bot, FolderTree, Keyboard } from 'lucide-react';
 import { CodeBlock } from '../components/CodeBlock';
 import { Moodboard } from '../components/ProjectBlocks';
 
 // Les utilitaires n'ont pas de capture : une icône vaut mieux qu'une case noire.
 const projectIcons = {
   bot: Bot,
-  download: Download,
+  keyboard: Keyboard,
   'folder-tree': FolderTree
 };
 
