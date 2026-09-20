@@ -1,6 +1,5 @@
 // Blocs de fiche projet partagés entre les fenêtres Développement et
-// Créations Visuelles : galerie légendée, moodboard de références et
-// déroulé « comment ça marche ».
+// Créations Visuelles : galerie légendée et moodboard de références.
 
 export const SectionTitle = ({ children }) => (
   <h3 className="text-sm uppercase tracking-wider text-white/60 mb-3">{children}</h3>
@@ -63,29 +62,6 @@ export const Moodboard = ({ moodboard }) => {
           </figure>
         ))}
       </div>
-    </div>
-  );
-};
-
-export const HowItWorks = ({ steps, title = 'Comment ça marche' }) => {
-  if (!steps?.length) return null;
-
-  return (
-    <div className="border-t border-white/20 pt-4">
-      <SectionTitle>{title}</SectionTitle>
-      <ol className="space-y-4">
-        {steps.map((step, idx) => (
-          <li key={idx} className="flex gap-3">
-            <span className="text-xs text-white/40 pt-0.5 tabular-nums">
-              {String(idx + 1).padStart(2, '0')}
-            </span>
-            <div className="space-y-1 border-l border-white/15 pl-3">
-              <p className="text-sm text-white">{step.title}</p>
-              <p className="text-sm text-white/70 leading-relaxed">{step.text}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
     </div>
   );
 };

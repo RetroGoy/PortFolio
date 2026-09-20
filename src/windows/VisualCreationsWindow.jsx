@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { videos, threeDProjects } from '../data/creativeProjects.jsx';
 import { Play } from 'lucide-react';
-import { Gallery, Moodboard, HowItWorks } from '../components/ProjectBlocks';
+import { Gallery, Moodboard } from '../components/ProjectBlocks';
 
 export const VisualCreationsWindow = ({ onNavigate, currentView }) => {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -84,7 +84,6 @@ export const VisualCreationsWindow = ({ onNavigate, currentView }) => {
           </p>
         </div>
 
-        <HowItWorks steps={selectedItem.howItWorks} />
         <Gallery images={selectedItem.images} />
         <Moodboard moodboard={selectedItem.moodboard} />
 

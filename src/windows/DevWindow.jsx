@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { devProjects } from '../data/devProjects.jsx';
 import { ExternalLink, Maximize2 } from 'lucide-react';
 import { CodeBlock } from '../components/CodeBlock';
-import { Moodboard, HowItWorks } from '../components/ProjectBlocks';
+import { Moodboard } from '../components/ProjectBlocks';
 
 export const DevWindow = ({ onNavigate, currentView }) => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -164,8 +164,6 @@ export const DevWindow = ({ onNavigate, currentView }) => {
             </p>
           </div>
         )}
-
-        <HowItWorks steps={selectedProject.howItWorks} />
 
         <Moodboard moodboard={selectedProject.moodboard} />
 

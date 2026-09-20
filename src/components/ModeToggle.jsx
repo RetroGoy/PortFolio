@@ -6,8 +6,8 @@ const Segment = ({ active, onClick, icon, label, title }) => (
     onClick={onClick}
     title={title}
     aria-pressed={active}
-    className={`flex items-center gap-2 px-3 py-2 text-[10px] uppercase tracking-widest transition-colors ${
-      active ? 'bg-white/15 text-white' : 'text-white/50 hover:text-white/80'
+    className={`flex items-center gap-1.5 px-2 py-1 text-[9px] uppercase tracking-widest transition-colors ${
+      active ? 'text-white bg-white/10' : 'text-white/35 hover:text-white/70'
     }`}
   >
     {icon}
@@ -19,19 +19,19 @@ export const ModeToggle = () => {
   const { mode, setMode } = useViewMode();
 
   return (
-    <div className="fixed top-6 right-4 md:right-6 z-[300]">
-      <div className="flex items-stretch border-[1.5px] border-white bg-[#051810]/90 backdrop-blur-sm">
+    <div className="fixed top-5 right-3 md:right-5 z-[300]">
+      <div className="flex items-stretch border border-white/20 bg-black/40 backdrop-blur-sm">
         <Segment
           active={mode === 'desktop'}
           onClick={() => setMode('desktop')}
-          icon={<AppWindow size={16} strokeWidth={1.5} />}
+          icon={<AppWindow size={12} strokeWidth={1.5} />}
           label="Bureau"
           title="Mode bureau : fenêtres déplaçables"
         />
         <Segment
           active={mode === 'page'}
           onClick={() => setMode('page')}
-          icon={<AlignLeft size={16} strokeWidth={1.5} />}
+          icon={<AlignLeft size={12} strokeWidth={1.5} />}
           label="Page"
           title="Mode page : lecture classique, de haut en bas"
         />

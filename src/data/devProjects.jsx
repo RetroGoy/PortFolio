@@ -13,29 +13,6 @@ export const devProjects = [
     thumbnail: "/dev/ForkJam.jpeg",
     architecture:
       "ForkJam est un forum musical où chaque contribution audio devient un nœud dans un graphe. Les utilisateurs peuvent créer, écouter et 'forker' des branches de riffs synchronisées sur un BPM commun. L'app gère la lecture multipiste via Web Audio API et stocke les audios / données dans Supabase.",
-    howItWorks: [
-      {
-        title: "Chaque contribution est un nœud",
-        text: `Une piste postée se rattache à celle dont elle part : le fil de discussion prend la forme
-d'un graphe plutôt que d'une liste. « Forker » un riff, c'est ouvrir une branche à partir de
-n'importe quel point du graphe.`
-      },
-      {
-        title: "Tout le monde joue sur la même grille",
-        text: `Un BPM commun est fixé à la racine d'un graphe. Les pistes ajoutées ensuite s'alignent
-dessus, ce qui permet d'empiler des contributions enregistrées séparément sans qu'elles se décalent.`
-      },
-      {
-        title: "La lecture se fait dans le navigateur",
-        text: `La superposition des pistes est gérée par la Web Audio API : plusieurs sources jouées en
-parallèle, synchronisées sur la même horloge, avec le mixage côté client.`
-      },
-      {
-        title: "Stockage et comptes",
-        text: `Supabase s'occupe des fichiers audio, de la base et de l'authentification, ce qui laisse
-le front se concentrer sur le graphe et le lecteur.`
-      }
-    ],
     stack: {
       frontend: ["Next.js", "React", "TailwindCSS", "Zustand"],
       backend: ["Supabase (DB, Auth, Storage)"],
@@ -56,7 +33,7 @@ le front se concentrer sur le graphe et le lecteur.`
     thumbnail: "/dev/devicedeck.png",
     heroImage: "/dev/devicedeck.png",
     architecture:
-      "Le point de départ : le Speed Editor de DaVinci Resolve est un excellent clavier d'édition, mais bridé — il ne parle qu'à Resolve. DeviceDeck le débloque et en fait une surface de contrôle générique, qui pilote aussi bien le bureau que Logic, TouchDesigner ou un gimbal, avec un profil par logiciel et plusieurs couches par touche. Le même daemon lit aussi un OP-Z — décodé directement depuis son flux SysEx plutôt que via l'app officielle — et une manette DualShock 4, qui servent de commandes d'entrée supplémentaires. L'ensemble tourne en fond via launchd, avec un tableau de bord web et une petite app menu-barre.",
+      "Le point de départ : le Speed Editor de DaVinci Resolve est un excellent clavier d'édition, mais bridé — il ne parle qu'à Resolve. DeviceDeck le débloque : un daemon Python répond à son défi d'authentification HID (l'algo vient du reverse engineering de smunaut), lit ensuite ses touches et sa molette, et les retraduit selon l'application au premier plan, avec un profil par logiciel et plusieurs couches par touche (clic, double-clic, maintien + molette). La molette est exposée à Logic comme une vraie surface Mackie Control via un port MIDI virtuel, pour un scrub naturel de la tête de lecture. Dès que Resolve est ouvert, le daemon relâche immédiatement le clavier pour lui laisser son fonctionnement natif. Le même daemon lit aussi un OP-Z — décodé directement depuis son flux SysEx plutôt que via l'app officielle — et une manette DualShock 4, pour piloter le bureau ou le gimbal. Le point le plus tordu du projet, c'est le pont vers le gimbal DJI Ronin : l'app DJI ne propose aucune API, seulement un support natif des manettes DualShock 4. Un Raspberry Pi Pico, câblé en USB, se fait donc passer pour une DS4 aux yeux du système — il reçoit les commandes de DeviceDeck (molette du Speed Editor, gestes du DS4, encodeurs de l'OP-Z) et les retranscrit en trames DS4 valides. Le Ronin, persuadé de parler à une vraie manette, obéit. Côté interface : un tableau de bord web et une petite app menu-barre ; l'ensemble tourne en fond via launchd.",
     components: [
       {
         image: "/dev/speededitor.png",
@@ -72,31 +49,6 @@ le front se concentrer sur le graphe et le lecteur.`
         image: "/dev/roninvideoproj.png",
         name: "DJI Ronin RS3 Mini + vidéoprojecteur",
         description: "Le gimbal piloté à distance comme n'importe quel autre périphérique de sortie, ici avec un vidéoprojecteur embarqué."
-      }
-    ],
-    howItWorks: [
-      {
-        title: "Déverrouiller le clavier",
-        text: `Le Speed Editor n'émet rien tant qu'un logiciel n'a pas répondu à son défi
-d'authentification HID. Le daemon renvoie la bonne réponse, et le clavier se met à parler à autre
-chose que DaVinci.`
-      },
-      {
-        title: "Traduire selon l'application au premier plan",
-        text: `Chaque touche a un profil par logiciel et plusieurs couches — clic, double-clic, maintien
-combiné à la molette. Dès que Resolve passe devant, le daemon relâche le clavier pour lui rendre son
-comportement d'origine.`
-      },
-      {
-        title: "Faire passer la molette pour une surface de contrôle",
-        text: `Un port MIDI virtuel expose la molette à Logic comme une vraie surface Mackie Control :
-le scrub de la tête de lecture se comporte comme sur un contrôleur du commerce.`
-      },
-      {
-        title: "Se faire passer pour une manette",
-        text: `L'app du gimbal DJI Ronin n'a pas d'API, seulement un support natif des manettes
-DualShock 4. Un Raspberry Pi Pico se présente donc au système comme une DS4 et retranscrit en trames
-valides ce que lui envoie DeviceDeck — molette, gestes, encodeurs de l'OP-Z.`
       }
     ],
     stack: {
